@@ -1,4 +1,3 @@
-// Base de dados dividida rigorosamente por categoria
 const bancoDados = {
   carros: [
     { titulo: "Buenos Aires", categoria: "Intermediário", preco: 286, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80", link: "https://www.rentcars.com" },
@@ -37,7 +36,6 @@ function formatarMoeda(v) {
   return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-// Troca de Abas que esconde o que não é relevante
 function trocarAba(categoria, elemento) {
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
   if (elemento) elemento.classList.add('active');
@@ -45,7 +43,6 @@ function trocarAba(categoria, elemento) {
   const formGeral = document.getElementById('formGeral');
   const formHospedagem = document.getElementById('formHospedagem');
 
-  // Esconder todas as seções por padrão
   document.querySelectorAll('.view-block').forEach(v => v.style.display = 'none');
 
   if (categoria === 'hospedagem') {
@@ -66,7 +63,6 @@ function trocarAba(categoria, elemento) {
     document.getElementById('viewSeguros').style.display = 'block';
     renderSeguros();
   } else {
-    // monte / voos / pacotes
     formGeral.style.display = 'block';
     formHospedagem.style.display = 'none';
     configurarInputs(`Pesquisar ${categoria === 'monte' ? 'viagens' : categoria}`, true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
@@ -84,7 +80,6 @@ function configurarInputs(title, showOptions, lOrig, pOrig, lDest, pDest) {
   document.getElementById('inputDestino').placeholder = pDest;
 }
 
-// Renderizadores Individuais
 function renderCarros() {
   const cGrid = document.getElementById('carrosGrid');
   cGrid.innerHTML = '';
@@ -202,7 +197,6 @@ function renderSeguros() {
   });
 }
 
-// Modal Hóspedes
 function toggleModalHospedes() {
   const modal = document.getElementById('guestModal');
   if (modal) modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
