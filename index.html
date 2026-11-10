@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO</title>
+  <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="dark-mode">
 
+  <!-- Header Navbar com a vossa logo -->
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-brand">
@@ -21,6 +22,7 @@
     </div>
   </header>
 
+  <!-- Hero Banner com a logo principal -->
   <section class="hero-section">
     <div class="search-container">
       
@@ -29,6 +31,7 @@
         <p class="hero-subtitle">Voe com tarifas justas e mais economia para chegar onde importa.</p>
       </div>
 
+      <!-- Navegação por Abas -->
       <div class="tabs-container">
         <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
         <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
@@ -38,8 +41,10 @@
         <button class="tab-btn" onclick="trocarAba('seguros', this)">Seguros</button>
       </div>
 
+      <!-- Card Central de Busca -->
       <div class="search-card">
         
+        <!-- FORMULÁRIO GERAL -->
         <div id="formGeral">
           <div class="search-card-header">
             <h2 id="searchCardTitle">Pesquisar viagens</h2>
@@ -70,6 +75,7 @@
           </div>
         </div>
 
+        <!-- FORMULÁRIO DE HOSPEDAGEM -->
         <div id="formHospedagem" style="display:none;">
           <div class="search-card-header">
             <h2>Encontre sua próxima estadia</h2>
@@ -140,8 +146,10 @@
     </div>
   </section>
 
+  <!-- CATÁLOGOS ISOLADOS POR ABA -->
   <main class="main-body">
 
+    <!-- 1. BLOCO DE CARROS -->
     <div id="viewCarros" class="tab-content" style="display:none;">
       <div class="frota-features-grid">
         <div class="feature-item">
@@ -180,6 +188,7 @@
       </section>
     </div>
 
+    <!-- 2. BLOCO DE HOSPEDAGEM -->
     <div id="viewHospedagem" class="tab-content" style="display:none;">
       <section class="section-block">
         <h2 class="section-block-title">Especial Nordeste: Hotéis e Resorts</h2>
@@ -194,6 +203,7 @@
       </section>
     </div>
 
+    <!-- 3. BLOCO DE VOOS, PACOTES E MONTE SUA VIAGEM -->
     <div id="viewVoos" class="tab-content" style="display:none;">
       <section class="section-block">
         <h2 class="section-block-title" id="secVoosTitle">Destaques e Ofertas</h2>
@@ -201,11 +211,12 @@
         <div class="cards-grid" id="voosGrid"></div>
       </section>
 
+      <!-- Bloco com as Logos PNG das Companhias Aéreas -->
       <section class="section-block mt-4">
         <h2 class="section-block-title text-center">Companhias Aéreas Parceiras</h2>
         <p class="section-block-subtitle text-center">Emitimos bilhetes integrados com as principais companhias do mundo</p>
         <div class="airline-logos-grid">
-          <div class="airline-card"><img src="./empresa/gol.png" alt="GOL" class="airline-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span style="display:none; font-weight:800; font-size:1.3rem; color:#FFFFFF;">GOL</span></div>
+          <div class="airline-card"><img src="./empresa/gol.png" alt="GOL" class="airline-img"></div>
           <div class="airline-card"><img src="./empresa/azul.png" alt="Azul" class="airline-img"></div>
           <div class="airline-card"><img src="./empresa/latam.png" alt="Latam" class="airline-img"></div>
           <div class="airline-card"><img src="./empresa/copa.png" alt="Copa" class="airline-img"></div>
@@ -213,6 +224,7 @@
       </section>
     </div>
 
+    <!-- 4. BLOCO DE SEGUROS -->
     <div id="viewSeguros" class="tab-content" style="display:none;">
       <section class="section-block">
         <h2 class="section-block-title">🛡️ Viaje Protegido com um Seguro Viagem</h2>
@@ -237,6 +249,7 @@
 
   </main>
 
+  <!-- Rodapé -->
   <footer class="footer">
     <div class="footer-container">
       <div>
