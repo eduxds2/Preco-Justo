@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Justo - Acesso Restrito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0b1110;
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
+
+    <!-- Cabeçalho Minimalista -->
+    <header class="w-full py-6 px-8 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <span class="text-xl font-black tracking-widest text-emerald-400 uppercase">Preço Justo</span>
+        </div>
+    </header>
+
+    <!-- Tela de Login Centralizada (Fundo preto/escuro, estilo painel restrito) -->
+    <main class="flex-grow flex items-center justify-center px-4 py-8">
+        <div class="max-w-md w-full bg-[#121c19] border border-emerald-900/40 p-8 rounded-2xl shadow-2xl shadow-emerald-950/50 space-y-6">
+            
+            <div class="text-center space-y-2">
+                <h1 class="text-2xl font-bold tracking-tight text-emerald-400">Preço Justo</h1>
+                <p class="text-xs text-emerald-600 uppercase tracking-widest font-semibold">Acesse sua conta ou painel restrito</p>
+            </div>
+
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Acesso autorizado!'); window.location.href='index.html';">
+                <div>
+                    <label class="block text-xs font-bold text-emerald-500/80 uppercase mb-1">Usuário / Login</label>
+                    <input type="text" required placeholder="Ex: adm (Master) ou adm:hotelmar" class="w-full px-4 py-3 rounded-xl bg-[#0b1110] border border-emerald-900/60 text-emerald-200 placeholder-emerald-800/60 focus:outline-none focus:border-emerald-500 transition text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-emerald-500/80 uppercase mb-1">Senha</label>
+                    <input type="password" required placeholder="Sua senha" class="w-full px-4 py-3 rounded-xl bg-[#0b1110] border border-emerald-900/60 text-emerald-200 placeholder-emerald-800/60 focus:outline-none focus:border-emerald-500 transition text-sm">
+                </div>
+                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-3 px-4 rounded-xl transition shadow-lg shadow-emerald-500/20 text-sm tracking-wide">
+                    Entrar no Sistema
+                </button>
+            </form>
+
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="w-full py-6 text-center text-xs text-emerald-900">
+        &copy; 2026 Preço Justo. Painel Administrativo.
+    </footer>
+
+</body>
+</html>
