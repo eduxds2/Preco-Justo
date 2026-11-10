@@ -8,7 +8,7 @@
 </head>
 <body class="light-mode">
 
-  <!-- Header Navbar usando a sua logo.png da raiz -->
+  <!-- Header Navbar -->
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-brand">
@@ -23,7 +23,7 @@
     </div>
   </header>
 
-  <!-- Hero Banner com a logo.png oficial centralizada -->
+  <!-- Hero Banner -->
   <section class="hero-section">
     <div class="search-container">
       
@@ -32,7 +32,7 @@
         <p class="hero-subtitle">Voe com tarifas justas e mais economia para chegar onde importa.</p>
       </div>
 
-      <!-- Navegação por Abas Principais -->
+      <!-- Navegação por Abas -->
       <div class="tabs-container">
         <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
         <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
@@ -93,12 +93,11 @@
               <input type="text" id="stayDatas" placeholder="1 de mar. - 2 de mar.">
             </div>
 
-            <!-- Campo de Hóspedes -->
+            <!-- Hóspedes Popover -->
             <div class="input-box flex-2 relative-box">
               <span class="box-label">HÓSPEDES E QUARTOS</span>
               <input type="text" id="stayOcupacaoInput" value="2 hóspedes, 1 quarto" readonly onclick="toggleModalHospedes()">
               
-              <!-- Modal Popover -->
               <div class="guest-modal" id="guestModal" style="display:none;">
                 <div class="modal-row">
                   <div class="modal-label"><strong>Adultos</strong></div>
@@ -131,7 +130,6 @@
 
                 <div class="modal-checkbox-row">
                   <label><input type="checkbox" id="chkPets"> Aceita animais</label>
-                  <span class="sub-info">Ver só estadias que aceitam animais</span>
                 </div>
 
                 <div class="modal-footer-btns">
@@ -150,31 +148,31 @@
     </div>
   </section>
 
-  <!-- ÁREA DE CONTEÚDO EXCLUSIVO DA ABA SELECIONADA -->
-  <main class="main-body" id="mainBody">
+  <!-- CATÁLOGOS ISOLADOS POR ABA -->
+  <main class="main-body">
 
-    <!-- 1. SEÇÃO EXCLUSIVA DE CARROS -->
-    <div id="viewCarros" class="view-block" style="display:none;">
+    <!-- 1. BLOCO DE CARROS -->
+    <div id="viewCarros" class="tab-content" style="display:none;">
       <div class="frota-features-grid">
         <div class="feature-item">
           <div class="feature-icon-circle">⚡</div>
           <div class="feature-text">
             <h4>Fast Retirada Digital</h4>
-            <p>Retire seu carro em até 5 minutos, sem enfrentar filas.</p>
+            <p>Retire seu carro em até 5 minutos, sem filas.</p>
           </div>
         </div>
         <div class="feature-item">
           <div class="feature-icon-circle">🚗</div>
           <div class="feature-text">
             <h4>Adicionais</h4>
-            <p>Pra que sua viagem seja ainda mais simples e prazerosa!</p>
+            <p>Para que sua viagem seja ainda mais simples!</p>
           </div>
         </div>
         <div class="feature-item">
           <div class="feature-icon-circle">👤</div>
           <div class="feature-text">
             <h4>Portal do Cliente</h4>
-            <p>Tudo que você precisa, em um só lugar.</p>
+            <p>Tudo o que você precisa em um só lugar.</p>
           </div>
         </div>
       </div>
@@ -187,44 +185,36 @@
 
       <section class="section-block mt-4">
         <h2 class="section-block-title text-center">Conheça a nossa Frota</h2>
-        <p class="section-block-subtitle text-center">As melhores condições para você reservar e aproveitar</p>
+        <p class="section-block-subtitle text-center">As melhores condições para você reservar</p>
         <div class="cards-grid" id="frotaGrid"></div>
-        <div class="btn-group-center">
-          <button class="btn-outline-green">CONFIRA TODOS OS GRUPOS</button>
-        </div>
       </section>
     </div>
 
-    <!-- 2. SEÇÃO EXCLUSIVA DE HOSPEDAGEM -->
-    <div id="viewHospedagem" class="view-block" style="display:none;">
+    <!-- 2. BLOCO DE HOSPEDAGEM -->
+    <div id="viewHospedagem" class="tab-content" style="display:none;">
       <section class="section-block">
         <h2 class="section-block-title">Especial Nordeste: Hotéis e Resorts</h2>
-        <p class="section-block-subtitle">Estadias incríveis nos melhores destinos praianos</p>
+        <p class="section-block-subtitle">Estadias incríveis nos melhores destinos</p>
         <div class="cards-grid" id="hospedagemGrid"></div>
       </section>
 
       <section class="section-block mt-4">
-        <h2 class="section-block-title">🏰 Hospedagens Confortáveis em Campos do Jordão</h2>
-        <p class="section-block-subtitle">Parcele em até 10x iguais! Viaja que dá!</p>
+        <h2 class="section-block-title">🏰 Hospedagens em Campos do Jordão</h2>
+        <p class="section-block-subtitle">Parcele em até 10x sem juros</p>
         <div class="cards-grid" id="camposGrid"></div>
       </section>
     </div>
 
-    <!-- 3. SEÇÃO EXCLUSIVA DE VOOS & PACOTES -->
-    <div id="viewVoos" class="view-block" style="display:none;">
+    <!-- 3. BLOCO DE VOOS E PACOTES -->
+    <div id="viewVoos" class="tab-content" style="display:none;">
       <section class="section-block">
-        <h2 class="section-block-title">🌅 Passagens aéreas baratas Nordeste do Brasil</h2>
-        <p class="section-block-subtitle">De Salvador a Natal explore e garanta sua passagem</p>
+        <h2 class="section-block-title">🌅 Passagens Aéreas - Nordeste do Brasil</h2>
+        <p class="section-block-subtitle">Garanta sua passagem para o paraíso</p>
         <div class="cards-grid" id="voosGrid"></div>
       </section>
 
       <section class="section-block mt-4">
-        <h2 class="section-block-title">Ofertas Imbatíveis</h2>
-        <div class="cards-grid" id="voosImbateisGrid"></div>
-      </section>
-
-      <section class="section-block mt-4">
-        <h2 class="section-block-title">Passagens aéreas baratas: viaje mais e gaste menos</h2>
+        <h2 class="section-block-title">Companhias Aéreas Parceiras</h2>
         <div class="company-logos-row content-card">
           <span class="company-logo-item">LATAM AIRLINES</span>
           <span class="company-logo-item">GOL</span>
@@ -234,35 +224,24 @@
       </section>
     </div>
 
-    <!-- 4. SEÇÃO EXCLUSIVA DE SEGUROS -->
-    <div id="viewSeguros" class="view-block" style="display:none;">
+    <!-- 4. BLOCO DE SEGUROS -->
+    <div id="viewSeguros" class="tab-content" style="display:none;">
       <section class="section-block">
-        <h2 class="section-block-title">🛡️ Viaje protegido com um seguro viagem</h2>
-        <p class="section-block-subtitle">Assistência 24h médica e proteção de bagagem</p>
+        <h2 class="section-block-title">🛡️ Viaje Protegido com um Seguro Viagem</h2>
+        <p class="section-block-subtitle">Assistência médica completa e flexível</p>
         <div class="cards-grid" id="segurosGrid"></div>
       </section>
 
       <section class="section-block mt-4">
-        <h2 class="section-block-title">Dúvidas frequentes sobre seguro viagem</h2>
+        <h2 class="section-block-title">Dúvidas Frequentes sobre Seguro Viagem</h2>
         <div class="faq-grid">
           <div class="faq-card content-card">
             <h4>O que é o seguro viagem?</h4>
-            <p>O seguro viagem cuida, protege e presta suporte ao passageiro durante o período da sua viagem em casos de urgências.</p>
+            <p>Cuida e presta suporte ao passageiro durante o período da viagem em casos de urgência médica.</p>
           </div>
           <div class="faq-card content-card">
-            <h4>Por que contratar um seguro viagem?</h4>
-            <p>Recomendado para viagens internacionais ou nacionais, garantindo auxílio imediato contra imprevistos.</p>
-          </div>
-        </div>
-
-        <div class="newsletter-box content-card">
-          <div>
-            <h4>Receba ofertas exclusivas no seu e-mail</h4>
-            <p style="font-size:0.8rem; color:#64748B;">Política de privacidade aplicada</p>
-          </div>
-          <div class="newsletter-input-group">
-            <input type="email" placeholder="Insira seu e-mail">
-            <button class="btn-submit-search">Quero me inscrever</button>
+            <h4>Por que contratar?</h4>
+            <p>Garante tranquilidade total contra despesas médicas inesperadas e extravio de bagagem.</p>
           </div>
         </div>
       </section>
