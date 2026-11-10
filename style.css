@@ -6,7 +6,6 @@
   transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
 
-/* ☀️ MODO CLARO (ELEGANTE E LIMPO) */
 body.light-mode {
   background-color: #F8FAFC;
   color: #0F172A;
@@ -21,10 +20,6 @@ body.light-mode .header-btn {
   background-color: #FFFFFF;
   border: 1px solid #CBD5E1;
   color: #0F172A;
-}
-
-body.light-mode .header-btn:hover {
-  background-color: #F1F5F9;
 }
 
 body.light-mode .hero-section {
@@ -56,7 +51,7 @@ body.light-mode .search-inputs-grid {
   background-color: #FFFFFF;
 }
 
-/* 🌙 MODO ESCURO (CYBERPUNK CLEAN) */
+/* Modo Escuro */
 body.dark-mode {
   background-color: #0B1315;
   color: #F8FAFC;
@@ -71,10 +66,6 @@ body.dark-mode .header-btn {
   background-color: #1A292C;
   border: 1px solid #374151;
   color: #FFFFFF;
-}
-
-body.dark-mode .header-btn:hover {
-  border-color: #22C55E;
 }
 
 body.dark-mode .hero-section {
@@ -131,12 +122,13 @@ body.dark-mode .footer {
 .logo-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
 }
 
-.logo-plane {
-  font-size: 1.4rem;
+.logo-svg-icon {
+  width: 28px;
+  height: 28px;
 }
 
 .brand-text {
@@ -146,14 +138,8 @@ body.dark-mode .footer {
   line-height: 1;
 }
 
-body.dark-mode .brand-text {
-  color: #FFFFFF;
-}
-
-.brand-text strong {
-  color: #22C55E;
-  font-weight: 800;
-}
+body.dark-mode .brand-text { color: #FFFFFF; }
+.brand-text strong { color: #22C55E; font-weight: 800; }
 
 .header-nav-actions {
   display: flex;
@@ -175,14 +161,23 @@ body.dark-mode .brand-text {
 .btn-login { font-weight: 700; }
 
 /* Hero Section */
-.hero-section {
-  padding: 3rem 1rem;
-}
+.hero-section { padding: 3rem 1rem; }
 
 .hero-brand-header {
   text-align: left;
   max-width: 980px;
   margin: 0 auto 2rem auto;
+}
+
+.hero-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-svg-plane {
+  width: 64px;
+  height: 64px;
 }
 
 .hero-brand-title {
@@ -192,26 +187,18 @@ body.dark-mode .brand-text {
   letter-spacing: -1px;
 }
 
-.hero-brand-title span {
-  color: #22C55E;
-  font-weight: 800;
-}
+.hero-brand-title span { color: #22C55E; font-weight: 800; }
 
 .hero-subtitle {
   color: #64748B;
   font-size: 0.95rem;
   margin-top: 0.8rem;
-  max-width: 400px;
+  max-width: 450px;
 }
 
-body.dark-mode .hero-subtitle {
-  color: #9CA3AF;
-}
+body.dark-mode .hero-subtitle { color: #9CA3AF; }
 
-.search-container {
-  max-width: 980px;
-  margin: 0 auto;
-}
+.search-container { max-width: 980px; margin: 0 auto; }
 
 .tabs-container {
   display: flex;
@@ -244,10 +231,7 @@ body.dark-mode .hero-subtitle {
   gap: 1rem;
 }
 
-.search-card-header h2 {
-  font-size: 1.3rem;
-  font-weight: 800;
-}
+.search-card-header h2 { font-size: 1.3rem; font-weight: 800; }
 
 .trip-options { display: flex; gap: 0.5rem; }
 
@@ -322,7 +306,7 @@ body.dark-mode .hero-subtitle {
 
 .btn-submit-search:hover { background-color: #16A34A; }
 
-/* Modal de Hóspedes Popover */
+/* Modal de Hóspedes */
 .relative-box { position: relative; }
 
 .guest-modal {
@@ -376,9 +360,7 @@ body.dark-mode .hero-subtitle {
   margin: 1rem 0;
 }
 
-body.dark-mode .modal-divider {
-  border-top-color: #374151;
-}
+body.dark-mode .modal-divider { border-top-color: #374151; }
 
 .modal-checkbox-row label {
   font-weight: 700;
@@ -423,17 +405,16 @@ body.dark-mode .modal-divider {
   cursor: pointer;
 }
 
-/* Base Principal do Catálogo */
+/* Áreas de Catálogo */
 .main-body {
   max-width: 980px;
   margin: 3rem auto;
   padding: 0 1rem;
 }
 
-.section-block {
-  margin-bottom: 3.5rem;
-  scroll-margin-top: 90px;
-}
+.section-block { margin-bottom: 2.5rem; }
+.mt-4 { margin-top: 3rem; }
+.text-center { text-align: center; }
 
 .section-block-title {
   font-size: 1.4rem;
@@ -494,14 +475,20 @@ body.dark-mode .modal-divider {
   margin: 8px 0;
 }
 
-.price-box {
-  margin-top: 10px;
+.blue-badge {
+  background-color: #0284C7;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 6px;
+  width: fit-content;
 }
 
-.price-label {
-  font-size: 0.75rem;
-  color: #64748B;
-}
+.price-box { margin-top: 10px; }
+.price-label { font-size: 0.75rem; color: #64748B; }
 
 .price-amount {
   font-size: 1.35rem;
@@ -521,16 +508,24 @@ body.dark-mode .modal-divider {
   margin-top: 1rem;
 }
 
-.btn-card-action:hover {
-  background-color: #16A34A;
+.btn-card-action:hover { background-color: #16A34A; }
+
+.remessa-tag {
+  font-size: 0.75rem;
+  color: #64748B;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 8px;
+  margin-top: 8px;
 }
+
+body.dark-mode .remessa-tag { border-top-color: #374151; }
 
 /* Recursos de Carros */
 .frota-features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .feature-item {
@@ -540,19 +535,45 @@ body.dark-mode .modal-divider {
 }
 
 .feature-icon-circle {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: #15803D;
+  background-color: #84CC16;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #64748B; }
+
+.btn-group-center { text-align: center; margin-top: 1.5rem; }
+
+.btn-outline-green {
+  background: transparent;
+  border: 1px solid #15803D;
+  color: #15803D;
+  padding: 0.6rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body.dark-mode .btn-outline-green { border-color: #22C55E; color: #22C55E; }
+
+.company-logos-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.company-logo-item { font-weight: 800; font-size: 1.1rem; color: #64748B; }
 
 /* FAQ e Newsletter */
 .faq-grid {
@@ -561,20 +582,9 @@ body.dark-mode .modal-divider {
   gap: 1.5rem;
 }
 
-.faq-card {
-  padding: 1.4rem;
-}
-
-.faq-card h4 {
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
-}
-
-.faq-card p {
-  font-size: 0.85rem;
-  color: #64748B;
-  line-height: 1.4;
-}
+.faq-card { padding: 1.4rem; }
+.faq-card h4 { font-size: 1rem; margin-bottom: 0.6rem; }
+.faq-card p { font-size: 0.85rem; color: #64748B; line-height: 1.4; }
 
 .newsletter-box {
   display: flex;
@@ -587,16 +597,8 @@ body.dark-mode .modal-divider {
   gap: 1rem;
 }
 
-.newsletter-input-group {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.newsletter-input-group input {
-  padding: 0.6rem 1rem;
-  border: 1px solid #CBD5E1;
-  border-radius: 8px;
-}
+.newsletter-input-group { display: flex; gap: 0.8rem; }
+.newsletter-input-group input { padding: 0.6rem 1rem; border: 1px solid #CBD5E1; border-radius: 8px; }
 
 /* Footer */
 .footer {
