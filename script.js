@@ -75,12 +75,14 @@ function trocarAba(categoria, elemento) {
     formHospedagem.style.display = 'none';
     configurarInputs('Pesquisar pacotes', true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
     document.getElementById('viewVoos').style.display = 'block';
+    atualizarTitulosSecao("Pacotes Promocionais Exclusivos", "Garanta voo + hotel com preços imperdíveis");
     renderPacotes();
   } else if (categoria === 'voos') {
     formGeral.style.display = 'block';
     formHospedagem.style.display = 'none';
     configurarInputs('Pesquisar voos', true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
     document.getElementById('viewVoos').style.display = 'block';
+    atualizarTitulosSecao("Passagens Aéreas Nacionais e Internacionais", "As melhores rotas com as principais companhias");
     renderVoos();
   } else {
     // monte sua viagem
@@ -88,8 +90,16 @@ function trocarAba(categoria, elemento) {
     formHospedagem.style.display = 'none';
     configurarInputs('Monte sua viagem', true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
     document.getElementById('viewVoos').style.display = 'block';
+    atualizarTitulosSecao("Monte sua Viagem Personalizada", "Combine voos, estadias e aproveite o melhor roteiro");
     renderMonte();
   }
+}
+
+function atualizarTitulosSecao(titulo, sub) {
+  const t = document.getElementById('secVoosTitle');
+  const s = document.getElementById('secVoosSub');
+  if (t) t.innerText = titulo;
+  if (s) s.innerText = sub;
 }
 
 function configurarInputs(title, showOptions, lOrig, pOrig, lDest, pDest) {
