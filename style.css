@@ -41,7 +41,11 @@ body.dark-mode .tab-btn.active {
   border-bottom: 3px solid #22C55E;
 }
 
-body.dark-mode .search-card, body.dark-mode .content-card, body.dark-mode .guest-modal, body.dark-mode .login-card {
+body.dark-mode .search-card, 
+body.dark-mode .content-card, 
+body.dark-mode .guest-modal, 
+body.dark-mode .login-card,
+body.dark-mode .login-card-elegant {
   background-color: #111C1E;
   border: 1px solid #1F2937;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
@@ -52,7 +56,8 @@ body.dark-mode .search-inputs-grid {
   background-color: #111C1E;
 }
 
-body.dark-mode input, body.dark-mode select {
+body.dark-mode input, 
+body.dark-mode select {
   color: #FFFFFF;
 }
 
@@ -428,7 +433,7 @@ body.dark-mode .footer {
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #9CA3AF; }
 
-/* TODAS AS LOGOS DAS COMPANHIAS AGORA PADRONIZADAS COM O MESMO TAMANHO GRANDE DA GOL */
+/* LOGOS DAS COMPANHIAS AÉREAS PADRONIZADAS COM TAMANHO GRANDE E UNIFORME */
 .airline-logos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -450,11 +455,10 @@ body.dark-mode .footer {
 
 .airline-img {
   width: 100%;
-  max-width: 175px;
-  height: 100%;
-  max-height: 85px;
+  max-width: 185px;
+  height: 75px;
   object-fit: contain;
-  filter: brightness(1.15);
+  filter: brightness(1.2);
 }
 
 .faq-grid {
