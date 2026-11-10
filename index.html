@@ -3,128 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preço Justo | Acesso ao Sistema</title>
+    <title>Início - PREÇO JUSTO</title>
+    <!-- Tailwind CSS para estilização rápida e limpa -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #0b1311; color: #e0e0e0; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        .login-card { background: #121f1b; padding: 40px; border-radius: 12px; border: 1px solid #1e332c; width: 400px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
-        h1 { color: #00E676; font-size: 1.8rem; margin-bottom: 8px; text-align: center; }
-        p.subtitle { color: #8fa8a0; font-size: 0.9rem; text-align: center; margin-bottom: 24px; }
-        .input-group { margin-bottom: 16px; }
-        .input-group label { display: block; font-size: 0.85rem; margin-bottom: 6px; color: #8fa8a0; }
-        .input-group input { width: 100%; padding: 12px; background: #0b1311; border: 1px solid #2d4d43; color: #fff; border-radius: 6px; outline: none; }
-        .input-group input:focus { border-color: #00E676; }
-        .btn-submit { width: 100%; padding: 12px; background: #00E676; color: #0b1311; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: 0.2s; }
-        .btn-submit:hover { background: #00c853; }
-        
-        /* Painel Admin (Oculto inicialmente) */
-        #admin-panel { display: none; width: 600px; background: #121f1b; padding: 30px; border-radius: 12px; border: 1px solid #00E676; }
-        .hotel-list { margin-top: 20px; max-height: 150px; overflow-y: auto; background: #0b1311; padding: 10px; border-radius: 6px; border: 1px solid #2d4d43; }
-        .hotel-item { display: flex; justify-content: space-between; padding: 8px; border-bottom: 1px solid #1e332c; font-size: 0.9rem; }
+        body {
+            background-color: #ffffff;
+            color: #1f2937;
+        }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between">
 
-    <!-- TELA DE LOGIN UNIFICADA -->
-    <div class="login-card" id="login-screen">
-        <h1>Preço Justo</h1>
-        <p class="subtitle">Acesse sua conta ou painel restrito</p>
-        <form onsubmit="autenticarSistema(event)">
-            <div class="input-group">
-                <label>Usuário / Login</label>
-                <input type="text" id="usuario" required placeholder="Ex: adm (Master) ou adm:hotelmar">
-            </div>
-            <div class="input-group">
-                <label>Senha</label>
-                <input type="password" id="senha" required placeholder="Sua senha">
-            </div>
-            <button type="submit" class="btn-submit">Entrar no Sistema</button>
-        </form>
-    </div>
-
-    <!-- PAINEL DO ADMINISTRADOR (EXCLUSIVO DO DONO) -->
-    <div id="admin-panel">
-        <h1>Painel do Administrador (Dono)</h1>
-        <p class="subtitle">Gerenciamento e Criação de Logins de Hotéis (Estilo iFood Vendedor)</p>
-        
-        <div class="input-group">
-            <label>Nome do Hotel (Ex: Furabeach Alojamentos)</label>
-            <input type="text" id="novoHotelNome" placeholder="Nome comercial do hotel">
+    <!-- Cabeçalho / Navbar -->
+    <header class="w-full py-4 px-6 border-b border-gray-100 flex justify-between items-center shadow-sm">
+        <div class="flex items-center space-x-2">
+            <!-- Logo Customizada (Substituindo o padrão do Trivago) -->
+            <span class="text-2xl font-black tracking-wider text-blue-600 uppercase">Preço Justo</span>
         </div>
-        <div class="input-group">
-            <label>Senha Personalizada para o Hotel</label>
-            <input type="text" id="novoHotelSenha" placeholder="Senha de acesso da empresa">
+        <div>
+            <a href="login.html" class="bg-blue-600 text-white px-5 py-2 rounded-full font-medium hover:bg-blue-700 transition shadow-md">
+                Entrar / Cadastrar
+            </a>
         </div>
-        <button onclick="criarLoginHotel()" class="btn-submit">Gerar Credencial de Hotel</button>
+    </header>
 
-        <h3 style="margin-top: 20px; font-size: 1rem; color: #00E676;">Hotéis / Empresas Cadastradas:</h3>
-        <div class="hotel-list" id="listaHoteisCadastrados">
-            <div class="hotel-item"><span>adm:furabeach</span> <span>(Senha gerada)</span></div>
-        </div>
-        <br>
-        <button onclick="logout()" style="background: #ff5252; color: white;" class="btn-submit">Sair do Painel Admin</button>
-    </div>
-
-    <script>
-        // Banco simulado de empresas de hotéis criadas pelo dono
-        let hoteisCadastrados = {
-            "adm:furabeach": "123456"
-        };
-
-        function autenticarSistema(event) {
-            event.preventDefault();
-            const user = document.getElementById('usuario').value.trim();
-            const pass = document.getElementById('senha').value.trim();
-
-            // 1. Validação do Dono (Master)
-            if (user === "adm" && pass === "admin") {
-                document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('admin-panel').style.display = 'block';
-                alert("Bem-vindo ao Painel Master do Administrador!");
-                return;
-            }
-
-            // 2. Validação de Hotéis/Empresas cadastradas
-            if (hoteisCadastrados[user] && hoteisCadastrados[user] === pass) {
-                alert(`Login autorizado para a empresa: ${user}. Redirecionando para o painel de edição do hotel...`);
-                // Aqui depois vamos redirecionar para o painel estilo iFood do vendedor
-                window.location.href = "#painel-vendedor";
-                return;
-            }
-
-            // 3. Caso contrário, erro de credencial
-            alert("Usuário ou senha incorretos!");
-        }
-
-        function criarLoginHotel() {
-            const nomeHotelInput = document.getElementById('novoHotelNome').value.trim();
-            const senhaHotelInput = document.getElementById('novoHotelSenha').value.trim();
-
-            if(!nomeHotelInput || !senhaHotelInput) {
-                alert("Preencha o nome e a senha do hotel!");
-                return;
-            }
-
-            // Formata o login automático no padrão adm:nomedohotel (sem espaços)
-            const loginFormatado = "adm:" + nomeHotelInput.toLowerCase().replace(/\s+/g, '');
+    <!-- Bloco Central de Destaque (Inspirado no layout central do Trivago, com fundo branco e foco na logo/busca) -->
+    <main class="flex-grow flex items-center justify-center px-4 py-12">
+        <div class="max-w-3xl w-full text-center space-y-8">
             
-            hoteisCadastrados[loginFormatado] = senhaHotelInput;
+            <!-- Logo Gigante / Slogan Central -->
+            <div class="space-y-3">
+                <div class="inline-block bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide">
+                    Comparador Inteligente de Preços
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
+                    Encontre o melhor preço para sua viagem.
+                </h1>
+                <p class="text-lg text-gray-500 max-w-xl mx-auto">
+                    Compare hotéis, carros e pacotes em dezenas de sites em segundos.
+                </p>
+            </div>
 
-            // Atualiza a lista visual na tela
-            const lista = document.getElementById('listaHoteisCadastrados');
-            lista.innerHTML += `<div class="hotel-item"><span>${loginFormatado}</span> <span>Senha: ${senhaHotelInput}</span></div>`;
+            <!-- Caixa de Pesquisa Interativa -->
+            <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-200 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                <div class="border-b sm:border-b-0 sm:border-r border-gray-200 pb-3 sm:pb-0 sm:pr-4">
+                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Destino ou Hotel</label>
+                    <input type="text" placeholder="Para onde você vai?" class="w-full focus:outline-none text-gray-800 font-medium placeholder-gray-400">
+                </div>
+                <div class="border-b sm:border-b-0 sm:border-r border-gray-200 pb-3 sm:pb-0 sm:pr-4">
+                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Datas</label>
+                    <input type="text" placeholder="Check-in — Check-out" class="w-full focus:outline-none text-gray-800 font-medium placeholder-gray-400">
+                </div>
+                <div class="flex items-center">
+                    <button onclick="window.location.href='login.html'" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl hover:bg-blue-700 transition shadow-lg text-center">
+                        Pesquisar
+                    </button>
+                </div>
+            </div>
 
-            alert(`Login gerado com sucesso para o hotel! Credencial de acesso: ${loginFormatado}`);
-            document.getElementById('novoHotelNome').value = "";
-            document.getElementById('novoHotelSenha').value = "";
-        }
+        </div>
+    </main>
 
-        function logout() {
-            document.getElementById('admin-panel').style.display = 'none';
-            document.getElementById('login-screen').style.display = 'block';
-            document.getElementById('usuario').value = "";
-            document.getElementById('senha').value = "";
-        }
-    </script>
+    <!-- Rodapé Simples -->
+    <footer class="w-full py-6 text-center text-xs text-gray-400 border-t border-gray-100">
+        &copy; 2026 Preço Justo. Todos os direitos reservados. Hospedado no GitHub Pages.
+    </footer>
+
 </body>
 </html>
