@@ -94,7 +94,6 @@ const bancoDeDados = {
   ]
 };
 
-// Dados de Hóspedes
 let hospedes = { adultos: 2, criancas: 0, quartos: 1 };
 let abaAtual = 'monte';
 
@@ -102,7 +101,6 @@ function formatarMoeda(valor) {
   return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-// Renderizar Ofertas em Tela
 function renderizarOfertas(categoria) {
   const container = document.getElementById('offersContainer');
   if (!container) return;
@@ -119,7 +117,7 @@ function renderizarOfertas(categoria) {
           <p class="offer-location">${item.localizacao}</p>
           <p style="font-size:0.75rem; color:#F59E0B; font-weight:bold;">★ ${item.nota}</p>
           <div style="margin-top: 8px;">
-            <span style="font-size:0.75rem; color:#64748B;">A partir de</span>
+            <span style="font-size:0.75rem; color:#9CA3AF;">A partir de</span>
             <div class="offer-price">${formatarMoeda(item.preco)}</div>
           </div>
           <button onclick="window.open('${item.link}', '_blank')" class="btn-offer-green">Ver Oferta ❯</button>
@@ -129,7 +127,6 @@ function renderizarOfertas(categoria) {
   });
 }
 
-// Trocar Abas e Rótulos do Formulário
 function trocarAba(categoria, elemento) {
   abaAtual = categoria;
 
@@ -175,7 +172,6 @@ function trocarAba(categoria, elemento) {
       if (inputDestino) inputDestino.placeholder = "1 viajante";
       if (categoryTitle) categoryTitle.innerText = "Planos de Seguro Viagem";
     } else {
-      // Voos / Monte sua viagem / Pacotes
       if (title) title.innerText = `Pesquisar ${categoria === 'monte' ? 'viagens' : categoria}`;
       if (tripOptions) tripOptions.style.display = "flex";
       if (btnSwap) btnSwap.style.display = "flex";
@@ -190,7 +186,6 @@ function trocarAba(categoria, elemento) {
   renderizarOfertas(categoria);
 }
 
-// Lógica do Modal de Hóspedes
 function toggleModalHospedes() {
   const modal = document.getElementById('guestModal');
   if (modal) {
@@ -204,7 +199,6 @@ function alterarHospedes(tipo, delta) {
     if (tipo === 'quartos' && hospedes[tipo] + delta < 1) return;
 
     hospedes[tipo] += delta;
-
     document.getElementById(`cnt${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`).innerText = hospedes[tipo];
     atualizarTextoInputHospedes();
   }
@@ -228,7 +222,6 @@ function confirmarHospedes() {
   document.getElementById('guestModal').style.display = 'none';
 }
 
-// Fechar modal ao clicar fora
 document.addEventListener('click', (e) => {
   const modal = document.getElementById('guestModal');
   const input = document.getElementById('stayOcupacaoInput');
@@ -239,7 +232,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Funções Auxiliares
 function selecionarTipoViagem(tipo) {
   const p1 = document.getElementById('pillIdaVolta');
   const p2 = document.getElementById('pillSomenteIda');
@@ -265,14 +257,14 @@ function inverterDestinos() {
 function toggleTheme() {
   const body = document.body;
   const btn = document.getElementById('btnThemeToggle');
-  if (body.classList.contains('light-mode')) {
-    body.classList.remove('light-mode');
-    body.classList.add('dark-mode');
-    if (btn) btn.innerText = '☀️ Modo';
-  } else {
+  if (body.classList.contains('dark-mode')) {
     body.classList.remove('dark-mode');
     body.classList.add('light-mode');
     if (btn) btn.innerText = '🌙 Modo';
+  } else {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    if (btn) btn.innerText = '☀️ Modo';
   }
 }
 
