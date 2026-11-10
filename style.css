@@ -507,7 +507,7 @@ body.dark-mode .footer {
 .footer a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; line-height: 2; }
 .footer a:hover { color: #22C55E; }
 .nav-text-logo-img {
-  height: 48px; /* Podes ajustar este valor para mais (ex: 52px) ou menos (ex: 42px) */
+  height: 68px; /* Podes ajustar este valor para mais (ex: 52px) ou menos (ex: 42px) */
   width: auto;
   object-fit: contain;
   filter: brightness(1.2);
