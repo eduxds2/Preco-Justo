@@ -15,14 +15,13 @@
       background: radial-gradient(circle at 50% 20%, #162B28 0%, #0B1315 75%);
     }
 
-    /* Cartão mais largo ("gordinho") e menos comprido na vertical */
     .login-card-elegant {
       background-color: #111C1E;
       border: 1px solid #1F2937;
       border-radius: 20px;
       padding: 2.2rem 2.5rem;
       width: 100%;
-      max-width: 520px; /* Aumentado para dar mais largura */
+      max-width: 520px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
@@ -272,16 +271,13 @@
 
   <script>
     function realizarLogin(event) {
-      exit_event = event;
       event.preventDefault();
       const usuario = document.getElementById('loginUsuario').value.trim();
       const senha = document.getElementById('loginSenha').value.trim();
 
       if (usuario.toLowerCase() === 'admin' && senha === 'admin') {
-        alert('Login de Administrador efetuado com sucesso!');
         window.location.href = 'index.html?admin=true';
       } else {
-        alert('Login efetuado com sucesso!');
         window.location.href = 'index.html';
       }
     }
