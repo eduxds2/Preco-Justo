@@ -72,8 +72,8 @@ body.dark-mode .footer {
   z-index: 100;
 }
 
-.nav-logo-img-large {
-  height: 52px;
+.nav-logo-img {
+  height: 38px;
   width: auto;
   object-fit: contain;
 }
@@ -106,7 +106,7 @@ body.dark-mode .footer {
 }
 
 .hero-logo-img {
-  max-width: 280px;
+  max-width: 220px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -215,7 +215,6 @@ body.dark-mode .footer {
   height: 32px;
   cursor: pointer;
   color: #FFFFFF;
-  transition: transform 0.2s ease;
 }
 
 .btn-submit-search {
@@ -483,7 +482,7 @@ body.dark-mode .footer {
 .footer a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; line-height: 2; }
 .footer a:hover { color: #22C55E; }
 
-/* ESTILOS DA TELA DE LOGIN */
+/* ESTILOS DA TELA DE LOGIN CLÁSSICA */
 .login-wrapper {
   min-height: 80vh;
   display: flex;
@@ -498,13 +497,13 @@ body.dark-mode .footer {
   border-radius: 16px;
   padding: 2.5rem;
   width: 100%;
-  max-width: 440px;
+  max-width: 400px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .login-card h2 {
   margin-bottom: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   text-align: center;
   color: #FFFFFF;
@@ -539,10 +538,10 @@ body.dark-mode .footer {
   background-color: #22C55E;
   color: white;
   border: none;
-  padding: 0.9rem;
+  padding: 0.85rem;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   margin-top: 0.5rem;
 }
@@ -553,7 +552,7 @@ body.dark-mode .footer {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .login-links-grid a {
@@ -575,7 +574,7 @@ body.dark-mode .footer {
   border-radius: 8px;
   font-weight: 700;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .btn-empresa-register:hover {
@@ -589,37 +588,7 @@ body.dark-mode .footer {
   margin-top: 1.5rem;
   color: #9CA3AF;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
 .back-home:hover { color: #22C55E; }
-
-/* RESPONSIVIDADE PARA CELULARES */
-@media (max-width: 768px) {
-  .header { padding: 0.8rem 1rem; }
-  
-  .search-inputs-grid {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.8rem;
-    padding: 1rem;
-  }
-
-  .btn-swap {
-    align-self: center;
-    transform: rotate(90deg);
-    margin: -0.4rem 0;
-  }
-
-  .flex-2 {
-    width: 100%;
-    min-width: 100%;
-  }
-
-  .search-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-logo-img { max-width: 160px; }
-}
