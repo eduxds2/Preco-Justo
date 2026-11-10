@@ -72,7 +72,6 @@ body.dark-mode .footer {
   z-index: 100;
 }
 
-/* LOGO SUPERIOR ESQUERDA BEM MAIS VISÍVEL E ELEGANTE */
 .nav-logo-img {
   height: 65px;
   width: auto;
@@ -429,7 +428,7 @@ body.dark-mode .footer {
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #9CA3AF; }
 
-/* LOGOS DAS COMPANHIAS AÉREAS BEM PROPORCIONADAS E PERFEITAS NOS CARTÕES */
+/* TODAS AS LOGOS DAS COMPANHIAS AGORA PADRONIZADAS COM O MESMO TAMANHO GRANDE DA GOL */
 .airline-logos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -440,20 +439,20 @@ body.dark-mode .footer {
 .airline-card {
   background-color: #111C1E;
   border: 1px solid #1F2937;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 110px;
+  height: 120px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .airline-img {
-  max-width: 170px;
-  max-height: 75px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  max-width: 175px;
+  height: 100%;
+  max-height: 85px;
   object-fit: contain;
   filter: brightness(1.15);
 }
