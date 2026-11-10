@@ -1,8 +1,22 @@
 const bancoDados = {
+  monte: [
+    { titulo: "Pacote Nordeste Completo", sub: "Aéreo + Hotel (7 Dias) • Salvador", preco: 1890, descTag: "Mais Vendido", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Experiência Rio de Janeiro", sub: "Aéreo + Hotel (4 Dias) • Copacabana", preco: 1250, descTag: "Imperdível", img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Foz do Iguaçu em Família", sub: "Aéreo + Hotel (5 Dias)", preco: 1420, nota: "★ 4.8", img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" }
+  ],
+  voos: [
+    { titulo: "Voo São Paulo (GRU) ➔ Porto Seguro (BPS)", sub: "Ida e Volta • Direto • Por LATAM", preco: 450, img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Voo Rio de Janeiro (GIG) ➔ Salvador (SSA)", sub: "Somente Ida • Voo Noturno • Por GOL", preco: 310, img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Voo São Paulo (CGH) ➔ Recife (REC)", sub: "Ida e Volta • Econômica • Por Azul", preco: 590, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" }
+  ],
+  pacotes: [
+    { titulo: "Pacote Natal + Pipa", sub: "Aéreo Ida e Volta + 5 Noites de Hospedagem", preco: 1680, descTag: "-30%", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Pacote Maceió Promocional", sub: "Aéreo + Resort All Inclusive", preco: 2450, descTag: "Exclusivo", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=500&q=80" }
+  ],
   carros: [
-    { titulo: "Chevrolet Camaro ZL1", categoria: "Esportivo V8 • 650 CV", preco: 890, cap: "👤 4  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Hyundai HB20 Automático", categoria: "Compacto • Completo", preco: 149, cap: "👤 5  🧳 2  🚪 4", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Jeep Renegade SUV", categoria: "SUV Automático", preco: 216, cap: "👤 5  🧳 3  🚪 4", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
+    { titulo: "Volkswagen Golf GTI", sub: "Esportivo Turbo • 230 CV", preco: 380, cap: "👤 5  🧳 3  🚪 4", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Chevrolet Camaro ZL1", sub: "Esportivo V8 • 650 CV", preco: 890, cap: "👤 4  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Jeep Renegade SUV", sub: "SUV Automático", preco: 216, cap: "👤 5  🧳 3  🚪 4", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
   ],
   frota: [
     { titulo: "Grupo GI - SUV Compacto Especial", desc: "Nissan Kicks 1.6, GM Tracker ou similar", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=500&q=80" },
@@ -56,11 +70,25 @@ function trocarAba(categoria, elemento) {
     configurarInputs('Pesquisar seguros', false, 'DESTINO', 'Ex: Brasil, Europa', 'PASSAGEIROS', '1 viajante');
     document.getElementById('viewSeguros').style.display = 'block';
     renderSeguros();
-  } else {
+  } else if (categoria === 'pacotes') {
     formGeral.style.display = 'block';
     formHospedagem.style.display = 'none';
-    configurarInputs(`Pesquisar ${categoria === 'monte' ? 'viagens' : categoria}`, true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
+    configurarInputs('Pesquisar pacotes', true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
     document.getElementById('viewVoos').style.display = 'block';
+    renderPacotes();
+  } else if (categoria === 'voos') {
+    formGeral.style.display = 'block';
+    formHospedagem.style.display = 'none';
+    configurarInputs('Pesquisar voos', true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
+    document.getElementById('viewVoos').style.display = 'block';
+    renderVoos();
+  } else {
+    // monte sua viagem
+    formGeral.style.display = 'block';
+    formHospedagem.style.display = 'none';
+    configurarInputs('Monte sua viagem', true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
+    document.getElementById('viewVoos').style.display = 'block';
+    renderMonte();
   }
 }
 
@@ -73,6 +101,69 @@ function configurarInputs(title, showOptions, lOrig, pOrig, lDest, pDest) {
   document.getElementById('inputDestino').placeholder = pDest;
 }
 
+function renderMonte() {
+  const vGrid = document.getElementById('voosGrid');
+  vGrid.innerHTML = '';
+  bancoDados.monte.forEach(i => {
+    vGrid.innerHTML += `
+      <div class="content-card">
+        <img src="${i.img}" alt="${i.titulo}">
+        <div class="card-body">
+          <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">PACOTE COMPLETO</span>
+          <h3 class="card-title">${i.titulo}</h3>
+          <p class="card-subtitle">${i.sub}</p>
+          <div class="price-box">
+            <span class="price-label">Preço por pessoa a partir de</span>
+            <div class="price-amount">${formatarMoeda(i.preco)}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function renderVoos() {
+  const vGrid = document.getElementById('voosGrid');
+  vGrid.innerHTML = '';
+  bancoDados.voos.forEach(i => {
+    vGrid.innerHTML += `
+      <div class="content-card">
+        <img src="${i.img}" alt="${i.titulo}">
+        <div class="card-body">
+          <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">PASSAGEM AÉREA</span>
+          <h3 class="card-title">${i.titulo}</h3>
+          <p class="card-subtitle">${i.sub}</p>
+          <div class="price-box">
+            <span class="price-label">Tarifa de ida e volta</span>
+            <div class="price-amount">${formatarMoeda(i.preco)}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function renderPacotes() {
+  const vGrid = document.getElementById('voosGrid');
+  vGrid.innerHTML = '';
+  bancoDados.pacotes.forEach(i => {
+    vGrid.innerHTML += `
+      <div class="content-card">
+        <img src="${i.img}" alt="${i.titulo}">
+        <div class="card-body">
+          <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">PACOTE PROMOCIONAL</span>
+          <h3 class="card-title">${i.titulo}</h3>
+          <p class="card-subtitle">${i.sub}</p>
+          <div class="price-box">
+            <span class="price-label">A partir de</span>
+            <div class="price-amount">${formatarMoeda(i.preco)}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
 function renderCarros() {
   const cGrid = document.getElementById('carrosGrid');
   cGrid.innerHTML = '';
@@ -83,7 +174,7 @@ function renderCarros() {
         <div class="card-body">
           <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">CARRO EXCLUSIVO</span>
           <h3 class="card-title">${i.titulo}</h3>
-          <p class="card-subtitle">${i.categoria}</p>
+          <p class="card-subtitle">${i.sub}</p>
           <div class="car-icons-row" style="font-size:0.8rem; color:#9CA3AF; margin:8px 0;"><span>${i.cap}</span></div>
           <div class="price-box">
             <span class="price-label">Diárias a partir de</span>
