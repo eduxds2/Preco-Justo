@@ -85,7 +85,6 @@ function trocarAba(categoria, elemento) {
     atualizarTitulosSecao("Passagens Aéreas Nacionais e Internacionais", "As melhores rotas com as principais companhias");
     renderVoos();
   } else {
-    // monte sua viagem
     formGeral.style.display = 'block';
     formHospedagem.style.display = 'none';
     configurarInputs('Monte sua viagem', true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
