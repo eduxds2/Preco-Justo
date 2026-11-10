@@ -11,75 +11,27 @@ body.dark-mode {
   color: #F8FAFC;
 }
 
-body.dark-mode .header {
+/* =========================================================
+   ESTILO DO CABEÇALHO E ABAS MESCLADOS (Estilo Booking)
+========================================================= */
+.header-booking-wrapper {
   background-color: #111C1E;
-  border-bottom: 1px solid #1F2937;
-}
-
-body.dark-mode .header-btn {
-  background-color: #1A292C;
-  border: 1px solid #374151;
-  color: #FFFFFF;
-}
-
-body.dark-mode .hero-section {
-  background-color: #0E1719;
-  background-image: radial-gradient(circle at 50% 20%, #162B28 0%, #0E1719 75%);
-}
-
-body.dark-mode .tabs-container {
-  background-color: #121E20;
-}
-
-body.dark-mode .tab-btn {
-  color: #9CA3AF;
-}
-
-body.dark-mode .tab-btn.active {
-  background-color: #1A292C;
-  color: #22C55E;
-  border-bottom: 3px solid #22C55E;
-}
-
-body.dark-mode .search-card, 
-body.dark-mode .content-card, 
-body.dark-mode .guest-modal, 
-body.dark-mode .login-card,
-body.dark-mode .login-card-elegant {
-  background-color: #111C1E;
-  border: 1px solid #1F2937;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-body.dark-mode .search-inputs-grid {
-  border: 1px solid #374151;
-  background-color: #111C1E;
-}
-
-body.dark-mode input, 
-body.dark-mode select {
-  color: #FFFFFF;
-}
-
-body.dark-mode .footer {
-  background-color: #050B0C;
-  color: #6B7280;
-}
-
-.header {
-  max-width: 100%;
-  padding: 1rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid #1F2937;
 }
 
-/* =========================================================
-   ESTILO DA ARTE TEXTUAL NO CABEÇALHO (logo-texto.png)
-========================================================= */
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo de texto (logo-texto.png) */
 .logo-brand-img-link {
   display: flex;
   align-items: center;
@@ -92,11 +44,11 @@ body.dark-mode .footer {
   filter: brightness(1.2);
 }
 
-/* Container da moeda e bandeira pequena no Header */
+/* Ações direitas do Header */
 .booking-header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .currency-display {
@@ -106,7 +58,6 @@ body.dark-mode .footer {
   cursor: pointer;
 }
 
-/* Bandeira menor estilo Booking */
 .flag-icon-small {
   width: 18px;
   height: 18px;
@@ -124,9 +75,65 @@ body.dark-mode .footer {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  gap: 6px;
 }
 
-.btn-login { font-weight: 700; }
+.btn-login {
+  background-color: #FFFFFF;
+  color: #0B1315;
+  font-weight: 700;
+}
+
+.btn-menu {
+  background-color: #1A292C;
+  border: 1px solid #374151;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FAIXA DE ABAS INTEGRADA NO MESMO BLOCO DO HEADER
+========================================================= */
+.header-nav-tabs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 0.5rem 2rem;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+  background-color: #1A292C;
+  color: #FFFFFF;
+  border: 1px solid #374151;
+}
+
+/* Hero Section e Restante da Página */
+body.dark-mode .hero-section {
+  background-color: #0E1719;
+  background-image: radial-gradient(circle at 50% 20%, #162B28 0%, #0E1719 75%);
+}
 
 .hero-section { padding: 3rem 1rem; }
 
@@ -144,25 +151,18 @@ body.dark-mode .footer {
 
 .search-container { max-width: 980px; margin: 0 auto; }
 
-.tabs-container {
-  display: flex;
-  border-radius: 12px 12px 0 0;
-  overflow-x: auto;
-}
-
-.tab-btn {
-  flex: 1;
-  padding: 1rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  border: none;
-  background: transparent;
+body.dark-mode .search-card, 
+body.dark-mode .content-card, 
+body.dark-mode .guest-modal, 
+body.dark-mode .login-card,
+body.dark-mode .login-card-elegant {
+  background-color: #111C1E;
+  border: 1px solid #1F2937;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .search-card {
-  border-radius: 0 0 16px 16px;
+  border-radius: 16px;
   padding: 1.8rem;
 }
 
@@ -196,6 +196,11 @@ body.dark-mode .footer {
 
 .radio-pill input { display: none; }
 
+body.dark-mode .search-inputs-grid {
+  border: 1px solid #374151;
+  background-color: #111C1E;
+}
+
 .search-inputs-grid {
   display: flex;
   align-items: center;
@@ -217,6 +222,11 @@ body.dark-mode .footer {
   font-weight: 700;
   color: #9CA3AF;
   text-transform: uppercase;
+}
+
+body.dark-mode input, 
+body.dark-mode select {
+  color: #FFFFFF;
 }
 
 .input-box input {
@@ -462,9 +472,6 @@ body.dark-mode .footer {
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #9CA3AF; }
 
-/* =========================================================
-   LOGOS DAS COMPANHIAS AÉREAS - GRANDES E UNIFORMES
-========================================================= */
 .airline-logos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -502,6 +509,11 @@ body.dark-mode .footer {
 .faq-card { padding: 1.4rem; }
 .faq-card h4 { font-size: 1rem; margin-bottom: 0.6rem; }
 .faq-card p { font-size: 0.85rem; color: #9CA3AF; line-height: 1.4; }
+
+body.dark-mode .footer {
+  background-color: #050B0C;
+  color: #6B7280;
+}
 
 .footer {
   background-color: #050B0C;
