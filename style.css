@@ -144,7 +144,7 @@ body.dark-mode .footer {
 
 .btn-login { font-weight: 700; }
 
-/* Hero Section & Logo Principal Ajustada */
+/* Hero Section */
 .hero-section { padding: 2.5rem 1rem; }
 
 .hero-brand-header {
@@ -343,14 +343,6 @@ body.dark-mode .modal-divider { border-top-color: #374151; }
   cursor: pointer;
 }
 
-.sub-info {
-  display: block;
-  font-size: 0.78rem;
-  color: #64748B;
-  margin-top: 4px;
-  margin-left: 24px;
-}
-
 .modal-footer-btns {
   display: flex;
   justify-content: space-between;
@@ -439,26 +431,6 @@ body.dark-mode .modal-divider { border-top-color: #374151; }
   margin-bottom: 8px;
 }
 
-.car-icons-row {
-  display: flex;
-  gap: 12px;
-  font-size: 0.82rem;
-  color: #64748B;
-  margin: 8px 0;
-}
-
-.blue-badge {
-  background-color: #0284C7;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 12px;
-  display: inline-block;
-  margin-bottom: 6px;
-  width: fit-content;
-}
-
 .price-box { margin-top: 10px; }
 .price-label { font-size: 0.75rem; color: #64748B; }
 
@@ -467,20 +439,6 @@ body.dark-mode .modal-divider { border-top-color: #374151; }
   font-weight: 800;
   color: #22C55E;
 }
-
-.btn-card-action {
-  width: 100%;
-  background-color: #22C55E;
-  color: white;
-  border: none;
-  padding: 0.65rem;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.btn-card-action:hover { background-color: #16A34A; }
 
 .remessa-tag {
   font-size: 0.75rem;
@@ -492,7 +450,6 @@ body.dark-mode .modal-divider { border-top-color: #374151; }
 
 body.dark-mode .remessa-tag { border-top-color: #374151; }
 
-/* Recursos de Carros */
 .frota-features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -521,20 +478,6 @@ body.dark-mode .remessa-tag { border-top-color: #374151; }
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #64748B; }
 
-.btn-group-center { text-align: center; margin-top: 1.5rem; }
-
-.btn-outline-green {
-  background: transparent;
-  border: 1px solid #15803D;
-  color: #15803D;
-  padding: 0.6rem 1.8rem;
-  border-radius: 6px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-body.dark-mode .btn-outline-green { border-color: #22C55E; color: #22C55E; }
-
 .company-logos-row {
   display: flex;
   justify-content: space-around;
@@ -547,7 +490,6 @@ body.dark-mode .btn-outline-green { border-color: #22C55E; color: #22C55E; }
 
 .company-logo-item { font-weight: 800; font-size: 1.1rem; color: #64748B; }
 
-/* FAQ e Newsletter */
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -557,20 +499,6 @@ body.dark-mode .btn-outline-green { border-color: #22C55E; color: #22C55E; }
 .faq-card { padding: 1.4rem; }
 .faq-card h4 { font-size: 1rem; margin-bottom: 0.6rem; }
 .faq-card p { font-size: 0.85rem; color: #64748B; line-height: 1.4; }
-
-.newsletter-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  border-radius: 14px;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.newsletter-input-group { display: flex; gap: 0.8rem; }
-.newsletter-input-group input { padding: 0.6rem 1rem; border: 1px solid #CBD5E1; border-radius: 8px; }
 
 /* Footer */
 .footer {
