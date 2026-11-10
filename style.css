@@ -493,3 +493,37 @@ body.dark-mode .footer {
 .footer-logo { color: white; font-size: 1.15rem; margin-bottom: 0.5rem; }
 .footer a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; line-height: 2; }
 .footer a:hover { color: #22C55E; }
+/* Estilo do Logo Textual no Cabeçalho estilo Booking */
+.logo-text-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo-text-brand span {
+  color: #22C55E; /* Verde vibrante para o "justo.com" */
+}
+
+/* Estilo da Moeda e Bandeira estilo Booking no Header */
+.booking-header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.currency-display {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.flag-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
