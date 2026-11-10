@@ -27,9 +27,8 @@ body {
 .logo-text {
   font-size: 1.5rem;
   font-weight: 900;
-  color: #2563EB;
+  color: #0284C7;
   text-decoration: none;
-  letter-spacing: -0.5px;
 }
 
 .header-nav {
@@ -50,21 +49,20 @@ body {
 
 .btn-login-header {
   background-color: #FFFFFF;
-  border: 1px solid #2563EB;
-  color: #2563EB;
+  border: 1px solid #0284C7;
+  color: #0284C7;
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
   font-weight: 700;
   font-size: 0.875rem;
   text-decoration: none;
-  transition: all 0.2s;
 }
 
 .btn-login-header:hover {
-  background-color: #EFF6FF;
+  background-color: #F0F9FF;
 }
 
-/* Hero Section de Pesquisa */
+/* Hero Section Landing Page */
 .hero-section {
   background-color: #FFFFFF;
   padding: 2.5rem 1rem;
@@ -87,7 +85,6 @@ body {
 .hero-subtitle {
   color: #64748B;
   margin-bottom: 1.5rem;
-  font-size: 1rem;
 }
 
 .search-bar-container {
@@ -138,7 +135,6 @@ body {
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
 .btn-search-main:hover {
@@ -156,86 +152,220 @@ body {
   color: #94A3B8;
 }
 
-/* Filtros Rápidos (Pills) */
-.quick-filters-bar {
+/* Section Generica */
+.home-section {
   max-width: 1100px;
-  margin: 1rem auto;
+  margin: 2.5rem auto;
   padding: 0 1rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.see-more-link {
+  color: #0284C7;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Banner Promo */
+.promo-banner-section {
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.promo-banner {
+  background: linear-gradient(90deg, #E11D48 0%, #F59E0B 20%, #FFFFFF 50%, #0284C7 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.promo-text h2 {
+  font-size: 1.5rem;
+  color: #0F172A;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.btn-iniciar-busca {
+  background-color: #0F172A;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Card Visualizacao Recente */
+.recent-card {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 350px;
+  cursor: pointer;
+}
+
+.badge-green {
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 600;
+}
+
+.recent-hotel-preview {
   display: flex;
   gap: 8px;
-  overflow-x: auto;
+  align-items: center;
 }
 
-.filter-pill {
-  background-color: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #475569;
+.recent-hotel-preview img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Grid Ofertas Home */
+.grid-offers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.mini-offer-card {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  overflow: hidden;
   cursor: pointer;
-  white-space: nowrap;
 }
 
-.filter-pill.active, .filter-pill:hover {
-  background-color: #0284C7;
+.mini-offer-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.mini-offer-body {
+  padding: 0.8rem;
+}
+
+.tag-red {
+  background-color: #BE123C;
   color: white;
-  border-color: #0284C7;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
-/* Layout Principal */
+.mini-price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-top: 4px;
+}
+
+/* Grid Cidades */
+.grid-cities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.city-card {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.city-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.city-details {
+  padding: 0.8rem;
+}
+
+/* Member Banner */
+.member-callout-banner {
+  max-width: 1100px;
+  margin: 2rem auto;
+  background-color: #FEF3C7;
+  border: 1px solid #FCD34D;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-member-login {
+  background-color: #D97706;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Layout Resultados (busca.html) */
+.search-hero-mini {
+  background-color: white;
+  padding: 1rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.search-hero-mini .search-bar-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .main-content-layout {
   max-width: 1100px;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   padding: 0 1rem;
   display: flex;
   gap: 1.5rem;
 }
 
-/* Sidebar de Filtros */
 .sidebar-filters {
-  width: 250px;
+  width: 240px;
   flex-shrink: 0;
   background: white;
   border: 1px solid #E2E8F0;
   border-radius: 10px;
-  padding: 1.2rem;
+  padding: 1rem;
   height: fit-content;
-}
-
-.filter-group {
-  margin-bottom: 1.2rem;
-  border-bottom: 1px solid #F1F5F9;
-  padding-bottom: 1rem;
-}
-
-.filter-group h3 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.filter-subtext {
-  font-size: 0.75rem;
-  color: #64748B;
-  margin-bottom: 0.4rem;
-}
-
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: #334155;
-  margin-bottom: 0.4rem;
-  cursor: pointer;
 }
 
 .price-inputs {
   display: flex;
   align-items: center;
   gap: 6px;
+  margin-top: 8px;
 }
 
 .price-inputs input {
@@ -243,10 +373,8 @@ body {
   padding: 0.4rem;
   border: 1px solid #CBD5E1;
   border-radius: 6px;
-  font-size: 0.85rem;
 }
 
-/* Lista de Hoteis Trivago */
 .results-container {
   flex: 1;
 }
@@ -258,12 +386,10 @@ body {
   margin-bottom: 1.25rem;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 
 .hotel-img-container {
-  width: 260px;
-  position: relative;
+  width: 250px;
   flex-shrink: 0;
 }
 
@@ -273,70 +399,16 @@ body {
   object-fit: cover;
 }
 
-.tag-popular {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #0284C7;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
 .hotel-details {
   flex: 1;
   padding: 1rem;
 }
 
-.hotel-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0F172A;
-}
-
-.rating-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: 6px 0;
-}
-
-.score {
-  background-color: #059669;
-  color: white;
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.rating-text {
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.hotel-distance {
-  font-size: 0.8rem;
-  color: #64748B;
-  margin-bottom: 6px;
-}
-
-.hotel-features {
-  font-size: 0.78rem;
-  color: #475569;
-  line-height: 1.4;
-}
-
 .hotel-pricing {
-  width: 280px;
+  width: 260px;
   background-color: #FAFAFA;
   border-left: 1px solid #E2E8F0;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .best-deal-box {
@@ -344,24 +416,6 @@ body {
   border: 1px solid #A7F3D0;
   border-radius: 8px;
   padding: 0.8rem;
-}
-
-.deal-partner-name {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #065F46;
-}
-
-.deal-benefit {
-  font-size: 0.72rem;
-  color: #047857;
-}
-
-.deal-price {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #065F46;
-  margin-top: 4px;
 }
 
 .btn-green-deal {
@@ -372,100 +426,8 @@ body {
   padding: 0.65rem;
   border-radius: 6px;
   font-weight: 700;
-  font-size: 0.9rem;
   cursor: pointer;
   margin-top: 6px;
-}
-
-.btn-green-deal:hover {
-  background-color: #047857;
-}
-
-.other-deals {
-  border-top: 1px solid #E2E8F0;
-  padding-top: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.other-deal-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.78rem;
-  color: #475569;
-  padding: 2px 0;
-}
-
-/* Seção Buscas Populares */
-.home-sections-container {
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-
-.home-sections-container h2 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.popular-cities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-}
-
-.city-card {
-  background: white;
-  border: 1px solid #E2E8F0;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.city-card:hover {
-  transform: translateY(-3px);
-}
-
-.city-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-}
-
-.city-info {
-  padding: 0.8rem;
-}
-
-.city-info h4 {
-  font-size: 1rem;
-}
-
-.city-info p {
-  font-size: 0.8rem;
-  color: #64748B;
-}
-
-/* Membership Banner */
-.membership-banner {
-  max-width: 1100px;
-  margin: 2rem auto;
-  background-color: #FEF3C7;
-  border: 1px solid #FCD34D;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.btn-membership-login {
-  background-color: #D97706;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 0.85rem;
 }
 
 /* Footer */
@@ -476,30 +438,10 @@ body {
   margin-top: 3rem;
 }
 
-.footer-columns {
+.footer-grid {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-}
-
-.footer-col h4 {
-  color: white;
-  margin-bottom: 0.8rem;
-}
-
-.footer-col ul {
-  list-style: none;
-}
-
-.footer-col a {
-  color: #94A3B8;
-  text-decoration: none;
-  font-size: 0.85rem;
-  line-height: 2;
-}
-
-.footer-col a:hover {
-  color: white;
 }
