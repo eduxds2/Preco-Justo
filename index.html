@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Justo | Sistema de Reservas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <span>🧳</span> preço <strong>justo</strong>
+        </div>
+        <div class="user-area">
+            <button onclick="abrirLogin()" class="btn-login-header">Entrar / Acesso Restrito</button>
+        </div>
+    </header>
 
+    <!-- Conteúdo Principal: Pesquisa de Hotéis -->
+    <main class="main-content">
+        <div class="hero">
+            <h1>Encontre sua próxima estadia pelo preço justo.</h1>
+            <p>Compare ofertas de hotéis em Porto Seguro, Furadouro e muito mais.</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Onde você vai se hospedar? (Cidade ou Hotel)" id="destino">
+            <input type="date" id="entrada">
+            <input type="date" id="saida">
+            <button onclick="pesquisarHoteis()" class="btn-search">Pesquisar</button>
+        </div>
+    </main>
+
+    <!-- Modal de Login Unificado -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharLogin()">&times;</span>
+            <h2>Acesso ao Sistema</h2>
+            <form id="loginForm" onsubmit="realizarLogin(event)">
+                <div class="input-group">
+                    <label>Usuário / E-mail ou Nome do Hotel (ex: adm:hotelmar)</label>
+                    <input type="text" id="loginUser" required placeholder="Digite seu usuário ou login de hotel">
+                </div>
+                <div class="input-group">
+                    <label>Senha</label>
+                    <input type="password" id="loginPass" required placeholder="Sua senha">
+                </div>
+                <button type="submit" class="btn-submit">Entrar</button>
+                <p class="signup-text">Não tem conta? <a href="#" onclick="alert('Redirecionando para auto-cadastro de cliente...')">Cadastre-se aqui</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
