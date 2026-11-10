@@ -3,152 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Economize até 50% na sua próxima estadia</title>
+  <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho (Header) -->
-  <header class="header">
-    <div class="header-logo">
-      <a href="index.html" class="logo-text">PREÇO JUSTO</a>
-    </div>
-    <div class="header-nav">
-      <button class="btn-lang">🌐 PT · R$</button>
-      <a href="login.html" class="btn-login-header">Fazer login</a>
-      <button class="btn-menu">≡ Menu</button>
-    </div>
-  </header>
-
-  <!-- Hero Principal de Busca -->
-  <section class="hero-section">
-    <div class="hero-card">
-      <h1 class="hero-title">Economize até 50% na sua próxima estadia</h1>
-      <p class="hero-subtitle">Comparamos preços de hotéis de mais de 100 sites</p>
-
-      <!-- Caixas de Busca -->
-      <div class="search-bar-container">
-        <div class="search-field field-destination">
-          <span class="field-label">Destino</span>
-          <input type="text" id="homeSearchInput" placeholder="Para onde você quer ir?" value="Porto Seguro">
+  <!-- Topo Hero Escuro (Visual da Imagem) -->
+  <div class="hero-header-bg">
+    
+    <!-- Navbar -->
+    <header class="header">
+      <div class="header-logo">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">✈️</span>
+          <span class="logo-text">preço<br><strong>justo</strong></span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <div class="dropdown">
+          <button class="nav-link">Descubra ▾</button>
         </div>
-        <div class="search-field field-dates">
-          <span class="field-label">Entrada/Saída</span>
-          <input type="text" value="1 de mar. - 2 de mar." readonly>
+        <div class="dropdown">
+          <button class="nav-link">Minhas viagens ▾</button>
         </div>
-        <div class="search-field field-guests">
-          <span class="field-label">Hóspedes e quartos</span>
-          <input type="text" value="2 hóspedes, 1 quarto" readonly>
-        </div>
-        <button class="btn-search-main" onclick="irParaBusca()">Pesquisar</button>
+        <a href="#" class="nav-link">Central de Ajuda</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-icon">🔍</button>
+        <a href="login.html" class="btn-icon" title="Login / Minha Conta">👤</a>
       </div>
+    </header>
 
-      <!-- Parceiros Integrados -->
-      <div class="partners-bar">
-        <span>Booking.com</span>
-        <span>Hoteis.com</span>
-        <span>Expedia</span>
-        <span>Vrbo</span>
-        <span>Trip.com</span>
-        <span>decolar</span>
-        <span class="partner-more">100+ outros sites</span>
+    <!-- Banner Principal -->
+    <section class="banner-intro">
+      <div class="banner-content">
+        <h1 class="brand-title">preço<br><span class="highlight">justo</span></h1>
+        <p class="brand-sub">Voe com tarifas justas e mais economia para chegar onde importa.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Banner Promocional Atalho -->
-  <section class="promo-banner-section">
-    <div class="promo-banner">
-      <div class="promo-text">
-        <h2>O seu atalho para encontrar uma ótima oferta</h2>
-      </div>
-      <div class="promo-img-box">
-        <button onclick="irParaBusca()" class="btn-iniciar-busca">Iniciar busca</button>
-      </div>
+    <!-- Barra de Navegação por Categorias (Abas) -->
+    <div class="tabs-container">
+      <button class="tab-btn" onclick="trocarAba('monte')">Monte sua viagem</button>
+      <button class="tab-btn active" onclick="trocarAba('voos')">Voos</button>
+      <button class="tab-btn" onclick="trocarAba('pacotes')">Pacotes</button>
+      <button class="tab-btn" onclick="trocarAba('hospedagem')">Hospedagem</button>
+      <button class="tab-btn" onclick="trocarAba('carros')">Carros</button>
+      <button class="tab-btn" onclick="trocarAba('seguros')">Seguros</button>
+      <button class="tab-btn" onclick="trocarAba('upgrade')">Upgrade</button>
+      <button class="tab-btn" onclick="trocarAba('esim')">eSIM</button>
+      <button class="tab-btn" onclick="trocarAba('universal')">Universal</button>
     </div>
-  </section>
 
-  <!-- Visualizações Recentes -->
-  <section class="home-section">
-    <div class="section-header">
-      <h2>Visualizações recentes</h2>
-      <a href="busca.html" class="see-more-link">Ver tudo ➔</a>
-    </div>
-    <div class="recent-card" onclick="irParaBusca('Porto Seguro')">
-      <div class="recent-info">
-        <strong>Porto Seguro</strong>
-        <p>1 de mar. - 2 de mar. • 2 hóspedes</p>
-        <span class="badge-green">✓ Cancelamento gratuito</span>
-      </div>
-      <div class="recent-hotel-preview">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=300&q=80" alt="Hotel">
-        <div>
-          <h4>Hotel Fasano...</h4>
-          <p>★ 9,2 - Excelente</p>
+    <!-- Card de Busca Flutuante -->
+    <div class="search-card">
+      <div class="search-card-header">
+        <h2 id="searchCardTitle">Para onde você quer ir?</h2>
+        <div class="trip-options" id="tripOptions">
+          <label class="radio-pill active">
+            <input type="radio" name="tripType" value="ida-volta" checked> ✓ Ida e volta
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="tripType" value="somente-ida"> Somente ida
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="tripType" value="multidestino"> Multidestino
+          </label>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Ofertas Incríveis -->
-  <section class="home-section">
-    <div class="section-header">
-      <h2>Ofertas incríveis em Porto Seguro</h2>
-      <a href="busca.html" class="see-more-link">Ver mais ofertas ➔</a>
-    </div>
-    <div class="grid-offers" id="homeOffersGrid"></div>
-  </section>
-
-  <!-- Buscas Populares por Cidade -->
-  <section class="home-section">
-    <h2>Buscas populares</h2>
-    <div class="grid-cities">
-      <div class="city-card" onclick="irParaBusca('São Paulo')">
-        <img src="https://images.unsplash.com/photo-1543059080-f29f9d74e30b?auto=format&fit=crop&w=400&q=80" alt="São Paulo">
-        <div class="city-details">
-          <h4>São Paulo</h4>
-          <p>3.462 Hotéis • R$ 597 em média</p>
+      <div class="search-inputs-grid">
+        <div class="input-box">
+          <span class="box-label">De</span>
+          <input type="text" id="inputOrigem" placeholder="Insira uma origem">
         </div>
-      </div>
-      <div class="city-card" onclick="irParaBusca('Rio de Janeiro')">
-        <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=400&q=80" alt="Rio de Janeiro">
-        <div class="city-details">
-          <h4>Rio de Janeiro</h4>
-          <p>4.898 Hotéis • R$ 743 em média</p>
+        <button class="btn-swap" onclick="inverterDestinos()" title="Inverter origem e destino">⇆</button>
+        <div class="input-box">
+          <span class="box-label">Para</span>
+          <input type="text" id="inputDestino" placeholder="Insira um destino">
         </div>
-      </div>
-      <div class="city-card" onclick="irParaBusca('Maceió')">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Maceió">
-        <div class="city-details">
-          <h4>Maceió</h4>
-          <p>539 Hotéis • R$ 610 em média</p>
-        </div>
+        <button class="btn-submit-search" onclick="realizarPesquisa()">Buscar</button>
       </div>
     </div>
-  </section>
 
-  <!-- Banner Amarelo de Membro -->
-  <div class="member-callout-banner">
-    <span>💡 Quer ter acesso a benefícios e preços para associados?</span>
-    <a href="login.html" class="btn-member-login">Fazer login ></a>
-  </div>
+  </div> <!-- Fim hero-header-bg -->
+
+  <!-- Conteúdo Principal abaixo do Hero -->
+  <main class="main-body">
+
+    <!-- Card de Novidades (Malha Aérea Nacional) -->
+    <section class="news-card">
+      <div class="news-content">
+        <span class="badge-tag">NOVAS ROTAS</span>
+        <h3>Já viu as novidades da nossa malha aérea nacional? ✈️</h3>
+        <p>Mais destinos, mais conexões e a mesma experiência Preço Justo.</p>
+      </div>
+      <div class="news-action">
+        <span class="news-subtext">Aproveite a temporada de férias</span>
+        <button class="btn-outline" onclick="realizarPesquisa()">Confira os destinos</button>
+      </div>
+    </section>
+
+    <!-- Lista de Ofertas / Resultados (Renderizada via JS) -->
+    <section class="results-section">
+      <div class="section-title-box">
+        <h2>Melhores ofertas de Hospedagem & Voos</h2>
+        <p>Preços atualizados em tempo real nos nossos parceiros</p>
+      </div>
+      <div class="offers-grid" id="offersContainer"></div>
+    </section>
+
+  </main>
 
   <!-- Rodapé Institucional -->
   <footer class="footer">
-    <div class="footer-grid">
+    <div class="footer-container">
       <div>
-        <h3 class="logo-text">PREÇO JUSTO</h3>
-        <p>Compare preços de hotéis e economize em suas viagens.</p>
+        <h4 class="footer-logo">PREÇO JUSTO</h4>
+        <p>Pesquise e compare preços de hospedagens e voos com transparência.</p>
       </div>
       <div>
-        <h4>Sobre</h4>
-        <p>Termos e políticas</p>
-        <p>Aviso de privacidade</p>
+        <h4>Acesso do Sistema</h4>
+        <ul>
+          <li><a href="login.html">Login / Cadastro de Usuário</a></li>
+          <li><a href="login.html?tipo=empresa">Área da Empresa (Cadastrar Oferta)</a></li>
+          <li><a href="login.html?tipo=admin">Painel Administrativo</a></li>
+        </ul>
       </div>
       <div>
-        <h4>Benefícios</h4>
-        <p><a href="login.html" style="color:inherit;">Fazer Login</a></p>
-        <p>Ofertas exclusivas</p>
+        <h4>Termos & LGPD</h4>
+        <ul>
+          <li><a href="#">Política de Privacidade (RNF04)</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+        </ul>
       </div>
     </div>
   </footer>
