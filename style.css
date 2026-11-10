@@ -6,15 +6,15 @@
 }
 
 body {
-  background-color: #F4F5F7;
-  color: #1A1A1A;
+  background-color: #F8FAFC;
+  color: #1E293B;
   min-height: 100vh;
 }
 
-/* Header Estilo Trivago */
-header {
+/* Header */
+.header {
   background-color: #FFFFFF;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E2E8F0;
   padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -25,87 +25,244 @@ header {
 }
 
 .logo-text {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #007BFF;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #2563EB;
+  text-decoration: none;
   letter-spacing: -0.5px;
 }
 
-.header-actions {
+.header-nav {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+}
+
+.btn-lang, .btn-menu {
+  background: transparent;
+  border: 1px solid #CBD5E1;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
 .btn-login-header {
-  background: transparent;
-  border: 1px solid #D1D5DB;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
+  background-color: #FFFFFF;
+  border: 1px solid #2563EB;
+  color: #2563EB;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 0.875rem;
-  cursor: pointer;
-  color: #374151;
+  text-decoration: none;
   transition: all 0.2s;
 }
 
 .btn-login-header:hover {
-  background-color: #F3F4F6;
+  background-color: #EFF6FF;
 }
 
-/* Hero / Filtros Rápidos */
-.hero {
+/* Hero Section de Pesquisa */
+.hero-section {
   background-color: #FFFFFF;
-  padding: 2rem 1rem;
-  border-bottom: 1px solid #E5E7EB;
+  padding: 2.5rem 1rem;
+  border-bottom: 1px solid #E2E8F0;
 }
 
-.search-box {
-  max-width: 800px;
+.hero-card {
+  max-width: 1000px;
   margin: 0 auto;
-  display: flex;
-  gap: 8px;
+  text-align: center;
 }
 
-.search-box input {
-  flex: 1;
-  padding: 0.8rem 1rem;
-  border: 1px solid #D1D5DB;
-  border-radius: 8px;
+.hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.4rem;
+}
+
+.hero-subtitle {
+  color: #64748B;
+  margin-bottom: 1.5rem;
   font-size: 1rem;
-  outline: none;
 }
 
-.search-box button {
-  background-color: #007BFF;
-  color: #FFFFFF;
+.search-bar-container {
+  display: flex;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  padding: 6px;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.search-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0.4rem 0.8rem;
+  border-right: 1px solid #E2E8F0;
+}
+
+.search-field:last-of-type {
+  border-right: none;
+}
+
+.field-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.search-field input {
   border: none;
-  padding: 0.8rem 1.8rem;
+  outline: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0F172A;
+  background: transparent;
+}
+
+.btn-search-main {
+  background-color: #0284C7;
+  color: white;
+  border: none;
+  padding: 0 2rem;
   border-radius: 8px;
   font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-search-main:hover {
+  background-color: #0369A1;
+}
+
+.partners-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+/* Filtros Rápidos (Pills) */
+.quick-filters-bar {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.filter-pill {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-pill.active, .filter-pill:hover {
+  background-color: #0284C7;
+  color: white;
+  border-color: #0284C7;
+}
+
+/* Layout Principal */
+.main-content-layout {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Sidebar de Filtros */
+.sidebar-filters {
+  width: 250px;
+  flex-shrink: 0;
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 1.2rem;
+  height: fit-content;
+}
+
+.filter-group {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 1rem;
+}
+
+.filter-group h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.filter-subtext {
+  font-size: 0.75rem;
+  color: #64748B;
+  margin-bottom: 0.4rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 0.4rem;
   cursor: pointer;
 }
 
-/* Layout Principal: Lista de Hoteis */
-.main-layout {
-  max-width: 1100px;
-  margin: 1.5rem auto;
-  padding: 0 1rem;
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-/* Card Estilo Trivago */
+.price-inputs input {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+/* Lista de Hoteis Trivago */
+.results-container {
+  flex: 1;
+}
+
 .hotel-card {
   background-color: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
   margin-bottom: 1.25rem;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 
 .hotel-img-container {
-  width: 280px;
+  width: 260px;
   position: relative;
   flex-shrink: 0;
 }
@@ -120,9 +277,9 @@ header {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #007BFF;
+  background-color: #0284C7;
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
@@ -130,57 +287,52 @@ header {
 
 .hotel-details {
   flex: 1;
-  padding: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 1rem;
 }
 
 .hotel-title {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #111827;
+  color: #0F172A;
 }
 
 .rating-badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 6px;
   margin: 6px 0;
 }
 
 .score {
-  background-color: #10B981;
+  background-color: #059669;
   color: white;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   padding: 2px 6px;
   border-radius: 4px;
 }
 
 .rating-text {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #111827;
 }
 
 .hotel-distance {
-  font-size: 0.85rem;
-  color: #6B7280;
-  margin-bottom: 8px;
+  font-size: 0.8rem;
+  color: #64748B;
+  margin-bottom: 6px;
 }
 
 .hotel-features {
-  font-size: 0.8rem;
-  color: #4B5563;
+  font-size: 0.78rem;
+  color: #475569;
   line-height: 1.4;
 }
 
-/* Painel de Preços e Oferta Principal (Lado Direito) */
 .hotel-pricing {
-  width: 320px;
+  width: 280px;
   background-color: #FAFAFA;
-  border-left: 1px solid #E5E7EB;
+  border-left: 1px solid #E2E8F0;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -192,23 +344,21 @@ header {
   border: 1px solid #A7F3D0;
   border-radius: 8px;
   padding: 0.8rem;
-  margin-bottom: 0.8rem;
 }
 
 .deal-partner-name {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #065F46;
 }
 
 .deal-benefit {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: #047857;
-  margin: 2px 0;
 }
 
 .deal-price {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: #065F46;
   margin-top: 4px;
@@ -219,93 +369,137 @@ header {
   background-color: #059669;
   color: white;
   border: none;
-  padding: 0.7rem;
+  padding: 0.65rem;
   border-radius: 6px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   cursor: pointer;
   margin-top: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
 }
 
 .btn-green-deal:hover {
   background-color: #047857;
 }
 
-/* Outras Lojas Comparadas */
 .other-deals {
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid #E2E8F0;
   padding-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .other-deal-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
-  color: #4B5563;
-  padding: 3px 0;
+  font-size: 0.78rem;
+  color: #475569;
+  padding: 2px 0;
 }
 
-.other-deal-price {
-  font-weight: 700;
-  color: #111827;
+/* Seção Buscas Populares */
+.home-sections-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
-/* Modal de Login */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-card {
-  background: white;
-  width: 100%;
-  max-width: 400px;
-  padding: 2rem;
-  border-radius: 12px;
-  position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px; right: 16px;
-  background: none; border: none;
-  font-size: 1.4rem; cursor: pointer; color: #9CA3AF;
-}
-
-.modal-title {
-  font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem; color: #111827;
-}
-
-.modal-sub {
-  font-size: 0.85rem; color: #6B7280; margin-bottom: 1.2rem;
-}
-
-.form-group {
+.home-sections-container h2 {
+  font-size: 1.3rem;
   margin-bottom: 1rem;
 }
 
-.form-group label {
-  display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: #374151;
+.popular-cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
 }
 
-.form-group input {
-  width: 100%; padding: 0.65rem; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 0.9rem;
+.city-card {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.btn-submit-login {
-  width: 100%; background-color: #007BFF; color: white; border: none; padding: 0.75rem; border-radius: 6px; font-weight: 700; cursor: pointer; margin-top: 0.5rem;
+.city-card:hover {
+  transform: translateY(-3px);
 }
 
-.divider {
-  text-align: center; font-size: 0.75rem; color: #9CA3AF; margin: 1rem 0; position: relative;
+.city-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.city-info {
+  padding: 0.8rem;
+}
+
+.city-info h4 {
+  font-size: 1rem;
+}
+
+.city-info p {
+  font-size: 0.8rem;
+  color: #64748B;
+}
+
+/* Membership Banner */
+.membership-banner {
+  max-width: 1100px;
+  margin: 2rem auto;
+  background-color: #FEF3C7;
+  border: 1px solid #FCD34D;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-membership-login {
+  background-color: #D97706;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #0F172A;
+  color: #94A3B8;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-columns {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col a {
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  line-height: 2;
+}
+
+.footer-col a:hover {
+  color: white;
 }
