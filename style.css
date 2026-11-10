@@ -12,7 +12,7 @@ body.dark-mode {
 }
 
 /* =========================================================
-   ESTILO DO CABEÇALHO E ABAS MESCLADOS (Estilo Booking)
+   BLOCO UNIFICADO DO HEADER E ABAS (Mesclado estilo Booking)
 ========================================================= */
 .header-booking-wrapper {
   background-color: #111C1E;
@@ -25,30 +25,30 @@ body.dark-mode {
 .header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 2rem 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Logo de texto (logo-texto.png) */
+/* LOGO DE TEXTO DO CABEÇALHO (Tamanho ideal e nítido) */
 .logo-brand-img-link {
   display: flex;
   align-items: center;
 }
 
 .nav-text-logo-img {
-  height:200px;
+  height: 52px; /* Aumentado para preencher perfeitamente a área verde do teu desenho */
   width: auto;
   object-fit: contain;
-  filter: brightness(1.2);
+  filter: brightness(1.3);
 }
 
-/* Ações direitas do Header */
+/* Ações do lado direito do cabeçalho */
 .booking-header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .currency-display {
@@ -92,14 +92,14 @@ body.dark-mode {
 }
 
 /* =========================================================
-   FAIXA DE ABAS INTEGRADA NO MESMO BLOCO DO HEADER
+   FAIXA DE ABAS INTEGRADA (Mesclada sem espaçamentos vazios)
 ========================================================= */
 .header-nav-tabs {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem 0.5rem 2rem;
+  padding: 0 2rem 1rem 2rem;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   overflow-x: auto;
 }
 
@@ -109,13 +109,12 @@ body.dark-mode {
   color: #9CA3AF;
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
 }
 
 .tab-btn:hover {
@@ -135,7 +134,7 @@ body.dark-mode .hero-section {
   background-image: radial-gradient(circle at 50% 20%, #162B28 0%, #0E1719 75%);
 }
 
-.hero-section { padding: 3rem 1rem; }
+.hero-section { padding: 2.5rem 1rem; }
 
 .hero-brand-header {
   text-align: center;
