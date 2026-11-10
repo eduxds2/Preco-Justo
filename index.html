@@ -10,77 +10,46 @@
 </head>
 <body class="dark-mode">
 
-  <!-- CABEÇALHO PRINCIPAL -->
-  <div class="header-booking-wrapper">
+  <!-- Header Navbar estilo Booking -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html" class="logo-brand-img-link">
+        <img src="./logo-texto.png" alt="Preçojusto.com" class="nav-text-logo-img">
+      </a>
+    </div>
 
-    <header class="header">
-      <div class="header-logo">
-        <a href="index.html" class="logo-brand-img-link">
-          <img src="./logo-texto.png"
-               alt="Preçojusto.com"
-               class="nav-text-logo-img">
-        </a>
+    <div class="header-nav-actions booking-header-right">
+      <span class="currency-display">BRL</span>
+      <img src="https://flagcdn.com/w40/br.png" alt="Brasil" class="flag-icon-small">
+      
+      <!-- Espaço reservado para o botão dinâmico (Login ou Menu) -->
+      <div id="authActionContainer">
+        <a href="login.html" class="header-btn btn-login">Fazer login</a>
       </div>
+    </div>
+  </header>
 
-      <div class="header-nav-actions booking-header-right">
-        <span class="currency-display">BRL</span>
-
-        <img src="https://flagcdn.com/w40/br.png"
-             alt="Brasil"
-             class="flag-icon-small">
-
-        <div id="authActionContainer">
-          <a href="login.html" class="header-btn btn-login">
-            Fazer login
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <!-- NAVEGAÇÃO PRINCIPAL -->
-    <nav class="header-nav-tabs">
-      <button class="tab-btn active"
-        onclick="trocarAba('monte', this)">
-        Monte sua viagem
-      </button>
-
-      <button class="tab-btn"
-        onclick="trocarAba('voos', this)">
-        Voos
-      </button>
-
-      <button class="tab-btn"
-        onclick="trocarAba('pacotes', this)">
-        Pacotes
-      </button>
-
-      <button class="tab-btn"
-        onclick="trocarAba('hospedagem', this)">
-        Hospedagem
-      </button>
-
-      <button class="tab-btn"
-        onclick="trocarAba('carros', this)">
-        Carros
-      </button>
-
-      <button class="tab-btn"
-        onclick="trocarAba('seguros', this)">
-        Seguros
-      </button>
-    </nav>
-
-  </div>
-
-  <!-- Hero Banner e Card de Pesquisa -->
+  <!-- Hero Banner com Abas Limpas -->
   <section class="hero-section">
     <div class="search-container">
       
+      <!-- Título de Impacto -->
       <div class="hero-brand-header text-center" style="margin-bottom: 2rem;">
         <h1 style="font-size: 2.3rem; font-weight: 800; color: #F8FAFC; margin-bottom: 0.5rem;">Encontre sua próxima viagem</h1>
         <p class="hero-subtitle" style="font-size: 1.05rem; color: #9CA3AF;">Compare voos, hotéis, carros e seguros com total transparência e economia.</p>
       </div>
 
+      <!-- Navegação por Abas -->
+      <div class="tabs-container booking-tabs">
+        <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
+        <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
+        <button class="tab-btn" onclick="trocarAba('pacotes', this)">Pacotes</button>
+        <button class="tab-btn" onclick="trocarAba('hospedagem', this)">Hospedagem</button>
+        <button class="tab-btn" onclick="trocarAba('carros', this)">Carros</button>
+        <button class="tab-btn" onclick="trocarAba('seguros', this)">Seguros</button>
+      </div>
+
+      <!-- Card Central de Busca -->
       <div class="search-card">
         
         <!-- FORMULÁRIO GERAL -->
@@ -190,4 +159,176 @@
     </div>
   </section>
 
-  <!-- Restante do corpo, blocos de conteúdo e rodapé mantêm-se iguais -->
+  <!-- CATÁLOGOS ISOLADOS POR ABA -->
+  <main class="main-body">
+
+    <!-- SEÇÃO: POR QUE USAR O PREÇO JUSTO? -->
+    <section class="section-block" style="margin-bottom: 3.5rem;">
+      <h2 class="section-block-title" style="margin-bottom: 1.5rem;">Por que usar o Preço Justo?</h2>
+      <div class="cards-grid">
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">💡</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Transparência total de preços</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Comparamos as melhores tarifas do mercado sem taxas ocultas ou surpresas.</p>
+        </div>
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">⭐</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Milhares de avaliações reais</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Obtenha informações confiáveis de viajantes como você.</p>
+        </div>
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🌍</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Opções em todo o mundo</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Hotéis, voos, carros e pacotes nas principais companhias e destinos.</p>
+        </div>
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">💬</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Suporte dedicado 24h</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Estamos sempre prontos para ajudar em qualquer etapa da sua viagem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. BLOCO DE CARROS -->
+    <div id="viewCarros" class="tab-content" style="display:none;">
+      <div class="frota-features-grid">
+        <div class="feature-item">
+          <div class="feature-icon-circle">⚡</div>
+          <div class="feature-text">
+            <h4>Fast Retirada Digital</h4>
+            <p>Retire seu carro em até 5 minutos, sem filas.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-circle">🚗</div>
+          <div class="feature-text">
+            <h4>Adicionais</h4>
+            <p>Para que sua viagem seja ainda mais simples!</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-circle">👤</div>
+          <div class="feature-text">
+            <h4>Portal do Cliente</h4>
+            <p>Tudo o que você precisa em um só lugar.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="section-block">
+        <h2 class="section-block-title">🚗 Aluguel de Carros</h2>
+        <p class="section-block-subtitle">Encontre o carro certo para você</p>
+        <div class="cards-grid" id="carrosGrid"></div>
+      </section>
+
+      <section class="section-block mt-4">
+        <h2 class="section-block-title text-center">Conheça a nossa Frota</h2>
+        <p class="section-block-subtitle text-center">As melhores condições para você reservar</p>
+        <div class="cards-grid" id="frotaGrid"></div>
+      </section>
+    </div>
+
+    <!-- 2. BLOCO DE HOSPEDAGEM -->
+    <div id="viewHospedagem" class="tab-content" style="display:none;">
+      <section class="section-block">
+        <h2 class="section-block-title">Especial Nordeste: Hotéis e Resorts</h2>
+        <p class="section-block-subtitle">Estadias incríveis nos melhores destinos</p>
+        <div class="cards-grid" id="hospedagemGrid"></div>
+      </section>
+
+      <section class="section-block mt-4">
+        <h2 class="section-block-title">🏰 Hospedagens em Campos do Jordão</h2>
+        <p class="section-block-subtitle">Parcele em até 10x sem juros</p>
+        <div class="cards-grid" id="camposGrid"></div>
+      </section>
+    </div>
+
+    <!-- 3. BLOCO DE VOOS, PACOTES E MONTE SUA VIAGEM -->
+    <div id="viewVoos" class="tab-content" style="display:none;">
+      <section class="section-block">
+        <h2 class="section-block-title" id="secVoosTitle">Destaques e Ofertas</h2>
+        <p class="section-block-subtitle" id="secVoosSub">As melhores opções selecionadas para você</p>
+        <div class="cards-grid" id="voosGrid"></div>
+      </section>
+
+      <!-- Bloco com as Logos PNG das Companhias Aéreas -->
+      <section class="section-block mt-4">
+        <h2 class="section-block-title text-center">Companhias Aéreas Parceiras</h2>
+        <p class="section-block-subtitle text-center">Emitimos bilhetes integrados com as principais companhias do mundo</p>
+        <div class="airline-logos-grid">
+          <div class="airline-card"><img src="./empresa/gol.png" alt="GOL" class="airline-img"></div>
+          <div class="airline-card"><img src="./empresa/azul.png" alt="Azul" class="airline-img"></div>
+          <div class="airline-card"><img src="./empresa/latam.png" alt="Latam" class="airline-img"></div>
+          <div class="airline-card"><img src="./empresa/copa.png" alt="Copa" class="airline-img"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 4. BLOCO DE SEGUROS -->
+    <div id="viewSeguros" class="tab-content" style="display:none;">
+      <section class="section-block">
+        <h2 class="section-block-title">🛡️ Viaje Protegido com um Seguro Viagem</h2>
+        <p class="section-block-subtitle">Assistência médica completa e flexível</p>
+        <div class="cards-grid" id="segurosGrid"></div>
+      </section>
+
+      <section class="section-block mt-4">
+        <h2 class="section-block-title">Dúvidas Frequentes sobre Seguro Viagem</h2>
+        <div class="faq-grid">
+          <div class="faq-card content-card">
+            <h4>O que é o seguro viagem?</h4>
+            <p>Cuida e presta suporte ao passageiro durante o período da viagem em casos de urgência médica.</p>
+          </div>
+          <div class="faq-card content-card">
+            <h4>Por que contratar?</h4>
+            <p>Garante tranquilidade total contra despesas médicas inesperadas e extravio de bagagem.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h4 class="footer-logo">PREÇO JUSTO</h4>
+        <p>Plataforma agregadora para comparação de voos, hotéis, carros e seguros.</p>
+      </div>
+      <div>
+        <h4>Acesso do Sistema</h4>
+        <ul>
+          <li><a href="login.html">Login de Usuário</a></li>
+          <li><a href="empresa-cadastro.html">Cadastrar Empresa / Parceiro</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Suporte & Legal</h4>
+        <ul>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script para alternar entre "Fazer login" e o botão "Menu" com base no login -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const jaLogado = localStorage.getItem('usuarioLogado') === 'true';
+      const container = document.getElementById('authActionContainer');
+
+      if (jaLogado) {
+        container.innerHTML = `
+          <button class="header-btn btn-menu" onclick="alert('Menu do usuário aberto!')">
+            <span class="menu-icon">☰</span> Menu
+          </button>
+        `;
+      }
+    });
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+</html>
