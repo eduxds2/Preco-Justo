@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados da Busca | PREÇO JUSTO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html" class="logo-text">PREÇO JUSTO</a>
+    </div>
+    <div class="header-nav">
+      <a href="login.html" class="btn-login-header">Fazer login</a>
+    </div>
+  </header>
+
+  <!-- Barra de Busca Rápida Topo -->
+  <div class="search-hero-mini">
+    <div class="search-bar-container">
+      <div class="search-field">
+        <input type="text" id="buscaSearchInput" placeholder="Para onde você quer ir?" value="Porto Seguro">
+      </div>
+      <button class="btn-search-main" onclick="filtrarBuscaPagina()">Pesquisar</button>
+    </div>
+  </div>
+
+  <!-- Container Principal: Filtros Laterais + Resultados -->
+  <div class="main-content-layout">
+    
+    <!-- Filtros Laterais -->
+    <aside class="sidebar-filters">
+      <h3>Filtros</h3>
+      <div class="filter-group">
+        <label class="checkbox-container">
+          <input type="checkbox" id="chkCancelamento" onchange="aplicarFiltrosSidebar()">
+          <span>Cancelamento gratuito</span>
+        </label>
+      </div>
+
+      <h3>Preço</h3>
+      <div class="price-inputs">
+        <input type="number" id="priceMin" placeholder="R$ Min" value="0" oninput="aplicarFiltrosSidebar()">
+        <span>-</span>
+        <input type="number" id="priceMax" placeholder="R$ Máx" value="3000" oninput="aplicarFiltrosSidebar()">
+      </div>
+    </aside>
+
+    <!-- Lista de Hotéis Carregados Dinamicamente -->
+    <main class="results-container" id="offersContainer"></main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
