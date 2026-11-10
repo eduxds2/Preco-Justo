@@ -78,7 +78,7 @@ body.dark-mode .footer {
 }
 
 /* =========================================================
-   ESTILO DA ARTE TEXTUAL NO CABEÇALHO (Imagem)
+   ESTILO DA ARTE TEXTUAL NO CABEÇALHO (logo-texto.png)
 ========================================================= */
 .logo-brand-img-link {
   display: flex;
@@ -86,10 +86,10 @@ body.dark-mode .footer {
 }
 
 .nav-text-logo-img {
-  height: 42px; /* Altura ideal para ficar grande e nítida no header */
+  height: 42px;
   width: auto;
   object-fit: contain;
-  filter: brightness(1.2); /* Deixa o texto bem branco e destacado no fundo escuro */
+  filter: brightness(1.2);
 }
 
 /* Container da moeda e bandeira pequena no Header */
@@ -227,6 +227,18 @@ body.dark-mode .footer {
   background: transparent;
   cursor: pointer;
   color: #FFFFFF;
+}
+
+.date-input-clean {
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  padding-top: 0.2rem;
+  background: transparent;
+  cursor: pointer;
+  color: #FFFFFF;
+  color-scheme: dark;
+  width: 100%;
 }
 
 .input-box input[type="date"] {
