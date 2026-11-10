@@ -3,55 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preço Justo | Sistema de Reservas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Preço Justo | Acesso ao Sistema</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #0b1311; color: #e0e0e0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-card { background: #121f1b; padding: 40px; border-radius: 12px; border: 1px solid #1e332c; width: 400px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        h1 { color: #00E676; font-size: 1.8rem; margin-bottom: 8px; text-align: center; }
+        p.subtitle { color: #8fa8a0; font-size: 0.9rem; text-align: center; margin-bottom: 24px; }
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; font-size: 0.85rem; margin-bottom: 6px; color: #8fa8a0; }
+        .input-group input { width: 100%; padding: 12px; background: #0b1311; border: 1px solid #2d4d43; color: #fff; border-radius: 6px; outline: none; }
+        .input-group input:focus { border-color: #00E676; }
+        .btn-submit { width: 100%; padding: 12px; background: #00E676; color: #0b1311; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+        .btn-submit:hover { background: #00c853; }
+        
+        /* Painel Admin (Oculto inicialmente) */
+        #admin-panel { display: none; width: 600px; background: #121f1b; padding: 30px; border-radius: 12px; border: 1px solid #00E676; }
+        .hotel-list { margin-top: 20px; max-height: 150px; overflow-y: auto; background: #0b1311; padding: 10px; border-radius: 6px; border: 1px solid #2d4d43; }
+        .hotel-item { display: flex; justify-content: space-between; padding: 8px; border-bottom: 1px solid #1e332c; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="logo">
-            <span>🧳</span> preço <strong>justo</strong>
-        </div>
-        <div class="user-area">
-            <button onclick="abrirLogin()" class="btn-login-header">Entrar / Acesso Restrito</button>
-        </div>
-    </header>
 
-    <!-- Conteúdo Principal: Pesquisa de Hotéis -->
-    <main class="main-content">
-        <div class="hero">
-            <h1>Encontre sua próxima estadia pelo preço justo.</h1>
-            <p>Compare ofertas de hotéis em Porto Seguro, Furadouro e muito mais.</p>
-        </div>
-
-        <div class="search-box">
-            <input type="text" placeholder="Onde você vai se hospedar? (Cidade ou Hotel)" id="destino">
-            <input type="date" id="entrada">
-            <input type="date" id="saida">
-            <button onclick="pesquisarHoteis()" class="btn-search">Pesquisar</button>
-        </div>
-    </main>
-
-    <!-- Modal de Login Unificado -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharLogin()">&times;</span>
-            <h2>Acesso ao Sistema</h2>
-            <form id="loginForm" onsubmit="realizarLogin(event)">
-                <div class="input-group">
-                    <label>Usuário / E-mail ou Nome do Hotel (ex: adm:hotelmar)</label>
-                    <input type="text" id="loginUser" required placeholder="Digite seu usuário ou login de hotel">
-                </div>
-                <div class="input-group">
-                    <label>Senha</label>
-                    <input type="password" id="loginPass" required placeholder="Sua senha">
-                </div>
-                <button type="submit" class="btn-submit">Entrar</button>
-                <p class="signup-text">Não tem conta? <a href="#" onclick="alert('Redirecionando para auto-cadastro de cliente...')">Cadastre-se aqui</a></p>
-            </form>
-        </div>
+    <!-- TELA DE LOGIN UNIFICADA -->
+    <div class="login-card" id="login-screen">
+        <h1>Preço Justo</h1>
+        <p class="subtitle">Acesse sua conta ou painel restrito</p>
+        <form onsubmit="autenticarSistema(event)">
+            <div class="input-group">
+                <label>Usuário / Login</label>
+                <input type="text" id="usuario" required placeholder="Ex: adm (Master) ou adm:hotelmar">
+            </div>
+            <div class="input-group">
+                <label>Senha</label>
+                <input type="password" id="senha" required placeholder="Sua senha">
+            </div>
+            <button type="submit" class="btn-submit">Entrar no Sistema</button>
+        </form>
     </div>
 
-    <script src="script.js"></script>
+    <!-- PAINEL DO ADMINISTRADOR (EXCLUSIVO DO DONO) -->
+    <div id="admin-panel">
+        <h1>Painel do Administrador (Dono)</h1>
+        <p class="subtitle">Gerenciamento e Criação de Logins de Hotéis (Estilo iFood Vendedor)</p>
+        
+        <div class="input-group">
+            <label>Nome do Hotel (Ex: Furabeach Alojamentos)</label>
+            <input type="text" id="novoHotelNome" placeholder="Nome comercial do hotel">
+        </div>
+        <div class="input-group">
+            <label>Senha Personalizada para o Hotel</label>
+            <input type="text" id="novoHotelSenha" placeholder="Senha de acesso da empresa">
+        </div>
+        <button onclick="criarLoginHotel()" class="btn-submit">Gerar Credencial de Hotel</button>
+
+        <h3 style="margin-top: 20px; font-size: 1rem; color: #00E676;">Hotéis / Empresas Cadastradas:</h3>
+        <div class="hotel-list" id="listaHoteisCadastrados">
+            <div class="hotel-item"><span>adm:furabeach</span> <span>(Senha gerada)</span></div>
+        </div>
+        <br>
+        <button onclick="logout()" style="background: #ff5252; color: white;" class="btn-submit">Sair do Painel Admin</button>
+    </div>
+
+    <script>
+        // Banco simulado de empresas de hotéis criadas pelo dono
+        let hoteisCadastrados = {
+            "adm:furabeach": "123456"
+        };
+
+        function autenticarSistema(event) {
+            event.preventDefault();
+            const user = document.getElementById('usuario').value.trim();
+            const pass = document.getElementById('senha').value.trim();
+
+            // 1. Validação do Dono (Master)
+            if (user === "adm" && pass === "admin") {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('admin-panel').style.display = 'block';
+                alert("Bem-vindo ao Painel Master do Administrador!");
+                return;
+            }
+
+            // 2. Validação de Hotéis/Empresas cadastradas
+            if (hoteisCadastrados[user] && hoteisCadastrados[user] === pass) {
+                alert(`Login autorizado para a empresa: ${user}. Redirecionando para o painel de edição do hotel...`);
+                // Aqui depois vamos redirecionar para o painel estilo iFood do vendedor
+                window.location.href = "#painel-vendedor";
+                return;
+            }
+
+            // 3. Caso contrário, erro de credencial
+            alert("Usuário ou senha incorretos!");
+        }
+
+        function criarLoginHotel() {
+            const nomeHotelInput = document.getElementById('novoHotelNome').value.trim();
+            const senhaHotelInput = document.getElementById('novoHotelSenha').value.trim();
+
+            if(!nomeHotelInput || !senhaHotelInput) {
+                alert("Preencha o nome e a senha do hotel!");
+                return;
+            }
+
+            // Formata o login automático no padrão adm:nomedohotel (sem espaços)
+            const loginFormatado = "adm:" + nomeHotelInput.toLowerCase().replace(/\s+/g, '');
+            
+            hoteisCadastrados[loginFormatado] = senhaHotelInput;
+
+            // Atualiza a lista visual na tela
+            const lista = document.getElementById('listaHoteisCadastrados');
+            lista.innerHTML += `<div class="hotel-item"><span>${loginFormatado}</span> <span>Senha: ${senhaHotelInput}</span></div>`;
+
+            alert(`Login gerado com sucesso para o hotel! Credencial de acesso: ${loginFormatado}`);
+            document.getElementById('novoHotelNome').value = "";
+            document.getElementById('novoHotelSenha').value = "";
+        }
+
+        function logout() {
+            document.getElementById('admin-panel').style.display = 'none';
+            document.getElementById('login-screen').style.display = 'block';
+            document.getElementById('usuario').value = "";
+            document.getElementById('senha').value = "";
+        }
+    </script>
 </body>
 </html>
