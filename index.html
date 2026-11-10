@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Comparador de Viagens e Hospedagens</title>
+  <title>PREÇO JUSTO | Voos, Hospedagens, Carros e Seguros</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="light-mode">
@@ -12,7 +12,6 @@
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-link">
-        <!-- Espaço para a sua logo personalizada -->
         <img src="public/assets/logo.png" alt="Preço Justo" class="custom-logo" onerror="this.style.display='none'; document.getElementById('textLogo').style.display='flex';">
         <div id="textLogo" class="text-logo" style="display:none;">
           <span class="logo-icon">✈️</span>
@@ -28,20 +27,17 @@
     </nav>
 
     <div class="header-actions">
-      <!-- Botão para Trocar Tema (Light / Dark Mode) -->
-      <button class="btn-theme-toggle" id="btnThemeToggle" onclick="toggleTheme()" title="Alternar Modo Claro / Escuro">
-        🌙
-      </button>
+      <button class="btn-theme-toggle" id="btnThemeToggle" onclick="toggleTheme()" title="Alternar Modo Claro / Escuro">🌙</button>
       <button class="btn-icon" title="Buscar">🔍</button>
       <a href="login.html" class="btn-icon" title="Fazer Login">👤</a>
     </div>
   </header>
 
-  <!-- Hero principal de busca -->
+  <!-- Hero principal -->
   <section class="hero-section">
     <div class="search-container">
       
-      <!-- Navegação por Abas -->
+      <!-- Navegação por Abas Limpa (Sem Upgrade, eSIM, Universal) -->
       <div class="tabs-container">
         <button class="tab-btn" onclick="trocarAba('monte', this)">Monte sua viagem</button>
         <button class="tab-btn active" onclick="trocarAba('voos', this)">Voos</button>
@@ -49,52 +45,157 @@
         <button class="tab-btn" onclick="trocarAba('hospedagem', this)">Hospedagem</button>
         <button class="tab-btn" onclick="trocarAba('carros', this)">Carros</button>
         <button class="tab-btn" onclick="trocarAba('seguros', this)">Seguros</button>
-        <button class="tab-btn" onclick="trocarAba('upgrade', this)">Upgrade</button>
-        <button class="tab-btn" onclick="trocarAba('esim', this)">eSIM</button>
-        <button class="tab-btn" onclick="trocarAba('universal', this)">Universal</button>
       </div>
 
       <!-- Card de Formulário Dinâmico -->
       <div class="search-card">
         
-        <!-- Conteúdo de Voos/Hotéis -->
-        <div id="formGenerico">
-          <div class="search-card-header">
-            <h2 id="searchCardTitle">Para onde você quer ir?</h2>
-            <div class="trip-options" id="tripOptions">
-              <label class="radio-pill active">
-                <input type="radio" name="tripType" value="ida-volta" checked> ✓ Ida e volta
-              </label>
-              <label class="radio-pill">
-                <input type="radio" name="tripType" value="somente-ida"> Somente ida
-              </label>
-            </div>
+        <!-- 1. FORMULÁRIO DE VOOS (Imagem 1 - Booking Flights) -->
+        <div id="formVoos">
+          <div class="flight-top-options">
+            <label class="radio-label">
+              <input type="radio" name="flightTripType" value="ida-volta" checked> Ida e volta
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="flightTripType" value="so-ida"> Só ida
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="flightTripType" value="multidestinos"> Multidestinos
+            </label>
+            
+            <select class="select-inline" id="flightClass">
+              <option value="economica">Classe da cabine: Econômica</option>
+              <option value="premium">Econômica Premium</option>
+              <option value="executiva">Executiva</option>
+              <option value="primeira">Primeira classe</option>
+            </select>
+
+            <label class="checkbox-inline">
+              <input type="checkbox" id="chkVoosDiretos"> Somente voos diretos
+            </label>
           </div>
 
-          <div class="search-inputs-grid">
-            <div class="input-box">
-              <span class="box-label">De</span>
-              <input type="text" id="inputOrigem" placeholder="Insira uma origem">
+          <div class="booking-inputs-grid">
+            <div class="input-box flex-2">
+              <span class="box-label">Partindo de</span>
+              <input type="text" id="flightOrigem" placeholder="São Paulo - Todos os aeroportos">
             </div>
-            <button class="btn-swap" onclick="inverterDestinos()">⇆</button>
-            <div class="input-box">
-              <span class="box-label">Para</span>
-              <input type="text" id="inputDestino" placeholder="Insira um destino">
+            <button class="btn-swap" onclick="inverterVoos()">⇆</button>
+            <div class="input-box flex-2">
+              <span class="box-label">Indo para</span>
+              <input type="text" id="flightDestino" placeholder="Indo para onde?">
             </div>
-            <button class="btn-submit-search" onclick="realizarPesquisa()">Buscar</button>
+            <div class="input-box flex-2">
+              <span class="box-label">Datas da viagem</span>
+              <input type="text" id="flightDatas" placeholder="sáb., 12 de dez. - sáb., 19 de dez.">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Viajantes</span>
+              <input type="text" id="flightPassageiros" value="1 adulto" readonly>
+            </div>
+            <button class="btn-submit-search" onclick="buscarVoos()">Conferir</button>
           </div>
         </div>
 
-        <!-- Conteúdo Específico de Carros (Estilo CVC) -->
+        <!-- 2. FORMULÁRIO DE HOSPEDAGEM (Imagens 2, 3 e 4 - Booking Stays) -->
+        <div id="formHospedagem" style="display:none;">
+          <h2 class="form-title">Encontre sua próxima estadia</h2>
+          <p class="form-subtitle">Encontre ofertas em hotéis, casas, apartamentos e muito mais...</p>
+          
+          <div class="booking-inputs-grid mt-3">
+            <div class="input-box flex-2">
+              <span class="box-label">Destino / Acomodação</span>
+              <input type="text" id="stayDestino" placeholder="Apartamentos para toda a família em Paris...">
+            </div>
+            <div class="input-box flex-2">
+              <span class="box-label">Data de check-in — Data de check-out</span>
+              <input type="text" id="stayDatas" placeholder="Selecione as datas" readonly onclick="togglePopover('popoverDatas')">
+            </div>
+            <div class="input-box flex-2 relative-box">
+              <span class="box-label">Selecione a ocupação</span>
+              <input type="text" id="stayOcupacaoInput" value="2 adultos · 0 crianças · 1 quarto" readonly onclick="togglePopover('popoverOcupacao')">
+              
+              <!-- Popover de Ocupação (Imagem 2) -->
+              <div class="popover-box" id="popoverOcupacao" style="display:none;">
+                <div class="counter-row">
+                  <span>Adultos</span>
+                  <div class="counter-btn-group">
+                    <button type="button" onclick="alterarContador('adultos', -1)">-</button>
+                    <span id="cntAdultos">2</span>
+                    <button type="button" onclick="alterarContador('adultos', 1)">+</button>
+                  </div>
+                </div>
+                <div class="counter-row">
+                  <span>Crianças</span>
+                  <div class="counter-btn-group">
+                    <button type="button" onclick="alterarContador('criancas', -1)">-</button>
+                    <span id="cntCriancas">0</span>
+                    <button type="button" onclick="alterarContador('criancas', 1)">+</button>
+                  </div>
+                </div>
+                <div class="counter-row">
+                  <span>Quartos</span>
+                  <div class="counter-btn-group">
+                    <button type="button" onclick="alterarContador('quartos', -1)">-</button>
+                    <span id="cntQuartos">1</span>
+                    <button type="button" onclick="alterarContador('quartos', 1)">+</button>
+                  </div>
+                </div>
+                <hr class="popover-divider">
+                <label class="switch-row">
+                  <span>Viajando a trabalho?</span>
+                  <input type="checkbox" id="swTrabalho">
+                </label>
+                <label class="switch-row">
+                  <span>Viajando com pets?</span>
+                  <input type="checkbox" id="swPets">
+                </label>
+                <button type="button" class="btn-popover-ok" onclick="togglePopover('popoverOcupacao')">OK</button>
+              </div>
+            </div>
+            <button class="btn-submit-search" onclick="buscarHospedagens()">Pesquisar</button>
+          </div>
+
+          <div class="sub-option-row">
+            <label><input type="checkbox" id="chkEstouTrabalho"> Estou viajando a trabalho</label>
+          </div>
+        </div>
+
+        <!-- 3. FORMULÁRIO DE SEGURO VIAGEM (Imagem 5 - CVC Seguro) -->
+        <div id="formSeguros" style="display:none;">
+          <h2 class="form-title">Seguro viagem com o melhor preço</h2>
+          
+          <div class="booking-inputs-grid mt-3">
+            <div class="input-box flex-2">
+              <span class="box-label">Destino</span>
+              <input type="text" id="seguroDestino" placeholder="América do Sul, Europa, EUA...">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Ida</span>
+              <input type="date" id="seguroIda">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Volta</span>
+              <input type="date" id="seguroVolta">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Viajantes</span>
+              <input type="number" id="seguroViajantes" value="1" min="1">
+            </div>
+            <button class="btn-submit-search" onclick="buscarSeguros()">Buscar</button>
+          </div>
+        </div>
+
+        <!-- 4. FORMULÁRIO DE CARROS (Mantido CVC Aluguel de Carros) -->
         <div id="formCarros" style="display:none;">
           <div class="search-card-header">
             <h2>Aluguel de carros com preços imperdíveis</h2>
             <label class="checkbox-cvc">
-              <input type="checkbox" id="chkOutroLocal"> Devolver em outro local ou destino
+              <input type="checkbox" id="chkOutroLocal"> Devolver em outro local
             </label>
           </div>
 
-          <div class="cvc-car-inputs-grid">
+          <div class="booking-inputs-grid">
             <div class="input-box flex-2">
               <span class="box-label">Local de retirada</span>
               <input type="text" id="carLocal" placeholder="Digite a cidade ou aeroporto">
@@ -104,16 +205,8 @@
               <input type="date" id="carDataRetirada">
             </div>
             <div class="input-box">
-              <span class="box-label">Hora</span>
-              <input type="time" id="carHoraRetirada" value="10:00">
-            </div>
-            <div class="input-box">
               <span class="box-label">Devolução</span>
               <input type="date" id="carDataDevolucao">
-            </div>
-            <div class="input-box">
-              <span class="box-label">Hora</span>
-              <input type="time" id="carHoraDevolucao" value="10:00">
             </div>
             <button class="btn-submit-search" onclick="buscarCarros()">Buscar</button>
           </div>
@@ -124,37 +217,23 @@
     </div>
   </section>
 
-  <!-- Corpo Principal -->
+  <!-- Conteúdo Principal -->
   <main class="main-body">
 
-    <!-- Seção de Aluguel de Carros (Estilo CVC - Aparece ao Clicar em Carros) -->
-    <section id="sectionCarrosCVC" style="display:none; margin-bottom: 2.5rem;">
-      <div class="cvc-banner-promo-grid">
-        <div class="cvc-promo-card promo-blue">
-          <span>ALUGUEL DE CARROS</span>
-          <h4>Categoria Compacto com Ar</h4>
-          <p>Diárias a partir de <strong>R$ 164</strong></p>
-        </div>
-        <div class="cvc-promo-card promo-yellow">
-          <span>OFERTA IMPERDÍVEL</span>
-          <h4>Proteção do veículo incluída</h4>
-          <p>Diárias a partir de <strong>R$ 67</strong></p>
-        </div>
+    <!-- Seção de Seguro Viagem (Aparece ao clicar em Seguros) -->
+    <section id="sectionSeguros" style="display:none;">
+      <div class="section-title-box">
+        <h2>Passagens e seguros com preços imbatíveis</h2>
+        <p>Proteção completa para a sua viagem nacional ou internacional</p>
       </div>
-
-      <div class="section-title-box mt-4">
-        <h2>Encontre o carro certo para você</h2>
-        <p>Veículos revisados e com quilometragem livre</p>
-      </div>
-
-      <div class="cars-grid" id="carsContainer"></div>
+      <div class="offers-grid" id="segurosContainer"></div>
     </section>
 
-    <!-- Lista de Ofertas Geral (Hotéis / Voos) -->
+    <!-- Lista de Ofertas Geral -->
     <section class="results-section" id="sectionGeral">
       <div class="section-title-box">
         <h2>Melhores ofertas encontradas</h2>
-        <p>Preços transparentes e atualizados nos principais parceiros</p>
+        <p>Preços transparentes e comparados nos principais fornecedores</p>
       </div>
       <div class="offers-grid" id="offersContainer"></div>
     </section>
@@ -166,7 +245,7 @@
     <div class="footer-container">
       <div>
         <h4 class="footer-logo">PREÇO JUSTO</h4>
-        <p>Plataforma agregadora para comparação de voos, hotéis e carros.</p>
+        <p>Plataforma agregadora para comparação de voos, hospedagens, carros e seguros.</p>
       </div>
       <div>
         <h4>Acesso do Sistema</h4>
