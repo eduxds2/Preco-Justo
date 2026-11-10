@@ -6,163 +6,306 @@
 }
 
 body {
-  background-color: #F8FAFC;
-  color: #0F172A;
+  background-color: #F4F5F7;
+  color: #1A1A1A;
   min-height: 100vh;
 }
 
+/* Header Estilo Trivago */
 header {
   background-color: #FFFFFF;
-  border-bottom: 1px solid #E2E8F0;
-  padding: 1rem 2rem;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo-text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0F172A;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #007BFF;
+  letter-spacing: -0.5px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-login-header {
+  background: transparent;
+  border: 1px solid #D1D5DB;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.btn-login-header:hover {
+  background-color: #F3F4F6;
+}
+
+/* Hero / Filtros Rápidos */
 .hero {
   background-color: #FFFFFF;
-  padding: 3rem 1rem;
-  text-align: center;
-  border-bottom: 1px solid #E2E8F0;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  color: #0F172A;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  color: #64748B;
-  margin-bottom: 1.5rem;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #E5E7EB;
 }
 
 .search-box {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .search-box input {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid #CBD5E1;
+  padding: 0.8rem 1rem;
+  border: 1px solid #D1D5DB;
   border-radius: 8px;
   font-size: 1rem;
   outline: none;
-  background-color: #F8FAFC;
-}
-
-.search-box input:focus {
-  border-color: #2563EB;
-  background-color: #FFFFFF;
 }
 
 .search-box button {
-  background-color: #2563EB;
+  background-color: #007BFF;
   color: #FFFFFF;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.search-box button:hover {
-  background-color: #1D4ED8;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 2rem auto;
+/* Layout Principal: Lista de Hoteis */
+.main-layout {
+  max-width: 1100px;
+  margin: 1.5rem auto;
   padding: 0 1rem;
 }
 
-.card {
+/* Card Estilo Trivago */
+.hotel-card {
   background-color: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
   display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
-.card-img {
-  width: 120px;
-  height: 120px;
+.hotel-img-container {
+  width: 280px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hotel-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  background-color: #F1F5F9;
 }
 
-.card-info {
-  flex: 1;
-}
-
-.card-tag {
-  display: inline-block;
-  background-color: #F1F5F9;
-  color: #475569;
+.tag-popular {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #007BFF;
+  color: white;
   font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  padding: 3px 8px;
   border-radius: 4px;
-  margin-bottom: 0.5rem;
 }
 
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #0F172A;
-  margin-bottom: 0.25rem;
-}
-
-.card-location {
-  font-size: 0.875rem;
-  color: #64748B;
-  margin-bottom: 0.5rem;
-}
-
-.card-action {
-  text-align: right;
+.hotel-details {
+  flex: 1;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
+  justify-content: space-between;
 }
 
-.price-label {
-  font-size: 0.75rem;
-  color: #94A3B8;
-}
-
-.price-value {
-  font-size: 1.5rem;
+.hotel-title {
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #0F172A;
+  color: #111827;
 }
 
-.btn-redirect {
+.rating-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #2563EB;
-  color: #FFFFFF;
-  text-decoration: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
+  margin: 6px 0;
 }
 
-.btn-redirect:hover {
-  background-color: #1D4ED8;
+.score {
+  background-color: #10B981;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.rating-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.hotel-distance {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-bottom: 8px;
+}
+
+.hotel-features {
+  font-size: 0.8rem;
+  color: #4B5563;
+  line-height: 1.4;
+}
+
+/* Painel de Preços e Oferta Principal (Lado Direito) */
+.hotel-pricing {
+  width: 320px;
+  background-color: #FAFAFA;
+  border-left: 1px solid #E5E7EB;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.best-deal-box {
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.deal-partner-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #065F46;
+}
+
+.deal-benefit {
+  font-size: 0.75rem;
+  color: #047857;
+  margin: 2px 0;
+}
+
+.deal-price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #065F46;
+  margin-top: 4px;
+}
+
+.btn-green-deal {
+  width: 100%;
+  background-color: #059669;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-green-deal:hover {
+  background-color: #047857;
+}
+
+/* Outras Lojas Comparadas */
+.other-deals {
+  border-top: 1px solid #E5E7EB;
+  padding-top: 0.5rem;
+}
+
+.other-deal-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #4B5563;
+  padding: 3px 0;
+}
+
+.other-deal-price {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Modal de Login */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-card {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none; border: none;
+  font-size: 1.4rem; cursor: pointer; color: #9CA3AF;
+}
+
+.modal-title {
+  font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem; color: #111827;
+}
+
+.modal-sub {
+  font-size: 0.85rem; color: #6B7280; margin-bottom: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: #374151;
+}
+
+.form-group input {
+  width: 100%; padding: 0.65rem; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 0.9rem;
+}
+
+.btn-submit-login {
+  width: 100%; background-color: #007BFF; color: white; border: none; padding: 0.75rem; border-radius: 6px; font-weight: 700; cursor: pointer; margin-top: 0.5rem;
+}
+
+.divider {
+  text-align: center; font-size: 0.75rem; color: #9CA3AF; margin: 1rem 0; position: relative;
 }
