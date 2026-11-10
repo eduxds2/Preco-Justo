@@ -1,32 +1,31 @@
 const bancoDados = {
   carros: [
-    { titulo: "Buenos Aires", categoria: "Intermediário", preco: 286, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80", link: "https://www.rentcars.com" },
-    { titulo: "Orlando", categoria: "Compacto", preco: 216, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80", link: "https://www.rentcars.com" },
-    { titulo: "Santiago", categoria: "Econômico", preco: 268, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80", link: "https://www.rentcars.com" }
+    { titulo: "Buenos Aires", categoria: "Intermediário", preco: 286, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Orlando", categoria: "Compacto", preco: 216, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Santiago", categoria: "Econômico", preco: 268, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
   ],
   frota: [
     { titulo: "Grupo GI - Suv Compacto Especial", desc: "NISSAN KICKS 1.6, GM TRACKER ou similar", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Grupo GX - Suv Automático", desc: "VW T-CROSS 1.0 Turbo, Hyundai Creta", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Grupo GH - Suv Luxo Automático", desc: "Jeep Compass 1.3 Turbo ou similar", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" }
+    { titulo: "Grupo GX - Suv Automático", desc: "VW T-CROSS 1.0 Turbo, Hyundai Creta", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
   ],
   hospedagem: [
-    { titulo: "Natal Praia Hotel", sub: "A 958m do centro • Natal", preco: 156, descTag: "-56%", nota: "★ 8.0", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80", link: "https://www.booking.com" },
-    { titulo: "D Beach Resort", sub: "A 11km do centro • Natal", preco: 469, nota: "★ 8.5", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80", link: "https://www.booking.com" },
-    { titulo: "Salinas Maceió All Inclusive Resort", sub: "A 20km do centro • Maceió", preco: 2052, nota: "★ 9.4", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=500&q=80", link: "https://www.booking.com" }
+    { titulo: "Natal Praia Hotel", sub: "A 958m do centro • Natal", preco: 156, descTag: "-56%", nota: "★ 8.0", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "D Beach Resort", sub: "A 11km do centro • Natal", preco: 469, nota: "★ 8.5", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Salinas Maceió All Inclusive Resort", sub: "A 20km do centro • Maceió", preco: 2052, nota: "★ 9.4", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=500&q=80" }
   ],
   campos: [
-    { titulo: "Pousada Campos De Provence", preco: 297, descTag: "-8%", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80", link: "https://www.booking.com" },
-    { titulo: "Pousada Grandchamp", preco: 316, img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80", link: "https://www.booking.com" }
+    { titulo: "Pousada Campos De Provence", preco: 297, descTag: "-8%", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Pousada Grandchamp", preco: 316, img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" }
   ],
   voos: [
-    { titulo: "Voos para Fortaleza", sub: "Saindo de SP • Por Azul", preco: 885, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80", link: "https://www.voeazul.com.br" },
-    { titulo: "Voos para Recife", sub: "Saindo de SP • Por Gol", preco: 884, img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80", link: "https://www.voegol.com.br" },
-    { titulo: "Voos para Maceió", sub: "Saindo de SP • Por LATAM", preco: 777, img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80", link: "https://www.latamairlines.com" }
+    { titulo: "Voos para Fortaleza", sub: "Saindo de SP • Por Azul", preco: 885, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Voos para Recife", sub: "Saindo de SP • Por Gol", preco: 884, img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Voos para Maceió", sub: "Saindo de SP • Por LATAM", preco: 777, img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80" }
   ],
   seguros: [
-    { titulo: "Seguro Viagem - Brasil", sub: "Por 2 dias • Reserva Flexível", preco: 35, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80", link: "https://www.cvc.com.br" },
-    { titulo: "Seguro Viagem - América Latina", sub: "Por 2 dias • Reserva Flexível", preco: 90, img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=500&q=80", link: "https://www.cvc.com.br" },
-    { titulo: "Seguro Viagem - Europa", sub: "Por 2 dias • Reserva Flexível", preco: 90, img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=80", link: "https://www.cvc.com.br" }
+    { titulo: "Seguro Viagem - Brasil", sub: "Por 2 dias • Reserva Flexível", preco: 35, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Seguro Viagem - América Latina", sub: "Por 2 dias • Reserva Flexível", preco: 90, img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Seguro Viagem - Europa", sub: "Por 2 dias • Reserva Flexível", preco: 90, img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=80" }
   ]
 };
 
@@ -43,7 +42,8 @@ function trocarAba(categoria, elemento) {
   const formGeral = document.getElementById('formGeral');
   const formHospedagem = document.getElementById('formHospedagem');
 
-  document.querySelectorAll('.view-block').forEach(v => v.style.display = 'none');
+  // Esconde todas as abas de conteúdo
+  document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
 
   if (categoria === 'hospedagem') {
     formGeral.style.display = 'none';
@@ -63,6 +63,7 @@ function trocarAba(categoria, elemento) {
     document.getElementById('viewSeguros').style.display = 'block';
     renderSeguros();
   } else {
+    // monte, voos, pacotes
     formGeral.style.display = 'block';
     formHospedagem.style.display = 'none';
     configurarInputs(`Pesquisar ${categoria === 'monte' ? 'viagens' : categoria}`, true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
@@ -88,10 +89,10 @@ function renderCarros() {
       <div class="content-card">
         <img src="${i.img}" alt="${i.titulo}">
         <div class="card-body">
-          <span class="blue-badge">Carros</span>
+          <span style="font-size:0.7rem; color:#0284C7; font-weight:700;">CARROS</span>
           <h3 class="card-title">${i.titulo}</h3>
           <p class="card-subtitle">${i.categoria}</p>
-          <div class="car-icons-row"><span>${i.cap}</span></div>
+          <div class="car-icons-row" style="font-size:0.8rem; color:#64748B; margin:8px 0;"><span>${i.cap}</span></div>
           <div class="price-box">
             <span class="price-label">Diárias a partir de</span>
             <div class="price-amount">${formatarMoeda(i.preco)}</div>
@@ -131,7 +132,7 @@ function renderHospedagem() {
           <p style="font-size:0.8rem; color:#0284C7; font-weight:bold;">${i.nota}</p>
           <div class="price-box">
             <span class="price-label">1 noite, 2 pessoas a partir de</span>
-            <div class="price-amount">${formatarMoeda(i.preco)} ${i.descTag ? `<span class="blue-badge" style="background:#059669">${i.descTag}</span>` : ''}</div>
+            <div class="price-amount">${formatarMoeda(i.preco)} ${i.descTag ? `<span style="background:#059669; color:white; padding:2px 6px; border-radius:4px; font-size:0.7rem;">${i.descTag}</span>` : ''}</div>
           </div>
         </div>
       </div>
@@ -146,7 +147,7 @@ function renderHospedagem() {
         <img src="${i.img}" alt="${i.titulo}">
         <div class="card-body">
           <h3 class="card-title">${i.titulo}</h3>
-          <div class="price-amount">${formatarMoeda(i.preco)}</div>
+          <div class="price-amount">${formatarMoeda(i.preco)} ${i.descTag ? `<span style="background:#059669; color:white; padding:2px 6px; border-radius:4px; font-size:0.7rem;">${i.descTag}</span>` : ''}</div>
         </div>
       </div>
     `;
@@ -172,8 +173,6 @@ function renderVoos() {
       </div>
     `;
   });
-
-  document.getElementById('voosImbateisGrid').innerHTML = vGrid.innerHTML;
 }
 
 function renderSeguros() {
