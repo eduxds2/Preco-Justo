@@ -52,7 +52,7 @@ body.dark-mode .search-inputs-grid {
   background-color: #111C1E;
 }
 
-body.dark-mode input {
+body.dark-mode input, body.dark-mode select {
   color: #FFFFFF;
 }
 
@@ -205,6 +205,10 @@ body.dark-mode .footer {
   background: transparent;
   cursor: pointer;
   color: #FFFFFF;
+}
+
+.input-box input[type="date"] {
+  color-scheme: dark;
 }
 
 .btn-swap {
@@ -391,7 +395,7 @@ body.dark-mode .footer {
 .remessa-tag {
   font-size: 0.75rem;
   color: #9CA3AF;
-  border-top: 1px solid #374151;
+  border-top: 1px solid #1F2937;
   padding-top: 8px;
   margin-top: 8px;
 }
@@ -426,30 +430,30 @@ body.dark-mode .footer {
 
 .airline-logos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .airline-card {
   background-color: #111C1E;
   border: 1px solid #1F2937;
-  padding: 1.2rem;
-  border-radius: 14px;
+  padding: 1.5rem;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  height: 110px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .airline-img {
-  max-width: 120px;
-  max-height: 45px;
+  max-width: 160px;
+  max-height: 65px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(1.1);
+  filter: brightness(1.15);
 }
 
 .faq-grid {
@@ -481,114 +485,3 @@ body.dark-mode .footer {
 .footer-logo { color: white; font-size: 1.15rem; margin-bottom: 0.5rem; }
 .footer a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; line-height: 2; }
 .footer a:hover { color: #22C55E; }
-
-/* ESTILOS DA TELA DE LOGIN CLÁSSICA */
-.login-wrapper {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.login-card {
-  background-color: #111C1E;
-  border: 1px solid #1F2937;
-  border-radius: 16px;
-  padding: 2.5rem;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.login-card h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.4rem;
-  font-weight: 800;
-  text-align: center;
-  color: #FFFFFF;
-}
-
-.login-input-group {
-  margin-bottom: 1.2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.login-input-group label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #9CA3AF;
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
-}
-
-.login-input-group input {
-  background-color: #0E1719;
-  border: 1px solid #374151;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  color: #FFFFFF;
-  font-size: 0.95rem;
-  outline: none;
-}
-
-.btn-login-submit {
-  width: 100%;
-  background-color: #22C55E;
-  color: white;
-  border: none;
-  padding: 0.85rem;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  margin-top: 0.5rem;
-}
-
-.btn-login-submit:hover { background-color: #16A34A; }
-
-.login-links-grid {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  font-size: 0.8rem;
-}
-
-.login-links-grid a {
-  color: #22C55E;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-links-grid a:hover { text-decoration: underline; }
-
-.empresa-box-action { margin-top: 1rem; }
-
-.btn-empresa-register {
-  width: 100%;
-  background-color: #1A292C;
-  border: 1px solid #22C55E;
-  color: #22C55E;
-  padding: 0.8rem;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-.btn-empresa-register:hover {
-  background-color: #22C55E;
-  color: #FFFFFF;
-}
-
-.back-home {
-  display: block;
-  text-align: center;
-  margin-top: 1.5rem;
-  color: #9CA3AF;
-  text-decoration: none;
-  font-size: 0.82rem;
-}
-
-.back-home:hover { color: #22C55E; }
