@@ -38,7 +38,7 @@ body.dark-mode {
 }
 
 .nav-text-logo-img {
-  height: 210px;
+  height:52px;
   width: auto;
   object-fit: contain;
   filter: brightness(1.2);
