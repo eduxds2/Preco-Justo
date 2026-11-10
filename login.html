@@ -5,47 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preço Justo - Acesso Restrito</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #0b1110;
-            color: #e2e8f0;
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
         }
-    </style>
+    </script>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
+<body class="min-h-screen flex flex-col justify-between bg-white text-gray-900 dark:bg-[#0b1110] dark:text-gray-100 transition-colors duration-300">
 
-    <!-- Cabeçalho Minimalista com a sua Logo PNG -->
-    <header class="w-full py-6 px-8 flex justify-between items-center">
+    <!-- Cabeçalho -->
+    <header class="w-full py-6 px-8 flex justify-between items-center border-b border-gray-100 dark:border-emerald-950">
         <div class="flex items-center space-x-2">
-            <!-- Insira o nome do arquivo da sua logo em PNG no atributo src (ex: logo.png) -->
             <img src="logo.png" alt="Preço Justo Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
-            <!-- Fallback caso a imagem demore ou não carregue -->
-            <span id="fallback-logo" style="display:none;" class="text-xl font-black tracking-widest text-emerald-400 uppercase">Preço Justo</span>
+            <span id="fallback-logo" style="display:none;" class="text-xl font-black tracking-widest text-blue-600 dark:text-emerald-400 uppercase">Preço Justo</span>
         </div>
         <div>
-            <a href="index.html" class="text-xs text-emerald-500 hover:text-emerald-400 font-medium uppercase tracking-wider transition">Voltar ao Início</a>
+            <a href="index.html" class="text-xs text-blue-600 dark:text-emerald-500 hover:underline font-medium uppercase tracking-wider transition">Voltar ao Início</a>
         </div>
     </header>
 
-    <!-- Tela de Login Centralizada (Fundo Preto com Cyberpunk Verde) -->
+    <!-- Tela de Login Centralizada -->
     <main class="flex-grow flex items-center justify-center px-4 py-8">
-        <div class="max-w-md w-full bg-[#121c19] border border-emerald-900/40 p-8 rounded-2xl shadow-2xl shadow-emerald-950/50 space-y-6">
+        <div class="max-w-md w-full bg-gray-50 dark:bg-[#121c19] border border-gray-200 dark:border-emerald-900/40 p-8 rounded-2xl shadow-xl space-y-6">
             
             <div class="text-center space-y-2">
-                <h1 class="text-2xl font-bold tracking-tight text-emerald-400">Preço Justo</h1>
-                <p class="text-xs text-emerald-600 uppercase tracking-widest font-semibold">Acesse sua conta ou painel restrito</p>
+                <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-emerald-400">Preço Justo</h1>
+                <p class="text-xs text-gray-500 dark:text-emerald-600 uppercase tracking-widest font-semibold">Acesse sua conta ou painel restrito</p>
             </div>
 
             <form class="space-y-4" onsubmit="event.preventDefault(); alert('Acesso autorizado!'); window.location.href='index.html';">
                 <div>
-                    <label class="block text-xs font-bold text-emerald-500/80 uppercase mb-1">E-mail / Usuário</label>
-                    <input type="text" required placeholder="Digite seu e-mail ou nome de usuário" class="w-full px-4 py-3 rounded-xl bg-[#0b1110] border border-emerald-900/60 text-emerald-200 placeholder-emerald-800/60 focus:outline-none focus:border-emerald-500 transition text-sm">
+                    <label class="block text-xs font-bold text-gray-600 dark:text-emerald-500/80 uppercase mb-1">E-mail / Usuário</label>
+                    <input type="text" required placeholder="Digite seu e-mail ou nome de usuário" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0b1110] border border-gray-300 dark:border-emerald-900/60 text-gray-800 dark:text-emerald-200 placeholder-gray-400 dark:placeholder-emerald-800/60 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:border-emerald-500 transition text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-emerald-500/80 uppercase mb-1">Senha</label>
-                    <input type="password" required placeholder="Sua senha" class="w-full px-4 py-3 rounded-xl bg-[#0b1110] border border-emerald-900/60 text-emerald-200 placeholder-emerald-800/60 focus:outline-none focus:border-emerald-500 transition text-sm">
+                    <label class="block text-xs font-bold text-gray-600 dark:text-emerald-500/80 uppercase mb-1">Senha</label>
+                    <input type="password" required placeholder="Sua senha" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0b1110] border border-gray-300 dark:border-emerald-900/60 text-gray-800 dark:text-emerald-200 placeholder-gray-400 dark:placeholder-emerald-800/60 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:border-emerald-500 transition text-sm">
                 </div>
-                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-3 px-4 rounded-xl transition shadow-lg shadow-emerald-500/20 text-sm tracking-wide cursor-pointer">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-black font-bold py-3 px-4 rounded-xl transition shadow-lg text-sm tracking-wide cursor-pointer">
                     Entrar no Sistema
                 </button>
             </form>
@@ -53,10 +50,35 @@
         </div>
     </main>
 
+    <!-- Botão Flutuante Dark/Light Mode (Canto Inferior Esquerdo) -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button onclick="toggleTheme()" class="bg-gray-900 text-white dark:bg-emerald-500 dark:text-black p-3 rounded-full shadow-2xl flex items-center space-x-2 text-xs font-bold transition hover:scale-105 cursor-pointer">
+            <span>🌓</span>
+            <span>Alternar Tema</span>
+        </button>
+    </div>
+
     <!-- Rodapé -->
-    <footer class="w-full py-6 text-center text-xs text-emerald-900">
+    <footer class="w-full py-6 text-center text-xs text-gray-400 dark:text-emerald-900">
         &copy; 2026 Preço Justo. Painel Administrativo.
     </footer>
 
+    <!-- Script para Alternar o Tema -->
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 </body>
 </html>
