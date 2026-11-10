@@ -1,253 +1,536 @@
-/* ================================================
-   PREÇOJUSTO.COM — NOVO CABEÇALHO
-   Inspirado na estrutura visual do Booking.com
-================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
 
-/* Fundo contínuo */
 body.dark-mode {
-    background: #0B1315;
-    color: #F8FAFC;
+  background-color: #0B1315;
+  color: #F8FAFC;
 }
 
-/* Barra superior */
+/* =========================================================
+   TOPO UNIFICADO COM DEGRADÊ ELEGANTE (Estilo Booking)
+========================================================= */
 .header-booking-wrapper {
-    width: 100%;
-    background: #0B1315;
-    position: relative;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, #132225 0%, #0E1719 100%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Linha principal */
 .header {
-    width: 100%;
-    max-width: 1240px;
-    min-height: 88px;
-    margin: 0 auto;
-    padding: 14px 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Logo */
+/* LOGO DE TEXTO DO CABEÇALHO */
 .logo-brand-img-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .nav-text-logo-img {
-    height: 54px;
-    width: auto;
-    max-width: 260px;
-    object-fit: contain;
-    display: block;
-    filter: none;
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)) brightness(1.25);
 }
 
-/* Ações do cabeçalho */
+/* Ações do lado direito do cabeçalho */
 .booking-header-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .currency-display {
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 800;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .flag-icon-small {
-    width: 21px;
-    height: 21px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-/* Botões */
 .header-btn {
-    min-height: 40px;
-    padding: 0 18px;
-    border-radius: 7px;
-    font-size: 13px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s ease;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .btn-login {
-    background: #FFFFFF;
-    color: #0B1315;
-    border: 1px solid #FFFFFF;
-}
-
-.btn-login:hover {
-    background: #E5E7EB;
+  background-color: #FFFFFF;
+  color: #0B1315;
+  font-weight: 700;
 }
 
 .btn-menu {
-    background: #172629;
-    color: #FFFFFF;
-    border: 1px solid #344448;
+  background-color: #1A292C;
+  border: 1px solid #374151;
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
-/* ================================================
-   NAVEGAÇÃO DE PRODUTOS
-================================================ */
-
+/* =========================================================
+   FAIXA DE ABAS INTEGRADA NO MESMO BLOCO DO TOPO
+========================================================= */
 .header-nav-tabs {
-    width: 100%;
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 24px 16px;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.header-nav-tabs::-webkit-scrollbar {
-    display: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 0.8rem 2rem;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
 }
 
 .tab-btn {
-    flex-shrink: 0;
-    background: transparent;
-    border: 1px solid transparent;
-    color: #CBD5E1;
-
-    padding: 11px 17px;
-    border-radius: 7px;
-
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-    cursor: pointer;
-
-    transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 
 .tab-btn:hover {
-    color: #FFFFFF;
-    background: rgba(255,255,255,0.07);
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .tab-btn.active {
-    color: #FFFFFF;
-    background: #19302D;
-    border-color: #22C55E;
+  background-color: #1A292C;
+  color: #FFFFFF;
+  border: 1px solid #374151;
 }
 
-/* ================================================
-   ÁREA PRINCIPAL
-================================================ */
-
+/* =========================================================
+   HERO SECTION COM TRANSIÇÃO SUAVE E DEGRADÊ
+========================================================= */
 body.dark-mode .hero-section {
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(25, 65, 54, 0.45) 0%,
-            rgba(11, 19, 21, 0) 72%
-        ),
-        #0B1315;
+  background: radial-gradient(circle at 50% 0%, #162B28 0%, #0B1315 75%);
 }
 
-.hero-section {
-    padding: 42px 24px 55px;
-}
-
-.search-container {
-    max-width: 1120px;
-    width: 100%;
-    margin: 0 auto;
-}
+.hero-section { padding: 3rem 1rem 4rem 1rem; }
 
 .hero-brand-header {
-    max-width: 900px;
-    margin: 0 auto 30px;
-}
-
-.hero-brand-header h1 {
-    font-size: clamp(28px, 3vw, 38px) !important;
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: #FFFFFF;
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto 2rem auto;
 }
 
 .hero-subtitle {
-    font-size: 15px !important;
-    color: #A3B2B5 !important;
+  color: #9CA3AF;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
 }
 
-/* Card de pesquisa */
+.search-container { max-width: 980px; margin: 0 auto; }
+
+body.dark-mode .search-card, 
+body.dark-mode .content-card, 
+body.dark-mode .guest-modal, 
+body.dark-mode .login-card,
+body.dark-mode .login-card-elegant {
+  background-color: #111C1E;
+  border: 1px solid #1F2937;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
 .search-card {
-    width: 100%;
-    border-radius: 14px;
-    padding: 25px;
-    background: #111C1E;
-    border: 1px solid #263638;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+  border-radius: 16px;
+  padding: 1.8rem;
 }
 
 .search-card-header {
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.search-card-header h2 { font-size: 1.3rem; font-weight: 800; }
+
+.trip-options { display: flex; gap: 0.5rem; }
+
+.radio-pill {
+  border: 1px solid #374151;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.radio-pill.active {
+  background-color: #15803D;
+  color: #FFFFFF;
+  border-color: #22C55E;
+}
+
+.radio-pill input { display: none; }
+
+body.dark-mode .search-inputs-grid {
+  border: 1px solid #374151;
+  background-color: #111C1E;
 }
 
 .search-inputs-grid {
-    min-height: 66px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
 }
 
-/* ================================================
-   RESPONSIVIDADE
-================================================ */
+.flex-2 { flex: 2; min-width: 180px; }
 
-@media (max-width: 700px) {
-
-    .header {
-        min-height: 72px;
-        padding: 12px 16px;
-    }
-
-    .nav-text-logo-img {
-        height: 43px;
-        max-width: 190px;
-    }
-
-    .booking-header-right {
-        gap: 9px;
-    }
-
-    .header-nav-tabs {
-        padding: 0 12px 12px;
-        gap: 4px;
-    }
-
-    .tab-btn {
-        padding: 9px 12px;
-        font-size: 12px;
-    }
-
-    .hero-section {
-        padding: 30px 14px 40px;
-    }
-
-    .search-card {
-        padding: 17px;
-    }
-
-    .search-inputs-grid {
-        flex-wrap: wrap;
-    }
-
-    .btn-submit-search {
-        width: 100%;
-    }
+.input-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+.box-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9CA3AF;
+  text-transform: uppercase;
+}
+
+body.dark-mode input, 
+body.dark-mode select {
+  color: #FFFFFF;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  padding-top: 0.2rem;
+  background: transparent;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.date-input-clean {
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  padding-top: 0.2rem;
+  background: transparent;
+  cursor: pointer;
+  color: #FFFFFF;
+  color-scheme: dark;
+  width: 100%;
+}
+
+.input-box input[type="date"] {
+  color-scheme: dark;
+}
+
+.btn-swap {
+  background: transparent;
+  border: 1px solid #374151;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.btn-submit-search {
+  background-color: #22C55E;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-submit-search:hover { background-color: #16A34A; }
+
+.relative-box { position: relative; }
+
+.guest-modal {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 310px;
+  border-radius: 16px;
+  padding: 1.2rem;
+  z-index: 500;
+}
+
+.modal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.counter-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-counter {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #22C55E;
+  background: transparent;
+  color: #22C55E;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.counter-value {
+  width: 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid #374151;
+  margin: 1rem 0;
+}
+
+.modal-checkbox-row label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.modal-footer-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.btn-redefinir {
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-confirmar {
+  background-color: #22C55E;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main-body {
+  max-width: 980px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.section-block { margin-bottom: 2.5rem; }
+.mt-4 { margin-top: 3rem; }
+.text-center { text-align: center; }
+
+.section-block-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.section-block-subtitle {
+  font-size: 0.88rem;
+  color: #9CA3AF;
+  margin-bottom: 1.5rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.content-card {
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-card img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 0.82rem;
+  color: #9CA3AF;
+  margin-bottom: 8px;
+}
+
+.price-box { margin-top: 10px; }
+.price-label { font-size: 0.75rem; color: #9CA3AF; }
+
+.price-amount {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #22C55E;
+}
+
+.remessa-tag {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  border-top: 1px solid #1F2937;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.frota-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #15803D;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.feature-text h4 { font-size: 0.95rem; font-weight: 700; }
+.feature-text p { font-size: 0.8rem; color: #9CA3AF; }
+
+.airline-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.airline-card {
+  background-color: #111C1E;
+  border: 1px solid #1F2937;
+  padding: 1.2rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.airline-img {
+  width: 100%;
+  max-width: 180px;
+  height: 100%;
+  max-height: 75px;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.faq-card { padding: 1.4rem; }
+.faq-card h4 { font-size: 1rem; margin-bottom: 0.6rem; }
+.faq-card p { font-size: 0.85rem; color: #9CA3AF; line-height: 1.4; }
+
+body.dark-mode .footer {
+  background-color: #050B0C;
+  color: #6B7280;
+}
+
+.footer {
+  background-color: #050B0C;
+  color: #9CA3AF;
+  padding: 3.5rem 1rem;
+  margin-top: 5rem;
+  border-top: 1px solid #1F2937;
+}
+
+.footer-container {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-logo { color: white; font-size: 1.15rem; margin-bottom: 0.5rem; }
+.footer a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; line-height: 2; }
+.footer a:hover { color: #22C55E; }
