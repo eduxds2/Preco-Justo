@@ -6,7 +6,7 @@
   <title>PREÇO JUSTO | Comparador de Viagens e Hospedagens</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body class="dark-mode">
+<body class="light-mode">
 
   <!-- Header Navbar Limpo com a Sua Logo -->
   <header class="header">
@@ -19,21 +19,21 @@
     <div class="header-nav-actions">
       <button class="header-btn">🌐 PT · R$</button>
       <a href="login.html" class="header-btn btn-login">👤 Fazer login</a>
-      <button class="header-btn" onclick="toggleTheme()" id="btnThemeToggle">☀️ Modo</button>
+      <button class="header-btn" onclick="toggleTheme()" id="btnThemeToggle">🌙 Modo</button>
     </div>
   </header>
 
-  <!-- Hero principal de busca com o Logo 3D em Destaque -->
+  <!-- Hero principal -->
   <section class="hero-section">
     <div class="search-container">
       
-      <!-- Logo Oficial em Destaque no Hero (Substituindo o Texto da Img 2) -->
+      <!-- Banner com a Logo Oficial 3D -->
       <div class="hero-logo-banner">
         <img src="./logo.png" alt="Preço Justo" class="hero-logo-img">
         <p class="hero-subtitle">Voe com tarifas justas e mais economia para chegar onde importa.</p>
       </div>
 
-      <!-- Navegação por Abas -->
+      <!-- Navegação por Abas Principais -->
       <div class="tabs-container">
         <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
         <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
@@ -46,7 +46,7 @@
       <!-- Card Central de Busca -->
       <div class="search-card">
         
-        <!-- FORMULÁRIO GERAL -->
+        <!-- FORMULÁRIO GERAL (Monte / Voos / Pacotes / Carros / Seguros) -->
         <div id="formGeral">
           <div class="search-card-header">
             <h2 id="searchCardTitle">Pesquisar viagens</h2>
@@ -94,12 +94,12 @@
               <input type="text" id="stayDatas" placeholder="1 de mar. - 2 de mar.">
             </div>
 
-            <!-- Campo de Hóspedes que Abre o Modal -->
+            <!-- Campo de Hóspedes -->
             <div class="input-box flex-2 relative-box">
               <span class="box-label">HÓSPEDES E QUARTOS</span>
               <input type="text" id="stayOcupacaoInput" value="2 hóspedes, 1 quarto" readonly onclick="toggleModalHospedes()">
               
-              <!-- Modal de Hóspedes -->
+              <!-- Modal Popover -->
               <div class="guest-modal" id="guestModal" style="display:none;">
                 <div class="modal-row">
                   <div class="modal-label"><strong>Adultos</strong></div>
@@ -151,19 +151,10 @@
     </div>
   </section>
 
-  <!-- Conteúdo Principal -->
-  <main class="main-body">
-    <section class="results-section">
-      <div class="section-title-box">
-        <h2 id="resultsCategoryTitle">Melhores ofertas de Hospedagem & Voos</h2>
-        <p>Preços atualizados em tempo real nos nossos parceiros</p>
-      </div>
+  <!-- Conteúdo Dinâmico por Aba -->
+  <main class="main-body" id="mainBodyContent"></main>
 
-      <div class="offers-grid" id="offersContainer"></div>
-    </section>
-  </main>
-
-  <!-- Rodapé -->
+  <!-- Rodapé Institucional Escuro -->
   <footer class="footer">
     <div class="footer-container">
       <div>
