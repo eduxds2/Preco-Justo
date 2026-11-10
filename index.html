@@ -3,33 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preçojusto.com | Site Oficial | Tarifas justas e mais economia</title>
+  <title>Precojusto.com | Site Oficial | Tarifas justas e mais economia</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
   <link rel="shortcut icon" type="image/png" href="./logo.png">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="dark-mode">
 
-  <!-- Header Navbar estilo Booking -->
+  <!-- Header Navbar estilo Booking com texto totalmente em branco e bandeira menor -->
   <header class="header">
     <div class="header-logo">
-      <a href="index.html" class="logo-brand-img-link">
-        <img src="./logo-texto.png" alt="Preçojusto.com" class="nav-text-logo-img">
+      <a href="index.html" class="logo-text-brand-pure">
+        precojusto.com
       </a>
     </div>
 
     <div class="header-nav-actions booking-header-right">
       <span class="currency-display">BRL</span>
       <img src="https://flagcdn.com/w40/br.png" alt="Brasil" class="flag-icon-small">
-      
-      <!-- Espaço reservado para o botão dinâmico (Login ou Menu) -->
-      <div id="authActionContainer">
-        <a href="login.html" class="header-btn btn-login">Fazer login</a>
-      </div>
+      <a href="login.html" class="header-btn btn-login">Fazer login</a>
     </div>
   </header>
 
-  <!-- Hero Banner com Abas Limpas -->
+  <!-- Hero Banner com Abas limpas (Sem emojis) -->
   <section class="hero-section">
     <div class="search-container">
       
@@ -39,7 +35,7 @@
         <p class="hero-subtitle" style="font-size: 1.05rem; color: #9CA3AF;">Compare voos, hotéis, carros e seguros com total transparência e economia.</p>
       </div>
 
-      <!-- Navegação por Abas -->
+      <!-- Navegação por Abas (Sem Emojis) -->
       <div class="tabs-container booking-tabs">
         <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
         <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
@@ -95,14 +91,9 @@
               <input type="text" id="stayDestino" placeholder="Para onde você vai?">
             </div>
 
-            <div class="input-box">
-              <span class="box-label">ENTRADA (CHECK-IN)</span>
-              <input type="date" id="stayDataEntrada" class="date-input-clean">
-            </div>
-
-            <div class="input-box">
-              <span class="box-label">SAÍDA (CHECK-OUT)</span>
-              <input type="date" id="stayDataSaida" class="date-input-clean">
+            <div class="input-box flex-2">
+              <span class="box-label">ENTRADA / SAÍDA</span>
+              <input type="date" id="stayDatas" style="color: #FFFFFF; background: transparent; border: none; outline: none; font-size: 0.95rem; cursor: pointer;">
             </div>
 
             <div class="input-box flex-2 relative-box">
@@ -312,22 +303,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Script para alternar entre "Fazer login" e o botão "Menu" com base no login -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      const jaLogado = localStorage.getItem('usuarioLogado') === 'true';
-      const container = document.getElementById('authActionContainer');
-
-      if (jaLogado) {
-        container.innerHTML = `
-          <button class="header-btn btn-menu" onclick="alert('Menu do usuário aberto!')">
-            <span class="menu-icon">☰</span> Menu
-          </button>
-        `;
-      }
-    });
-  </script>
 
   <script src="./script.js"></script>
 </body>
