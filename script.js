@@ -1,55 +1,34 @@
-const hoteis = [
+// Dados simulados de hospedagens e voos
+const ofertas = [
   {
     id: 1,
-    nome: "Arraial Bangalô Praia Hotel",
-    cidade: "Porto Seguro",
+    tipo: "hospedagem",
+    titulo: "Hotel & Resort Vista Mar",
+    localizacao: "Santo André, SP • 500m do centro",
+    nota: 4.9,
+    preco: 280.00,
     imagem: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80",
-    nota: 8.3,
-    avaliacaoTexto: "Muito bom",
-    avaliacoesCount: "4.127",
-    descontoBadge: "12% mais barato que outros sites",
-    preco: 761.00,
-    parceiro: "Outrip",
-    cancelamentoGratuito: true
+    linkParceiro: "https://www.booking.com"
   },
   {
     id: 2,
-    nome: "Hotel Solar do Imperador",
-    cidade: "Porto Seguro",
+    tipo: "hospedagem",
+    titulo: "Pousada Cantinho da Serra",
+    localizacao: "Serra da Mantiqueira, SP",
+    nota: 4.7,
+    preco: 190.00,
     imagem: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80",
-    nota: 8.4,
-    avaliacaoTexto: "Muito bom",
-    avaliacoesCount: "6.371",
-    descontoBadge: "22% mais barato que outros sites",
-    preco: 328.00,
-    parceiro: "Decolar",
-    cancelamentoGratuito: true
+    linkParceiro: "https://www.booking.com"
   },
   {
     id: 3,
-    nome: "Hotel Recanto Do Sol",
-    cidade: "Porto Seguro",
-    imagem: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=500&q=80",
-    nota: 7.1,
-    avaliacaoTexto: "Bom",
-    avaliacoesCount: "1.019",
-    descontoBadge: "Caiu R$ 17",
-    preco: 153.00,
-    parceiro: "Decolar",
-    cancelamentoGratuito: true
-  },
-  {
-    id: 4,
-    nome: "Mont Hebron",
-    cidade: "Porto Seguro",
-    imagem: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=500&q=80",
-    nota: 9.2,
-    avaliacaoTexto: "Excelente",
-    avaliacoesCount: "532",
-    descontoBadge: "Caiu R$ 95",
-    preco: 329.00,
-    parceiro: "Booking.com",
-    cancelamentoGratuito: true
+    tipo: "voos",
+    titulo: "Voo São Paulo (GRU) ➔ Porto Seguro (BPS)",
+    localizacao: "Ida e Volta • Direto",
+    nota: 4.8,
+    preco: 450.00,
+    imagem: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80",
+    linkParceiro: "https://www.latamairlines.com"
   }
 ];
 
@@ -57,92 +36,77 @@ function formatarMoeda(valor) {
   return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-// Redireciona da Home para a página de busca
-function irParaBusca(destino) {
-  const termo = destino || document.getElementById('homeSearchInput')?.value || 'Porto Seguro';
-  window.location.href = `busca.html?q=${encodeURIComponent(termo)}`;
-}
-
-// Renderiza mini-cards na Home
-function renderizarOfertasHome() {
-  const container = document.getElementById('homeOffersGrid');
-  if (!container) return;
-
-  container.innerHTML = '';
-  hoteis.forEach(hotel => {
-    container.innerHTML += `
-      <div class="mini-offer-card" onclick="irParaBusca('${hotel.cidade}')">
-        <img src="${hotel.imagem}" alt="${hotel.nome}">
-        <div class="mini-offer-body">
-          <span class="tag-red">${hotel.descontoBadge}</span>
-          <h4 style="margin-top:6px; font-size:0.9rem;">${hotel.nome}</h4>
-          <p style="font-size:0.75rem; color:#64748B;">★ ${hotel.nota} ${hotel.avaliacaoTexto}</p>
-          <div class="mini-price">${formatarMoeda(hotel.preco)} <span style="font-size:0.7rem; font-weight:normal;">/diária</span></div>
-        </div>
-      </div>
-    `;
-  });
-}
-
-// Renderiza busca completa em busca.html
-function renderizarResultadosBusca(lista) {
+function renderizarOfertas(lista) {
   const container = document.getElementById('offersContainer');
   if (!container) return;
 
   container.innerHTML = '';
-  lista.forEach(hotel => {
+  if (lista.length === 0) {
+    container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #6B7280;">Nenhuma oferta encontrada para esta pesquisa.</p>`;
+    return;
+  }
+
+  lista.forEach(item => {
     container.innerHTML += `
-      <div class="hotel-card">
-        <div class="hotel-img-container">
-          <img src="${hotel.imagem}" alt="${hotel.nome}" class="hotel-img">
-        </div>
-        <div class="hotel-details">
-          <h2>${hotel.nome}</h2>
-          <p style="color:#059669; font-weight:bold; font-size:0.85rem;">★ ${hotel.nota} (${hotel.avaliacaoTexto})</p>
-          <p style="font-size:0.8rem; color:#64748B;">📍 ${hotel.cidade}, Brasil</p>
-        </div>
-        <div class="hotel-pricing">
-          <div class="best-deal-box">
-            <span style="font-size:0.75rem; font-weight:bold; color:#065F46;">${hotel.parceiro}</span>
-            <div style="font-size:1.3rem; font-weight:bold; color:#065F46;">${formatarMoeda(hotel.preco)}</div>
-            <button onclick="window.open('https://www.booking.com', '_blank')" class="btn-green-deal">Ver oferta ❯</button>
+      <div class="offer-card">
+        <img src="${item.imagem}" alt="${item.titulo}">
+        <div class="offer-body">
+          <h3 class="offer-title">${item.titulo}</h3>
+          <p class="offer-location">${item.localizacao}</p>
+          <p style="font-size:0.85rem; color:#F59E0B;">★ ${item.nota}</p>
+          <div style="margin-top: 10px;">
+            <span style="font-size:0.75rem; color:#6B7280;">A partir de</span>
+            <div class="offer-price">${formatarMoeda(item.preco)}</div>
           </div>
+          <button onclick="window.open('${item.linkParceiro}', '_blank')" class="btn-reserve">Ver Oferta ❯</button>
         </div>
       </div>
     `;
   });
 }
 
-function aplicarFiltrosSidebar() {
-  const cancelamento = document.getElementById('chkCancelamento')?.checked;
-  const pMin = parseFloat(document.getElementById('priceMin')?.value) || 0;
-  const pMax = parseFloat(document.getElementById('priceMax')?.value) || 99999;
+// Troca de Abas do Hero
+function trocarAba(categoria) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
 
-  const filtrados = hoteis.filter(h => {
-    const okCanc = !cancelamento || h.cancelamentoGratuito;
-    const okPrice = h.preco >= pMin && h.preco <= pMax;
-    return okCanc && okPrice;
-  });
+  const title = document.getElementById('searchCardTitle');
+  const options = document.getElementById('tripOptions');
 
-  renderizarResultadosBusca(filtrados);
+  if (categoria === 'voos' || categoria === 'monte') {
+    title.innerText = "Para onde você quer ir?";
+    options.style.display = "flex";
+  } else if (categoria === 'hospedagem') {
+    title.innerText = "Encontre seu hotel ou pousada ideal";
+    options.style.display = "none";
+  } else {
+    title.innerText = `Pesquisar ${categoria}`;
+    options.style.display = "none";
+  }
 }
 
-function filtrarBuscaPagina() {
-  const term = document.getElementById('buscaSearchInput').value.toLowerCase();
-  const filtrados = hoteis.filter(h => h.nome.toLowerCase().includes(term) || h.cidade.toLowerCase().includes(term));
-  renderizarResultadosBusca(filtrados);
+function inverterDestinos() {
+  const orig = document.getElementById('inputOrigem');
+  const dest = document.getElementById('inputDestino');
+  const temp = orig.value;
+  orig.value = dest.value;
+  dest.value = temp;
+}
+
+function realizarPesquisa() {
+  const termo = document.getElementById('inputDestino')?.value.toLowerCase();
+  if (!termo) {
+    renderizarOfertas(ofertas);
+    return;
+  }
+
+  const filtrados = ofertas.filter(o => 
+    o.titulo.toLowerCase().includes(termo) || 
+    o.localizacao.toLowerCase().includes(termo)
+  );
+  renderizarOfertas(filtrados);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderizarOfertasHome();
-
-  // Caso esteja em busca.html
-  if (window.location.pathname.includes('busca.html')) {
-    const params = new URLSearchParams(window.location.search);
-    const query = params.get('q');
-    if (query && document.getElementById('buscaSearchInput')) {
-      document.getElementById('buscaSearchInput').value = query;
-    }
-    filtrarBuscaPagina();
-  }
+  renderizarOfertas(ofertas);
 });
