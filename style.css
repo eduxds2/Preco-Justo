@@ -78,14 +78,18 @@ body.dark-mode .footer {
 }
 
 /* =========================================================
-   ESTILO DA MARCA TEXTUAL NO CABEÇALHO (Estilo Booking)
+   ESTILO DA LOGO DO CABEÇALHO (Mala logo.png)
 ========================================================= */
-.logo-text-brand-pure {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  text-decoration: none;
-  letter-spacing: -0.5px;
+.logo-brand-img-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-text-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.2);
 }
 
 /* Container da moeda e bandeira pequena no Header */
@@ -223,6 +227,18 @@ body.dark-mode .footer {
   background: transparent;
   cursor: pointer;
   color: #FFFFFF;
+}
+
+.date-input-clean {
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  padding-top: 0.2rem;
+  background: transparent;
+  cursor: pointer;
+  color: #FFFFFF;
+  color-scheme: dark;
+  width: 100%;
 }
 
 .input-box input[type="date"] {
@@ -446,9 +462,6 @@ body.dark-mode .footer {
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #9CA3AF; }
 
-/* =========================================================
-   LOGOS DAS COMPANHIAS AÉREAS - GRANDES E UNIFORMES
-========================================================= */
 .airline-logos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -475,6 +488,17 @@ body.dark-mode .footer {
   max-height: 75px;
   object-fit: contain;
   filter: brightness(1.2);
+}
+
+/* =========================================================
+   TAMANHO PADRÃO (GOL fica com este tamanho original)
+========================================================= */
+
+/* =========================================================
+   AZUL, LATAM E COPA COM EXATAMENTE 68px
+========================================================= */
+.airline-img.logo-ajustada {
+  max-height: 68px !important;
 }
 
 .faq-grid {
@@ -506,9 +530,3 @@ body.dark-mode .footer {
 .footer-logo { color: white; font-size: 1.15rem; margin-bottom: 0.5rem; }
 .footer a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; line-height: 2; }
 .footer a:hover { color: #22C55E; }
-.nav-text-logo-img {
-  height: 68px; /* Podes ajustar este valor para mais (ex: 52px) ou menos (ex: 42px) */
-  width: auto;
-  object-fit: contain;
-  filter: brightness(1.2);
-}
