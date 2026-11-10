@@ -78,14 +78,18 @@ body.dark-mode .footer {
 }
 
 /* =========================================================
-   ESTILO DA MARCA TEXTUAL NO CABEÇALHO (Estilo Booking)
+   ESTILO DA ARTE TEXTUAL NO CABEÇALHO (Imagem)
 ========================================================= */
-.logo-text-brand-pure {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  text-decoration: none;
-  letter-spacing: -0.5px;
+.logo-brand-img-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-text-logo-img {
+  height: 42px; /* Altura ideal para ficar grande e nítida no header */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.2); /* Deixa o texto bem branco e destacado no fundo escuro */
 }
 
 /* Container da moeda e bandeira pequena no Header */
