@@ -6,7 +6,6 @@
   <title>Login | PREÇO JUSTO</title>
   <link rel="stylesheet" href="./style.css">
   <style>
-    /* Estilos Específicos da Tela de Login Elegante */
     .login-page-wrapper {
       min-height: 85vh;
       display: flex;
@@ -20,7 +19,7 @@
       background-color: #111C1E;
       border: 1px solid #1F2937;
       border-radius: 20px;
-      padding: 3rem 2.5rem;
+      padding: 2.8rem 2.5rem;
       width: 100%;
       max-width: 440px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -28,26 +27,73 @@
 
     .login-header-brand {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
+    /* Logo maior conforme pedido */
     .login-header-brand img {
-      max-width: 180px;
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
       margin-bottom: 0.8rem;
     }
 
-    .login-header-brand h2 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #FFFFFF;
-      letter-spacing: -0.5px;
+    .login-header-brand p {
+      font-size: 0.88rem;
+      color: #9CA3AF;
+      margin-top: 0.2rem;
     }
 
-    .login-header-brand p {
-      font-size: 0.85rem;
-      color: #9CA3AF;
-      margin-top: 0.3rem;
+    /* Botões Sociais (Google, Apple, etc.) */
+    .social-login-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
     }
+
+    .btn-social {
+      background-color: #0E1719;
+      border: 1px solid #374151;
+      color: #FFFFFF;
+      padding: 0.75rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-social:hover {
+      background-color: #1A292C;
+      border-color: #22C55E;
+    }
+
+    .divider-or {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #6B7280;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin: 1.2rem 0;
+      font-weight: 700;
+    }
+
+    .divider-or::before, .divider-or::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #1F2937;
+    }
+
+    .divider-or::before { margin-right: .75em; }
+    .divider-or::after { margin-left: .75em; }
 
     .login-form-group {
       margin-bottom: 1.2rem;
@@ -88,7 +134,7 @@
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
-      margin-top: 0.8rem;
+      margin-top: 0.5rem;
       transition: background-color 0.2s;
     }
 
@@ -117,13 +163,13 @@
     .divider-line {
       border: none;
       border-top: 1px solid #1F2937;
-      margin: 1.8rem 0;
+      margin: 1.5rem 0;
     }
 
     .empresa-action-box {
       background-color: #0E1719;
       border: 1px solid #1F2937;
-      padding: 1.2rem;
+      padding: 1.1rem;
       border-radius: 12px;
       text-align: center;
     }
@@ -156,7 +202,7 @@
     .back-home-link {
       display: block;
       text-align: center;
-      margin-top: 1.5rem;
+      margin-top: 1.4rem;
       color: #9CA3AF;
       text-decoration: none;
       font-size: 0.85rem;
@@ -176,14 +222,25 @@
         <a href="index.html">
           <img src="./logo.png" alt="Preço Justo Logo">
         </a>
-        <h2>Bem-vindo de volta</h2>
-        <p>Insira suas credenciais para gerenciar sua viagem</p>
+        <p>Faça login para gerenciar suas viagens</p>
       </div>
+
+      <!-- Login Social -->
+      <div class="social-login-grid">
+        <button type="button" class="btn-social" onclick="alert('Login com Google em desenvolvimento')">
+          🌐 Google
+        </button>
+        <button type="button" class="btn-social" onclick="alert('Login com Apple em desenvolvimento')">
+           Apple
+        </button>
+      </div>
+
+      <div class="divider-or">ou continue com e-mail</div>
 
       <form onsubmit="realizarLogin(event)">
         <div class="login-form-group">
-          <label>E-mail ou Nome</label>
-          <input type="text" id="loginUsuario" placeholder="ex: admin ou seu@email.com" required>
+          <label>Seu nome ou @email.com</label>
+          <input type="text" id="loginUsuario" placeholder="Seu nome ou @email.com" required>
         </div>
 
         <div class="login-form-group">
@@ -191,7 +248,7 @@
           <input type="password" id="loginSenha" placeholder="••••••••" required>
         </div>
 
-        <button type="submit" class="btn-login-action">Entrar na Conta</button>
+        <button type="submit" class="btn-login-action">Entrar</button>
       </form>
 
       <div class="login-links-row">
@@ -217,7 +274,7 @@
       const usuario = document.getElementById('loginUsuario').value.trim();
       const senha = document.getElementById('loginSenha').value.trim();
 
-      if (usuario === 'admin' && senha === 'admin') {
+      if (usuario.toLowerCase() === 'admin' && senha === 'admin') {
         alert('Login de Administrador efetuado com sucesso!');
         window.location.href = 'index.html?admin=true';
       } else {
