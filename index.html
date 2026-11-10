@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO</title>
+  <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="dark-mode">
@@ -272,6 +272,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- Script de Redirecionamento Automático após 8 segundos -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.has('admin')) {
+      setTimeout(function() {
+        window.location.href = 'login.html';
+      }, 8000); // 8000 ms = 8 segundos
+    }
+  </script>
 
   <script src="./script.js"></script>
 </body>
