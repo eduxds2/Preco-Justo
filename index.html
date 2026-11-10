@@ -6,7 +6,7 @@
   <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body class="light-mode">
+<body class="dark-mode">
 
   <!-- Header Navbar -->
   <header class="header">
@@ -19,7 +19,6 @@
     <div class="header-nav-actions">
       <button class="header-btn">PT · R$</button>
       <a href="login.html" class="header-btn btn-login">Fazer login</a>
-      <button class="header-btn btn-theme" onclick="toggleTheme()" id="btnThemeToggle">Modo Escuro</button>
     </div>
   </header>
 
@@ -93,7 +92,6 @@
               <input type="text" id="stayDatas" placeholder="1 de mar. - 2 de mar.">
             </div>
 
-            <!-- Hóspedes Popover -->
             <div class="input-box flex-2 relative-box">
               <span class="box-label">HÓSPEDES E QUARTOS</span>
               <input type="text" id="stayOcupacaoInput" value="2 hóspedes, 1 quarto" readonly onclick="toggleModalHospedes()">
@@ -205,16 +203,11 @@
       </section>
     </div>
 
-    <!-- 3. BLOCO DE VOOS E PACOTES -->
+    <!-- 3. BLOCO DE VOOS E PACOTES (Apenas Parceiros e Destaques) -->
     <div id="viewVoos" class="tab-content" style="display:none;">
       <section class="section-block">
-        <h2 class="section-block-title">🌅 Passagens Aéreas - Nordeste do Brasil</h2>
-        <p class="section-block-subtitle">Garanta sua passagem para o paraíso</p>
-        <div class="cards-grid" id="voosGrid"></div>
-      </section>
-
-      <section class="section-block mt-4">
         <h2 class="section-block-title">Companhias Aéreas Parceiras</h2>
+        <p class="section-block-subtitle">Compare as melhores tarifas do mercado em tempo real</p>
         <div class="company-logos-row content-card">
           <span class="company-logo-item">LATAM AIRLINES</span>
           <span class="company-logo-item">GOL</span>
