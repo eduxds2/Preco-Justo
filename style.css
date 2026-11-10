@@ -3,176 +3,219 @@
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-body {
-  background-color: #F3F4F6;
-  color: #1F2937;
+/* ☀️ TEMA CLARO (Default) */
+body.light-mode {
+  background-color: #F8FAFC;
+  color: #0F172A;
 }
 
-/* Hero Background Escuro */
-.hero-header-bg {
+body.light-mode .header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+body.light-mode .nav-link {
+  color: #475569;
+}
+
+body.light-mode .btn-icon, body.light-mode .btn-theme-toggle {
+  background: #F1F5F9;
+  color: #0F172A;
+}
+
+body.light-mode .hero-section {
+  background-color: #F1F5F9;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+body.light-mode .tabs-container {
+  background-color: #E2E8F0;
+}
+
+body.light-mode .tab-btn {
+  color: #475569;
+}
+
+body.light-mode .tab-btn.active {
+  background-color: #FFFFFF;
+  color: #2563EB;
+  border-bottom: 3px solid #2563EB;
+}
+
+body.light-mode .search-card, body.light-mode .offer-card, body.light-mode .car-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .search-inputs-grid, body.light-mode .cvc-car-inputs-grid {
+  border: 1px solid #CBD5E1;
+  background-color: #FFFFFF;
+}
+
+body.light-mode .footer {
+  background-color: #0F172A;
+  color: #94A3B8;
+}
+
+/* 🌙 TEMA ESCURO (Dark Mode) */
+body.dark-mode {
+  background-color: #0B1315;
+  color: #F3F4F6;
+}
+
+body.dark-mode .header {
+  background-color: #111C1E;
+  border-bottom: 1px solid #1F2937;
+}
+
+body.dark-mode .nav-link {
+  color: #D1D5DB;
+}
+
+body.dark-mode .btn-icon, body.dark-mode .btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+body.dark-mode .hero-section {
   background-color: #0E1719;
-  background-image: radial-gradient(circle at 70% 30%, #1A2E2B 0%, #0E1719 70%);
-  padding-bottom: 4rem;
-  position: relative;
 }
 
-/* Header */
+body.dark-mode .tabs-container {
+  background-color: #121E20;
+}
+
+body.dark-mode .tab-btn {
+  color: #9CA3AF;
+}
+
+body.dark-mode .tab-btn.active {
+  background-color: #1A292C;
+  color: #22C55E;
+  border-bottom: 3px solid #22C55E;
+}
+
+body.dark-mode .search-card, body.dark-mode .offer-card, body.dark-mode .car-card {
+  background-color: #111C1E;
+  border: 1px solid #1F2937;
+}
+
+body.dark-mode .search-inputs-grid, body.dark-mode .cvc-car-inputs-grid {
+  border: 1px solid #374151;
+  background-color: #111C1E;
+}
+
+body.dark-mode input {
+  color: #FFFFFF;
+}
+
+body.dark-mode .footer {
+  background-color: #050B0C;
+  color: #6B7280;
+}
+
+/* Header Estrutura */
 .header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
+.custom-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.text-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.logo-icon {
-  font-size: 1.8rem;
-}
-
-.logo-text {
-  color: #FFFFFF;
+  gap: 6px;
   font-size: 1.2rem;
-  line-height: 1.1;
-  font-weight: 300;
 }
 
-.logo-text strong {
-  color: #22C55E;
-  font-weight: 800;
+.logo-brand strong {
+  color: #2563EB;
 }
 
 .header-nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-link {
-  background: none;
-  border: none;
-  color: #E5E7EB;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   cursor: pointer;
   text-decoration: none;
 }
 
-.nav-link:hover {
-  color: #22C55E;
-}
-
 .header-actions {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.btn-icon {
-  background: rgba(255, 255, 255, 0.1);
+.btn-icon, .btn-theme-toggle {
   border: none;
-  color: white;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
   text-decoration: none;
 }
 
-.btn-icon:hover {
-  background: rgba(34, 197, 94, 0.2);
+/* Hero & Abas */
+.hero-section {
+  padding: 2rem 1rem;
 }
 
-/* Intro Banner */
-.banner-intro {
-  max-width: 1200px;
-  margin: 2rem auto 3rem auto;
-  padding: 0 2rem;
-}
-
-.brand-title {
-  color: #FFFFFF;
-  font-size: 4rem;
-  line-height: 0.95;
-  font-weight: 300;
-  letter-spacing: -1px;
-}
-
-.brand-title .highlight {
-  color: #22C55E;
-  font-weight: 800;
-}
-
-.brand-sub {
-  color: #9CA3AF;
-  max-width: 320px;
-  margin-top: 1rem;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* Navegação por Abas */
-.tabs-container {
+.search-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1rem;
+}
+
+.tabs-container {
   display: flex;
-  background: #111C1E;
   border-radius: 12px 12px 0 0;
   overflow-x: auto;
 }
 
 .tab-btn {
   flex: 1;
-  background: transparent;
-  border: none;
-  color: #9CA3AF;
-  padding: 1rem 0.8rem;
-  font-size: 0.9rem;
+  padding: 0.9rem 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 3px solid transparent;
-  transition: all 0.2s;
 }
 
-.tab-btn.active, .tab-btn:hover {
-  color: #FFFFFF;
-  background: #1A282B;
-  border-bottom-color: #22C55E;
-}
-
-/* Card de Busca Principal */
 .search-card {
-  max-width: 1100px;
-  margin: 0 auto;
-  background: #FFFFFF;
-  border-radius: 0 0 20px 20px;
-  padding: 2rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 16px 16px;
+  padding: 1.5rem;
 }
 
 .search-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .search-card-header h2 {
-  font-size: 1.4rem;
-  color: #111827;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
@@ -182,217 +225,158 @@ body {
 }
 
 .radio-pill {
-  border: 1px solid #E5E7EB;
-  padding: 0.4rem 1rem;
+  border: 1px solid #CBD5E1;
+  padding: 0.4rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.85rem;
-  color: #374151;
+  font-size: 0.8rem;
   cursor: pointer;
   font-weight: 600;
 }
 
 .radio-pill.active {
-  border-color: #22C55E;
-  background-color: #F0FDF4;
-  color: #15803D;
-}
-
-.radio-pill input {
-  display: none;
+  background-color: #2563EB;
+  color: white;
+  border-color: #2563EB;
 }
 
 .search-inputs-grid {
   display: flex;
   align-items: center;
-  border: 1px solid #D1D5DB;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 0.5rem 1rem;
   gap: 1rem;
+}
+
+/* Formulário de Carros CVC */
+.cvc-car-inputs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  gap: 0.8rem;
+}
+
+.flex-2 {
+  flex: 2;
+  min-width: 220px;
 }
 
 .input-box {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-width: 120px;
 }
 
 .box-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #6B7280;
+  color: #64748B;
+  text-transform: uppercase;
 }
 
 .input-box input {
   border: none;
   outline: none;
-  font-size: 1rem;
-  color: #111827;
+  font-size: 0.9rem;
   padding-top: 0.2rem;
+  background: transparent;
 }
 
 .btn-swap {
-  background: #F3F4F6;
-  border: 1px solid #D1D5DB;
+  background: transparent;
+  border: 1px solid #CBD5E1;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-  font-size: 1.1rem;
-  color: #4B5563;
 }
 
 .btn-submit-search {
-  background-color: #22C55E;
+  background-color: #2563EB;
   color: white;
   border: none;
-  padding: 0.8rem 2rem;
+  padding: 0.75rem 1.8rem;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
 }
 
 .btn-submit-search:hover {
-  background-color: #16A34A;
+  background-color: #1D4ED8;
 }
 
-/* Main Body */
+.checkbox-cvc {
+  font-size: 0.85rem;
+  color: #64748B;
+  cursor: pointer;
+}
+
+/* Cards e Banners CVC */
+.cvc-banner-promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cvc-promo-card {
+  padding: 1.2rem;
+  border-radius: 12px;
+  color: white;
+}
+
+.promo-blue {
+  background: linear-gradient(135deg, #1D4ED8, #3B82F6);
+}
+
+.promo-yellow {
+  background: linear-gradient(135deg, #D97706, #F59E0B);
+}
+
+.cars-grid, .offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.car-card, .offer-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.car-card img, .offer-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.car-body, .offer-body {
+  padding: 1rem;
+}
+
+.car-specs {
+  display: flex;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: #64748B;
+  margin: 6px 0;
+}
+
 .main-body {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* Card de Novidades */
-.news-card {
-  background: #FFFFFF;
-  border-radius: 16px;
-  padding: 1.5rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #E5E7EB;
-  margin-bottom: 2.5rem;
-}
-
-.badge-tag {
-  background-color: #15803D;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 12px;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.news-content h3 {
-  font-size: 1.25rem;
-  color: #111827;
-}
-
-.news-content p {
-  font-size: 0.9rem;
-  color: #6B7280;
-}
-
-.news-action {
-  text-align: right;
-}
-
-.news-subtext {
-  display: block;
-  font-size: 0.8rem;
-  color: #6B7280;
-  margin-bottom: 0.4rem;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid #D1D5DB;
-  color: #374151;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-outline:hover {
-  border-color: #111827;
-}
-
-/* Grid de Ofertas */
-.results-section {
-  margin-top: 2rem;
-}
-
-.section-title-box {
-  margin-bottom: 1.5rem;
-}
-
 .section-title-box h2 {
-  font-size: 1.5rem;
-  color: #111827;
-}
-
-.offers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.offer-card {
-  background: white;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.offer-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.offer-body {
-  padding: 1.2rem;
-}
-
-.offer-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #111827;
-}
-
-.offer-location {
-  font-size: 0.85rem;
-  color: #6B7280;
-  margin: 4px 0 10px 0;
-}
-
-.offer-price {
   font-size: 1.4rem;
-  font-weight: 800;
-  color: #15803D;
 }
 
-.btn-reserve {
-  width: 100%;
-  background-color: #22C55E;
-  color: white;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-/* Footer */
 .footer {
-  background-color: #0E1719;
-  color: #9CA3AF;
   padding: 3rem 1rem;
   margin-top: 4rem;
 }
@@ -405,19 +389,7 @@ body {
   gap: 2rem;
 }
 
-.footer-logo {
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
 .footer a {
-  color: #9CA3AF;
+  color: inherit;
   text-decoration: none;
-  font-size: 0.9rem;
-  line-height: 2;
-}
-
-.footer a:hover {
-  color: #22C55E;
 }
