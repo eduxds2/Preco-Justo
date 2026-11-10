@@ -315,6 +315,14 @@ function inverterDestinos() {
     const temp = orig.value;
     orig.value = dest.value;
     dest.value = temp;
+
+    const btnSwap = document.getElementById('btnSwap');
+    if (btnSwap) {
+      btnSwap.style.transform = "scale(1.2) rotate(180deg)";
+      setTimeout(() => {
+        btnSwap.style.transform = "scale(1) rotate(0deg)";
+      }, 200);
+    }
   }
 }
 
