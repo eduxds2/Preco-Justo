@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
-  <!-- Favicon na aba do navegador -->
-  <link rel="icon" type="image/png" href="./logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
+  <link rel="shortcut icon" type="image/png" href="./logo.png">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="dark-mode">
@@ -24,7 +24,7 @@
     </div>
   </header>
 
-  <!-- Hero Banner sem a logo central, focado em texto e estilo Booking -->
+  <!-- Hero Banner Estilo Booking -->
   <section class="hero-section">
     <div class="search-container">
       
@@ -274,16 +274,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Script de Redirecionamento Automático após 8 segundos -->
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    if (!urlParams.has('admin')) {
-      setTimeout(function() {
-        window.location.href = 'login.html';
-      }, 8000); // 8000 ms = 8 segundos
-    }
-  </script>
 
   <script src="./script.js"></script>
 </body>
