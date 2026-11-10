@@ -6,9 +6,9 @@
   transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
 
-/* ☀️ MODO CLARO (PADRÃO) */
+/* ☀️ MODO CLARO (ELEGANTE E LIMPO) */
 body.light-mode {
-  background-color: #F4F6F8;
+  background-color: #F8FAFC;
   color: #0F172A;
 }
 
@@ -23,8 +23,12 @@ body.light-mode .header-btn {
   color: #0F172A;
 }
 
+body.light-mode .header-btn:hover {
+  background-color: #F1F5F9;
+}
+
 body.light-mode .hero-section {
-  background-color: #EBF1F5;
+  background-color: #F1F5F9;
 }
 
 body.light-mode .tabs-container {
@@ -44,7 +48,7 @@ body.light-mode .tab-btn.active {
 body.light-mode .search-card, body.light-mode .content-card, body.light-mode .guest-modal {
   background-color: #FFFFFF;
   border: 1px solid #E2E8F0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 body.light-mode .search-inputs-grid {
@@ -52,7 +56,7 @@ body.light-mode .search-inputs-grid {
   background-color: #FFFFFF;
 }
 
-/* 🌙 MODO ESCURO */
+/* 🌙 MODO ESCURO (CYBERPUNK CLEAN) */
 body.dark-mode {
   background-color: #0B1315;
   color: #F8FAFC;
@@ -67,6 +71,10 @@ body.dark-mode .header-btn {
   background-color: #1A292C;
   border: 1px solid #374151;
   color: #FFFFFF;
+}
+
+body.dark-mode .header-btn:hover {
+  border-color: #22C55E;
 }
 
 body.dark-mode .hero-section {
@@ -111,7 +119,7 @@ body.dark-mode .footer {
 /* Header Navbar */
 .header {
   max-width: 100%;
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,10 +128,31 @@ body.dark-mode .footer {
   z-index: 100;
 }
 
-.nav-logo-img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-plane {
+  font-size: 1.4rem;
+}
+
+.brand-text {
+  font-size: 1.35rem;
+  color: #0284C7;
+  font-weight: 300;
+  line-height: 1;
+}
+
+body.dark-mode .brand-text {
+  color: #FFFFFF;
+}
+
+.brand-text strong {
+  color: #22C55E;
+  font-weight: 800;
 }
 
 .header-nav-actions {
@@ -133,7 +162,7 @@ body.dark-mode .footer {
 }
 
 .header-btn {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.1rem;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.85rem;
@@ -147,25 +176,36 @@ body.dark-mode .footer {
 
 /* Hero Section */
 .hero-section {
-  padding: 2.5rem 1rem;
+  padding: 3rem 1rem;
 }
 
-.hero-logo-banner {
-  text-align: center;
-  margin-bottom: 2rem;
+.hero-brand-header {
+  text-align: left;
+  max-width: 980px;
+  margin: 0 auto 2rem auto;
 }
 
-.hero-logo-img {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+.hero-brand-title {
+  font-size: 3.6rem;
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+.hero-brand-title span {
+  color: #22C55E;
+  font-weight: 800;
 }
 
 .hero-subtitle {
-  color: #9CA3AF;
+  color: #64748B;
   font-size: 0.95rem;
   margin-top: 0.8rem;
+  max-width: 400px;
+}
+
+body.dark-mode .hero-subtitle {
+  color: #9CA3AF;
 }
 
 .search-container {
@@ -247,7 +287,7 @@ body.dark-mode .footer {
 .box-label {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #9CA3AF;
+  color: #64748B;
   text-transform: uppercase;
 }
 
@@ -282,7 +322,7 @@ body.dark-mode .footer {
 
 .btn-submit-search:hover { background-color: #16A34A; }
 
-/* Modal de Hóspedes */
+/* Modal de Hóspedes Popover */
 .relative-box { position: relative; }
 
 .guest-modal {
@@ -312,9 +352,9 @@ body.dark-mode .footer {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid #0284C7;
+  border: 1px solid #22C55E;
   background: transparent;
-  color: #0284C7;
+  color: #22C55E;
   font-size: 1.2rem;
   cursor: pointer;
   display: flex;
@@ -332,8 +372,12 @@ body.dark-mode .footer {
 
 .modal-divider {
   border: none;
-  border-top: 1px solid #CBD5E1;
+  border-top: 1px solid #E2E8F0;
   margin: 1rem 0;
+}
+
+body.dark-mode .modal-divider {
+  border-top-color: #374151;
 }
 
 .modal-checkbox-row label {
@@ -348,7 +392,7 @@ body.dark-mode .footer {
 .sub-info {
   display: block;
   font-size: 0.78rem;
-  color: #9CA3AF;
+  color: #64748B;
   margin-top: 4px;
   margin-left: 24px;
 }
@@ -363,14 +407,14 @@ body.dark-mode .footer {
 .btn-redefinir {
   background: none;
   border: none;
-  color: #9CA3AF;
+  color: #94A3B8;
   font-weight: 700;
   font-size: 0.8rem;
   cursor: pointer;
 }
 
 .btn-confirmar {
-  background-color: #0284C7;
+  background-color: #22C55E;
   color: white;
   border: none;
   padding: 0.6rem 1.4rem;
@@ -379,19 +423,20 @@ body.dark-mode .footer {
   cursor: pointer;
 }
 
-/* Base Principal */
+/* Base Principal do Catálogo */
 .main-body {
-  max-width: 1050px;
-  margin: 2.5rem auto;
+  max-width: 980px;
+  margin: 3rem auto;
   padding: 0 1rem;
 }
 
 .section-block {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 90px;
 }
 
 .section-block-title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 0.3rem;
 }
@@ -399,13 +444,13 @@ body.dark-mode .footer {
 .section-block-subtitle {
   font-size: 0.88rem;
   color: #64748B;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .content-card {
@@ -417,49 +462,26 @@ body.dark-mode .footer {
 
 .content-card img {
   width: 100%;
-  height: 150px;
+  height: 165px;
   object-fit: cover;
 }
 
 .card-body {
-  padding: 1.1rem;
+  padding: 1.2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Badges e Tags */
-.blue-badge {
-  background-color: #0284C7;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 12px;
-  display: inline-block;
-  margin-bottom: 6px;
-  width: fit-content;
-}
-
-.green-discount-tag {
-  background-color: #059669;
-  color: white;
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-left: 6px;
-}
-
 .card-title {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .card-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #64748B;
   margin-bottom: 8px;
 }
@@ -467,7 +489,7 @@ body.dark-mode .footer {
 .car-icons-row {
   display: flex;
   gap: 12px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #64748B;
   margin: 8px 0;
 }
@@ -482,33 +504,33 @@ body.dark-mode .footer {
 }
 
 .price-amount {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: #0F172A;
-}
-
-body.dark-mode .price-amount {
   color: #22C55E;
 }
 
-.remessa-tag {
-  font-size: 0.75rem;
-  color: #64748B;
-  border-top: 1px solid #E2E8F0;
-  padding-top: 8px;
-  margin-top: 8px;
+.btn-card-action {
+  width: 100%;
+  background-color: #22C55E;
+  color: white;
+  border: none;
+  padding: 0.65rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
-body.dark-mode .remessa-tag {
-  border-top-color: #1F2937;
+.btn-card-action:hover {
+  background-color: #16A34A;
 }
 
-/* Destaques da Frota (img2) */
+/* Recursos de Carros */
 .frota-features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .feature-item {
@@ -518,93 +540,38 @@ body.dark-mode .remessa-tag {
 }
 
 .feature-icon-circle {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: #84CC16;
+  background-color: #15803D;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  color: white;
+  font-size: 1.2rem;
 }
 
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #64748B; }
 
-.btn-group-center {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.btn-outline-green {
-  background: transparent;
-  border: 1px solid #15803D;
-  color: #15803D;
-  padding: 0.6rem 1.8rem;
-  border-radius: 6px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-body.dark-mode .btn-outline-green {
-  border-color: #22C55E;
-  color: #22C55E;
-}
-
-/* Passagens e Recursos (img6) */
-.recursos-voos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.2rem;
-  margin: 2rem 0;
-}
-
-.recurso-card {
-  padding: 1.2rem;
-  border-radius: 12px;
-}
-
-.recurso-icon {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
-}
-
-.company-logos-row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 12px;
-}
-
-.company-logo-item {
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #64748B;
-}
-
-/* FAQ Seguro (img7) */
+/* FAQ e Newsletter */
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .faq-card {
-  padding: 1.2rem;
-  border-radius: 12px;
+  padding: 1.4rem;
 }
 
 .faq-card h4 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 0.6rem;
 }
 
 .faq-card p {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #64748B;
   line-height: 1.4;
 }
@@ -613,7 +580,7 @@ body.dark-mode .btn-outline-green {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 2rem;
   border-radius: 14px;
   margin-top: 2.5rem;
   flex-wrap: wrap;
@@ -628,13 +595,15 @@ body.dark-mode .btn-outline-green {
 .newsletter-input-group input {
   padding: 0.6rem 1rem;
   border: 1px solid #CBD5E1;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 /* Footer */
 .footer {
-  padding: 3rem 1rem;
-  margin-top: 4rem;
+  background-color: #0F172A;
+  color: #94A3B8;
+  padding: 3.5rem 1rem;
+  margin-top: 5rem;
 }
 
 .footer-container {
@@ -645,5 +614,6 @@ body.dark-mode .btn-outline-green {
   gap: 2rem;
 }
 
-.footer-logo { color: white; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.footer-logo { color: white; font-size: 1.15rem; margin-bottom: 0.5rem; }
 .footer a { color: #9CA3AF; text-decoration: none; font-size: 0.85rem; line-height: 2; }
+.footer a:hover { color: #22C55E; }
