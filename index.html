@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Compare preços de hotéis em mais de 100 sites</title>
+  <title>PREÇO JUSTO | Economize até 50% na sua próxima estadia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 1. Cabeçalho Principal (Header) -->
+  <!-- Cabeçalho (Header) -->
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-text">PREÇO JUSTO</a>
@@ -20,17 +20,17 @@
     </div>
   </header>
 
-  <!-- 2. Hero de Busca Inicial (Banner Principal) -->
+  <!-- Hero Principal de Busca -->
   <section class="hero-section">
     <div class="hero-card">
       <h1 class="hero-title">Economize até 50% na sua próxima estadia</h1>
       <p class="hero-subtitle">Comparamos preços de hotéis de mais de 100 sites</p>
 
-      <!-- Barra de Pesquisa Avançada -->
+      <!-- Caixas de Busca -->
       <div class="search-bar-container">
         <div class="search-field field-destination">
           <span class="field-label">Destino</span>
-          <input type="text" id="searchInput" placeholder="Ex: Porto Seguro, São Paulo, Rio de Janeiro" value="Porto Seguro">
+          <input type="text" id="homeSearchInput" placeholder="Para onde você quer ir?" value="Porto Seguro">
         </div>
         <div class="search-field field-dates">
           <span class="field-label">Entrada/Saída</span>
@@ -40,124 +40,115 @@
           <span class="field-label">Hóspedes e quartos</span>
           <input type="text" value="2 hóspedes, 1 quarto" readonly>
         </div>
-        <button class="btn-search-main" onclick="buscarHoteis()">Pesquisar</button>
+        <button class="btn-search-main" onclick="irParaBusca()">Pesquisar</button>
       </div>
 
-      <!-- Logos dos Parceiros Integrados -->
+      <!-- Parceiros Integrados -->
       <div class="partners-bar">
-        <span class="partner-logo">Booking.com</span>
-        <span class="partner-logo">Hoteis.com</span>
-        <span class="partner-logo">Expedia</span>
-        <span class="partner-logo">Vrbo</span>
-        <span class="partner-logo">Trip.com</span>
-        <span class="partner-logo">decolar</span>
-        <span class="partner-more">+100 outros sites</span>
+        <span>Booking.com</span>
+        <span>Hoteis.com</span>
+        <span>Expedia</span>
+        <span>Vrbo</span>
+        <span>Trip.com</span>
+        <span>decolar</span>
+        <span class="partner-more">100+ outros sites</span>
       </div>
     </div>
   </section>
 
-  <!-- 3. Barra de Filtros Rápidos Superior -->
-  <nav class="quick-filters-bar">
-    <button class="filter-pill active" onclick="filtrarPorPill('todos')">Todas as ofertas</button>
-    <button class="filter-pill" onclick="filtrarPorPill('ofertas')">Ofertas incríveis</button>
-    <button class="filter-pill" onclick="filtrarPorPill('piscina')">Piscina</button>
-    <button class="filter-pill" onclick="filtrarPorPill('cancelamento')">Cancelamento gratuito</button>
-    <button class="filter-pill" onclick="filtrarPorPill('cafe')">Café da manhã incluído</button>
-    <button class="filter-pill" onclick="filtrarPorPill('ar')">Ar-condicionado</button>
-  </nav>
-
-  <!-- 4. Layout Principal: Filtros Laterais + Lista de Hotéis -->
-  <div class="main-content-layout">
-    
-    <!-- Painel de Filtros Detalhados (Esquerda) -->
-    <aside class="sidebar-filters">
-      <div class="filter-group">
-        <h3>Filtros</h3>
-        <label class="checkbox-container">
-          <input type="checkbox" id="chkCancelamento" onchange="aplicarFiltrosSidebar()">
-          <span>Cancelamento gratuito</span>
-        </label>
+  <!-- Banner Promocional Atalho -->
+  <section class="promo-banner-section">
+    <div class="promo-banner">
+      <div class="promo-text">
+        <h2>O seu atalho para encontrar uma ótima oferta</h2>
       </div>
+      <div class="promo-img-box">
+        <button onclick="irParaBusca()" class="btn-iniciar-busca">Iniciar busca</button>
+      </div>
+    </div>
+  </section>
 
-      <div class="filter-group">
-        <h3>Preço</h3>
-        <p class="filter-subtext">Faixa de preço por diária</p>
-        <div class="price-inputs">
-          <input type="number" id="priceMin" placeholder="R$ Min" value="0" oninput="aplicarFiltrosSidebar()">
-          <span>-</span>
-          <input type="number" id="priceMax" placeholder="R$ Máx" value="3000" oninput="aplicarFiltrosSidebar()">
+  <!-- Visualizações Recentes -->
+  <section class="home-section">
+    <div class="section-header">
+      <h2>Visualizações recentes</h2>
+      <a href="busca.html" class="see-more-link">Ver tudo ➔</a>
+    </div>
+    <div class="recent-card" onclick="irParaBusca('Porto Seguro')">
+      <div class="recent-info">
+        <strong>Porto Seguro</strong>
+        <p>1 de mar. - 2 de mar. • 2 hóspedes</p>
+        <span class="badge-green">✓ Cancelamento gratuito</span>
+      </div>
+      <div class="recent-hotel-preview">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=300&q=80" alt="Hotel">
+        <div>
+          <h4>Hotel Fasano...</h4>
+          <p>★ 9,2 - Excelente</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="filter-group">
-        <h3>Avaliação do hotel</h3>
-        <label class="checkbox-container"><input type="checkbox" name="star" value="5" onchange="aplicarFiltrosSidebar()"> 5 estrelas</label>
-        <label class="checkbox-container"><input type="checkbox" name="star" value="4" onchange="aplicarFiltrosSidebar()"> 4 estrelas</label>
-        <label class="checkbox-container"><input type="checkbox" name="star" value="3" onchange="aplicarFiltrosSidebar()"> 3 estrelas</label>
-      </div>
-    </aside>
+  <!-- Ofertas Incríveis -->
+  <section class="home-section">
+    <div class="section-header">
+      <h2>Ofertas incríveis em Porto Seguro</h2>
+      <a href="busca.html" class="see-more-link">Ver mais ofertas ➔</a>
+    </div>
+    <div class="grid-offers" id="homeOffersGrid"></div>
+  </section>
 
-    <!-- Lista de Resultados Trivago (Centro) -->
-    <main class="results-container" id="offersContainer"></main>
-
-  </div>
-
-  <!-- 5. Seção Home: Buscas Populares e Destinos -->
-  <section class="home-sections-container">
+  <!-- Buscas Populares por Cidade -->
+  <section class="home-section">
     <h2>Buscas populares</h2>
-    <div class="popular-cities-grid">
-      <div class="city-card" onclick="pesquisarCidade('São Paulo')">
+    <div class="grid-cities">
+      <div class="city-card" onclick="irParaBusca('São Paulo')">
         <img src="https://images.unsplash.com/photo-1543059080-f29f9d74e30b?auto=format&fit=crop&w=400&q=80" alt="São Paulo">
-        <div class="city-info">
+        <div class="city-details">
           <h4>São Paulo</h4>
-          <p>Média: R$ 350/noite</p>
+          <p>3.462 Hotéis • R$ 597 em média</p>
         </div>
       </div>
-      <div class="city-card" onclick="pesquisarCidade('Rio de Janeiro')">
+      <div class="city-card" onclick="irParaBusca('Rio de Janeiro')">
         <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=400&q=80" alt="Rio de Janeiro">
-        <div class="city-info">
+        <div class="city-details">
           <h4>Rio de Janeiro</h4>
-          <p>Média: R$ 420/noite</p>
+          <p>4.898 Hotéis • R$ 743 em média</p>
         </div>
       </div>
-      <div class="city-card" onclick="pesquisarCidade('Porto Seguro')">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Porto Seguro">
-        <div class="city-info">
-          <h4>Porto Seguro</h4>
-          <p>Média: R$ 280/noite</p>
+      <div class="city-card" onclick="irParaBusca('Maceió')">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Maceió">
+        <div class="city-details">
+          <h4>Maceió</h4>
+          <p>539 Hotéis • R$ 610 em média</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Banner para Login/Associação -->
-  <div class="membership-banner">
-    <div class="membership-text">
-      💡 <strong>Quer ter acesso a benefícios e preços para associados?</strong> Cadastre-se gratuitamente.
-    </div>
-    <a href="login.html" class="btn-membership-login">Fazer login ></a>
+  <!-- Banner Amarelo de Membro -->
+  <div class="member-callout-banner">
+    <span>💡 Quer ter acesso a benefícios e preços para associados?</span>
+    <a href="login.html" class="btn-member-login">Fazer login ></a>
   </div>
 
-  <!-- 7. Rodapé Institucional (Footer) -->
+  <!-- Rodapé Institucional -->
   <footer class="footer">
-    <div class="footer-columns">
-      <div class="footer-col">
-        <h4>PREÇO JUSTO</h4>
-        <p>Seu comparador independente de preços de acomodações e ofertas.</p>
+    <div class="footer-grid">
+      <div>
+        <h3 class="logo-text">PREÇO JUSTO</h3>
+        <p>Compare preços de hotéis e economize em suas viagens.</p>
       </div>
-      <div class="footer-col">
-        <h4>Termos e políticas</h4>
-        <ul>
-          <li><a href="#">Condições de uso</a></li>
-          <li><a href="#">Privacidade</a></li>
-        </ul>
+      <div>
+        <h4>Sobre</h4>
+        <p>Termos e políticas</p>
+        <p>Aviso de privacidade</p>
       </div>
-      <div class="footer-col">
-        <h4>Benefícios para membros</h4>
-        <ul>
-          <li><a href="login.html">Personalizar experiência</a></li>
-          <li><a href="login.html">Ofertas exclusivas</a></li>
-        </ul>
+      <div>
+        <h4>Benefícios</h4>
+        <p><a href="login.html" style="color:inherit;">Fazer Login</a></p>
+        <p>Ofertas exclusivas</p>
       </div>
     </div>
   </footer>
