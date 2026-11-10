@@ -6,7 +6,6 @@
   transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
 
-/* MODO ESCURO FIXO */
 body.dark-mode {
   background-color: #0B1315;
   color: #F8FAFC;
@@ -62,7 +61,6 @@ body.dark-mode .footer {
   color: #6B7280;
 }
 
-/* Header Navbar */
 .header {
   max-width: 100%;
   padding: 0.8rem 2.5rem;
@@ -99,7 +97,6 @@ body.dark-mode .footer {
 
 .btn-login { font-weight: 700; }
 
-/* Hero Section */
 .hero-section { padding: 2.5rem 1rem; }
 
 .hero-brand-header {
@@ -233,7 +230,6 @@ body.dark-mode .footer {
 
 .btn-submit-search:hover { background-color: #16A34A; }
 
-/* Modal Hóspedes */
 .relative-box { position: relative; }
 
 .guest-modal {
@@ -322,7 +318,6 @@ body.dark-mode .footer {
   cursor: pointer;
 }
 
-/* Catálogos */
 .main-body {
   max-width: 980px;
   margin: 3rem auto;
@@ -451,7 +446,6 @@ body.dark-mode .footer {
 .faq-card h4 { font-size: 1rem; margin-bottom: 0.6rem; }
 .faq-card p { font-size: 0.85rem; color: #9CA3AF; line-height: 1.4; }
 
-/* Footer */
 .footer {
   background-color: #050B0C;
   color: #9CA3AF;
