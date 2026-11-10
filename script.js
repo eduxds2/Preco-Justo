@@ -1,12 +1,12 @@
 const bancoDados = {
   carros: [
-    { titulo: "Buenos Aires", categoria: "Intermediário", preco: 286, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Orlando", categoria: "Compacto", preco: 216, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Santiago", categoria: "Econômico", preco: 268, cap: "👤 5  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
+    { titulo: "VW Gol 1.0", categoria: "Econômico com Ar", preco: 98, cap: "👤 5  🧳 2  🚪 4", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Camaro Zl1", categoria: "Compacto Automático", preco: 149, cap: "👤 5  🧳 2  🚪 4", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Jeep Renegade SUV", categoria: "SUV Intermediário", preco: 216, cap: "👤 5  🧳 3  🚪 4", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
   ],
   frota: [
-    { titulo: "Grupo GI - Suv Compacto Especial", desc: "NISSAN KICKS 1.6, GM TRACKER ou similar", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Grupo GX - Suv Automático", desc: "VW T-CROSS 1.0 Turbo, Hyundai Creta", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
+    { titulo: "Grupo GI - SUV Compacto Especial", desc: "Nissan Kicks 1.6, GM Tracker ou similar", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Grupo GX - SUV Automático", desc: "VW T-Cross 1.0 Turbo, Hyundai Creta", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
   ],
   hospedagem: [
     { titulo: "Natal Praia Hotel", sub: "A 958m do centro • Natal", preco: 156, descTag: "-56%", nota: "★ 8.0", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" },
@@ -16,11 +16,6 @@ const bancoDados = {
   campos: [
     { titulo: "Pousada Campos De Provence", preco: 297, descTag: "-8%", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80" },
     { titulo: "Pousada Grandchamp", preco: 316, img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" }
-  ],
-  voos: [
-    { titulo: "Voos para Fortaleza", sub: "Saindo de SP • Por Azul", preco: 885, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Voos para Recife", sub: "Saindo de SP • Por Gol", preco: 884, img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Voos para Maceió", sub: "Saindo de SP • Por LATAM", preco: 777, img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80" }
   ],
   seguros: [
     { titulo: "Seguro Viagem - Brasil", sub: "Por 2 dias • Reserva Flexível", preco: 35, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" },
@@ -42,7 +37,6 @@ function trocarAba(categoria, elemento) {
   const formGeral = document.getElementById('formGeral');
   const formHospedagem = document.getElementById('formHospedagem');
 
-  // Esconde todas as abas de conteúdo
   document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
 
   if (categoria === 'hospedagem') {
@@ -63,12 +57,10 @@ function trocarAba(categoria, elemento) {
     document.getElementById('viewSeguros').style.display = 'block';
     renderSeguros();
   } else {
-    // monte, voos, pacotes
     formGeral.style.display = 'block';
     formHospedagem.style.display = 'none';
     configurarInputs(`Pesquisar ${categoria === 'monte' ? 'viagens' : categoria}`, true, 'DE', 'Insira uma origem', 'PARA', 'Insira um destino');
     document.getElementById('viewVoos').style.display = 'block';
-    renderVoos();
   }
 }
 
@@ -89,10 +81,10 @@ function renderCarros() {
       <div class="content-card">
         <img src="${i.img}" alt="${i.titulo}">
         <div class="card-body">
-          <span style="font-size:0.7rem; color:#0284C7; font-weight:700;">CARROS</span>
+          <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">CARROS</span>
           <h3 class="card-title">${i.titulo}</h3>
           <p class="card-subtitle">${i.categoria}</p>
-          <div class="car-icons-row" style="font-size:0.8rem; color:#64748B; margin:8px 0;"><span>${i.cap}</span></div>
+          <div class="car-icons-row" style="font-size:0.8rem; color:#9CA3AF; margin:8px 0;"><span>${i.cap}</span></div>
           <div class="price-box">
             <span class="price-label">Diárias a partir de</span>
             <div class="price-amount">${formatarMoeda(i.preco)}</div>
@@ -129,7 +121,7 @@ function renderHospedagem() {
           <span class="card-subtitle">HOSPEDAGENS</span>
           <h3 class="card-title">${i.titulo}</h3>
           <p class="card-subtitle">${i.sub}</p>
-          <p style="font-size:0.8rem; color:#0284C7; font-weight:bold;">${i.nota}</p>
+          <p style="font-size:0.8rem; color:#22C55E; font-weight:bold;">${i.nota}</p>
           <div class="price-box">
             <span class="price-label">1 noite, 2 pessoas a partir de</span>
             <div class="price-amount">${formatarMoeda(i.preco)} ${i.descTag ? `<span style="background:#059669; color:white; padding:2px 6px; border-radius:4px; font-size:0.7rem;">${i.descTag}</span>` : ''}</div>
@@ -148,27 +140,6 @@ function renderHospedagem() {
         <div class="card-body">
           <h3 class="card-title">${i.titulo}</h3>
           <div class="price-amount">${formatarMoeda(i.preco)} ${i.descTag ? `<span style="background:#059669; color:white; padding:2px 6px; border-radius:4px; font-size:0.7rem;">${i.descTag}</span>` : ''}</div>
-        </div>
-      </div>
-    `;
-  });
-}
-
-function renderVoos() {
-  const vGrid = document.getElementById('voosGrid');
-  vGrid.innerHTML = '';
-  bancoDados.voos.forEach(i => {
-    vGrid.innerHTML += `
-      <div class="content-card">
-        <img src="${i.img}" alt="${i.titulo}">
-        <div class="card-body">
-          <span class="card-subtitle">PASSAGEM</span>
-          <h3 class="card-title">${i.titulo}</h3>
-          <p class="card-subtitle">${i.sub}</p>
-          <div class="price-box">
-            <span class="price-label">Preço ida e volta</span>
-            <div class="price-amount">${formatarMoeda(i.preco)}</div>
-          </div>
         </div>
       </div>
     `;
@@ -244,20 +215,6 @@ function inverterDestinos() {
     const temp = orig.value;
     orig.value = dest.value;
     dest.value = temp;
-  }
-}
-
-function toggleTheme() {
-  const body = document.body;
-  const btn = document.getElementById('btnThemeToggle');
-  if (body.classList.contains('light-mode')) {
-    body.classList.remove('light-mode');
-    body.classList.add('dark-mode');
-    if (btn) btn.innerText = 'Modo Claro';
-  } else {
-    body.classList.remove('dark-mode');
-    body.classList.add('light-mode');
-    if (btn) btn.innerText = 'Modo Escuro';
   }
 }
 
