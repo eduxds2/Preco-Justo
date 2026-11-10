@@ -1,8 +1,8 @@
 const bancoDados = {
   carros: [
-    { titulo: "VW Gol 1.0", categoria: "Econômico com Ar", preco: 98, cap: "👤 5  🧳 2  🚪 4", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Camaro Zl1", categoria: "Compacto Automático", preco: 149, cap: "👤 5  🧳 2  🚪 4", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Jeep Renegade SUV", categoria: "SUV Intermediário", preco: 216, cap: "👤 5  🧳 3  🚪 4", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
+    { titulo: "Chevrolet Camaro ZL1", categoria: "Esportivo V8 • 650 CV", preco: 890, cap: "👤 4  🧳 2  🚪 2", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Hyundai HB20 Automático", categoria: "Compacto • Completo", preco: 149, cap: "👤 5  🧳 2  🚪 4", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Jeep Renegade SUV", categoria: "SUV Automático", preco: 216, cap: "👤 5  🧳 3  🚪 4", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" }
   ],
   frota: [
     { titulo: "Grupo GI - SUV Compacto Especial", desc: "Nissan Kicks 1.6, GM Tracker ou similar", img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=500&q=80" },
@@ -18,9 +18,9 @@ const bancoDados = {
     { titulo: "Pousada Grandchamp", preco: 316, img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" }
   ],
   seguros: [
-    { titulo: "Seguro Viagem - Brasil", sub: "Por 2 dias • Reserva Flexível", preco: 35, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Seguro Viagem - América Latina", sub: "Por 2 dias • Reserva Flexível", preco: 90, img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=500&q=80" },
-    { titulo: "Seguro Viagem - Europa", sub: "Por 2 dias • Reserva Flexível", preco: 90, img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=80" }
+    { titulo: "Seguro Viagem - Brasil", sub: "Cobertura Médica Nacional R$ 40.000", preco: 35, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Seguro Viagem - América Latina", sub: "Cobertura Médica USD 30.000", preco: 90, img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=500&q=80" },
+    { titulo: "Seguro Viagem - Europa", sub: "Cobertura Médica EUR 30.000 (Tratado Schengen)", preco: 120, img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=80" }
   ]
 };
 
@@ -81,7 +81,7 @@ function renderCarros() {
       <div class="content-card">
         <img src="${i.img}" alt="${i.titulo}">
         <div class="card-body">
-          <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">CARROS</span>
+          <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">CARRO EXCLUSIVO</span>
           <h3 class="card-title">${i.titulo}</h3>
           <p class="card-subtitle">${i.categoria}</p>
           <div class="car-icons-row" style="font-size:0.8rem; color:#9CA3AF; margin:8px 0;"><span>${i.cap}</span></div>
@@ -154,7 +154,7 @@ function renderSeguros() {
       <div class="content-card">
         <img src="${i.img}" alt="${i.titulo}">
         <div class="card-body">
-          <span class="card-subtitle">ASSISTÊNCIA</span>
+          <span style="font-size:0.7rem; color:#22C55E; font-weight:700;">ASSISTÊNCIA MÉDICA</span>
           <h3 class="card-title">${i.titulo}</h3>
           <p class="card-subtitle">${i.sub}</p>
           <div class="price-box">
