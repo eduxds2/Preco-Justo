@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preçojusto.com | Site Oficial | Tarifas justas e mais economia</title>
-  <!-- Favicon da aba usa a logo.png -->
   <link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
   <link rel="shortcut icon" type="image/png" href="./logo.png">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="dark-mode">
 
-  <!-- Header Navbar com a imagem de texto (logo-texto.png) -->
+  <!-- Header Navbar estilo Booking -->
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-brand-img-link">
@@ -22,11 +21,15 @@
     <div class="header-nav-actions booking-header-right">
       <span class="currency-display">BRL</span>
       <img src="https://flagcdn.com/w40/br.png" alt="Brasil" class="flag-icon-small">
-      <a href="login.html" class="header-btn btn-login">Fazer login</a>
+      
+      <!-- Espaço reservado para o botão dinâmico (Login ou Menu) -->
+      <div id="authActionContainer">
+        <a href="login.html" class="header-btn btn-login">Fazer login</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Banner com Abas Limpas (Sem emojis) -->
+  <!-- Hero Banner com Abas Limpas -->
   <section class="hero-section">
     <div class="search-container">
       
@@ -36,7 +39,7 @@
         <p class="hero-subtitle" style="font-size: 1.05rem; color: #9CA3AF;">Compare voos, hotéis, carros e seguros com total transparência e economia.</p>
       </div>
 
-      <!-- Navegação por Abas (Sem Emojis) -->
+      <!-- Navegação por Abas -->
       <div class="tabs-container booking-tabs">
         <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
         <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
@@ -80,7 +83,7 @@
           </div>
         </div>
 
-        <!-- FORMULÁRIO DE HOSPEDAGEM (Com Entrada e Saída Separados) -->
+        <!-- FORMULÁRIO DE HOSPEDAGEM -->
         <div id="formHospedagem" style="display:none;">
           <div class="search-card-header">
             <h2>Encontre sua próxima estadia</h2>
@@ -309,6 +312,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- Script para alternar entre "Fazer login" e o botão "Menu" com base no login -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const jaLogado = localStorage.getItem('usuarioLogado') === 'true';
+      const container = document.getElementById('authActionContainer');
+
+      if (jaLogado) {
+        container.innerHTML = `
+          <button class="header-btn btn-menu" onclick="alert('Menu do usuário aberto!')">
+            <span class="menu-icon">☰</span> Menu
+          </button>
+        `;
+      }
+    });
+  </script>
 
   <script src="./script.js"></script>
 </body>
