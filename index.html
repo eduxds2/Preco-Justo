@@ -3,68 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Tarifas Justas e Economia</title>
+  <title>PREÇO JUSTO | Comparador de Viagens e Hospedagens</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body class="dark-theme">
+<body class="light-mode">
 
-  <!-- Bloco Hero Escuro (Visual da Imagem Original) -->
-  <div class="hero-header-bg">
-    
-    <!-- Header / Navbar -->
-    <header class="header">
-      <div class="header-logo">
-        <a href="index.html" class="logo">
-          <span class="logo-icon">✈️</span>
-          <span class="logo-text">preço<br><strong class="neon-green">justo</strong></span>
-        </a>
-      </div>
+  <!-- Header Navbar -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html" class="logo-brand">
+        <span class="logo-plane">✈️</span>
+        <span class="brand-text">preço<strong>justo</strong></span>
+      </a>
+    </div>
 
-      <nav class="header-nav">
-        <span class="nav-link">Descubra ▾</span>
-        <span class="nav-link">Minhas viagens ▾</span>
-        <a href="#" class="nav-link">Central de Ajuda</a>
-      </nav>
+    <div class="header-nav-actions">
+      <button class="header-btn">🌐 PT · R$</button>
+      <a href="login.html" class="header-btn btn-login">👤 Fazer login</a>
+      <button class="header-btn" onclick="toggleTheme()" id="btnThemeToggle">🌙 Modo</button>
+    </div>
+  </header>
 
-      <div class="header-actions">
-        <button class="btn-icon">🔍</button>
-        <a href="login.html" class="btn-icon" title="Login / Cadastro">👤</a>
-      </div>
-    </header>
-
-    <!-- Banner com Título Grande do Logo -->
-    <section class="banner-intro">
-      <div class="banner-content">
-        <h1 class="brand-title">preço<br><span class="highlight">justo</span></h1>
-        <p class="brand-sub">Voe com tarifas justas e mais economia para chegar onde importa.</p>
-      </div>
-    </section>
-
-    <!-- Navegação por Abas Limpa (Apenas 6 Categorias Principais) -->
-    <div class="tabs-wrapper">
+  <!-- Hero principal de busca -->
+  <section class="hero-section">
+    <div class="search-container">
+      
+      <!-- Navegação por Abas -->
       <div class="tabs-container">
-        <button class="tab-btn" onclick="trocarAba('monte', this)">Monte sua viagem</button>
-        <button class="tab-btn active" onclick="trocarAba('voos', this)">Voos</button>
+        <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
+        <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
         <button class="tab-btn" onclick="trocarAba('pacotes', this)">Pacotes</button>
         <button class="tab-btn" onclick="trocarAba('hospedagem', this)">Hospedagem</button>
         <button class="tab-btn" onclick="trocarAba('carros', this)">Carros</button>
         <button class="tab-btn" onclick="trocarAba('seguros', this)">Seguros</button>
       </div>
-    </div>
 
-    <!-- Card de Busca Flutuante Branco -->
-    <div class="search-card-wrapper">
+      <!-- Card Central de Busca -->
       <div class="search-card">
         
-        <!-- 1. ABA VOOS / MONTE / PACOTES (Booking Flights Style) -->
-        <div id="formVoos">
+        <!-- FORMULÁRIO GERAL (Voos, Monte, Pacotes, Carros, Seguros) -->
+        <div id="formGeral">
           <div class="search-card-header">
-            <h2 id="searchCardTitle">Para onde você quer ir?</h2>
+            <h2 id="searchCardTitle">Pesquisar pacotes</h2>
             <div class="trip-options" id="tripOptions">
-              <label class="radio-pill active">
+              <label class="radio-pill active" id="pillIdaVolta" onclick="selecionarTipoViagem('ida-volta')">
                 <input type="radio" name="tripType" value="ida-volta" checked> ✓ Ida e volta
               </label>
-              <label class="radio-pill">
+              <label class="radio-pill" id="pillSomenteIda" onclick="selecionarTipoViagem('somente-ida')">
                 <input type="radio" name="tripType" value="somente-ida"> Somente ida
               </label>
             </div>
@@ -72,114 +57,115 @@
 
           <div class="search-inputs-grid">
             <div class="input-box flex-2">
-              <span class="box-label">De</span>
-              <input type="text" id="flightOrigem" placeholder="Insira uma origem">
+              <span class="box-label" id="labelOrigem">DE</span>
+              <input type="text" id="inputOrigem" placeholder="Insira uma origem">
             </div>
-            <button class="btn-swap" onclick="inverterVoos()" title="Inverter">⇆</button>
+            
+            <button class="btn-swap" id="btnSwap" onclick="inverterDestinos()" title="Inverter">⇆</button>
+            
             <div class="input-box flex-2">
-              <span class="box-label">Para</span>
-              <input type="text" id="flightDestino" placeholder="Insira um destino">
+              <span class="box-label" id="labelDestino">PARA</span>
+              <input type="text" id="inputDestino" placeholder="Insira um destino">
             </div>
-            <button class="btn-submit-search" onclick="realizarPesquisa()">Buscar</button>
+            
+            <button class="btn-submit-search" onclick="realizarPesquisa()">BUSCAR</button>
           </div>
         </div>
 
-        <!-- 2. ABA HOSPEDAGEM (Booking Stays Style) -->
+        <!-- FORMULÁRIO DE HOSPEDAGEM (Com modal funcional de pessoas) -->
         <div id="formHospedagem" style="display:none;">
           <div class="search-card-header">
             <h2>Encontre sua próxima estadia</h2>
           </div>
+
           <div class="search-inputs-grid">
             <div class="input-box flex-2">
-              <span class="box-label">Destino</span>
-              <input type="text" id="stayDestino" placeholder="Para onde você quer ir?">
+              <span class="box-label">DESTINO</span>
+              <input type="text" id="stayDestino" placeholder="Para onde você vai?">
             </div>
+
             <div class="input-box flex-2">
-              <span class="box-label">Check-in — Check-out</span>
-              <input type="text" id="stayDatas" placeholder="Selecione as datas">
+              <span class="box-label">ENTRADA / SAÍDA</span>
+              <input type="text" id="stayDatas" placeholder="1 de mar. - 2 de mar.">
             </div>
-            <div class="input-box flex-2">
-              <span class="box-label">Hóspedes</span>
-              <input type="text" value="2 adultos · 1 quarto" readonly>
+
+            <!-- Campo de Hóspedes que Abre o Modal -->
+            <div class="input-box flex-2 relative-box">
+              <span class="box-label">HÓSPEDES E QUARTOS</span>
+              <input type="text" id="stayOcupacaoInput" value="2 hóspedes, 1 quarto" readonly onclick="toggleModalHospedes()">
+              
+              <!-- Modal de Seleção de Hóspedes -->
+              <div class="guest-modal" id="guestModal" style="display:none;">
+                
+                <div class="modal-row">
+                  <div class="modal-label">
+                    <strong>Adultos</strong>
+                  </div>
+                  <div class="counter-control">
+                    <button type="button" class="btn-counter" onclick="alterarHospedes('adultos', -1)">-</button>
+                    <span id="cntAdultos" class="counter-value">2</span>
+                    <button type="button" class="btn-counter" onclick="alterarHospedes('adultos', 1)">+</button>
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-label">
+                    <strong>Crianças</strong>
+                  </div>
+                  <div class="counter-control">
+                    <button type="button" class="btn-counter" onclick="alterarHospedes('criancas', -1)">-</button>
+                    <span id="cntCriancas" class="counter-value">0</span>
+                    <button type="button" class="btn-counter" onclick="alterarHospedes('criancas', 1)">+</button>
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-label">
+                    <strong>Quartos</strong>
+                  </div>
+                  <div class="counter-control">
+                    <button type="button" class="btn-counter" onclick="alterarHospedes('quartos', -1)">-</button>
+                    <span id="cntQuartos" class="counter-value">1</span>
+                    <button type="button" class="btn-counter" onclick="alterarHospedes('quartos', 1)">+</button>
+                  </div>
+                </div>
+
+                <hr class="modal-divider">
+
+                <div class="modal-checkbox-row">
+                  <label>
+                    <input type="checkbox" id="chkPets"> Aceita animais
+                  </label>
+                  <span class="sub-info">Ver só estadias que aceitam animais</span>
+                </div>
+
+                <div class="modal-footer-btns">
+                  <button type="button" class="btn-redefinir" onclick="redefinirHospedes()">REDEFINIR</button>
+                  <button type="button" class="btn-confirmar" onclick="confirmarHospedes()">Confirmar</button>
+                </div>
+
+              </div> <!-- Fim guest-modal -->
             </div>
+
             <button class="btn-submit-search" onclick="realizarPesquisa()">Pesquisar</button>
           </div>
         </div>
 
-        <!-- 3. ABA CARROS (CVC Rent Cars Style) -->
-        <div id="formCarros" style="display:none;">
-          <div class="search-card-header">
-            <h2>Aluguel de carros com preços imperdíveis</h2>
-          </div>
-          <div class="search-inputs-grid">
-            <div class="input-box flex-2">
-              <span class="box-label">Local de retirada</span>
-              <input type="text" placeholder="Digite a cidade ou aeroporto">
-            </div>
-            <div class="input-box">
-              <span class="box-label">Retirada</span>
-              <input type="date">
-            </div>
-            <div class="input-box">
-              <span class="box-label">Devolução</span>
-              <input type="date">
-            </div>
-            <button class="btn-submit-search" onclick="realizarPesquisa()">Buscar</button>
-          </div>
-        </div>
+      </div> <!-- Fim search-card -->
 
-        <!-- 4. ABA SEGUROS (CVC Seguro Style) -->
-        <div id="formSeguros" style="display:none;">
-          <div class="search-card-header">
-            <h2>Seguro viagem com o melhor preço</h2>
-          </div>
-          <div class="search-inputs-grid">
-            <div class="input-box flex-2">
-              <span class="box-label">Destino</span>
-              <input type="text" placeholder="América do Sul, Europa, EUA...">
-            </div>
-            <div class="input-box">
-              <span class="box-label">Ida</span>
-              <input type="date">
-            </div>
-            <div class="input-box">
-              <span class="box-label">Volta</span>
-              <input type="date">
-            </div>
-            <button class="btn-submit-search" onclick="realizarPesquisa()">Buscar</button>
-          </div>
-        </div>
-
-      </div>
     </div>
+  </section>
 
-  </div> <!-- Fim hero-header-bg -->
-
-  <!-- Conteúdo Principal -->
+  <!-- Conteúdo Principal com Cards de Ofertas -->
   <main class="main-body">
-
-    <!-- Card de Novidades (Malha Aérea Nacional) -->
-    <section class="news-card">
-      <div class="news-content">
-        <span class="badge-tag">NOVAS ROTAS</span>
-        <h3>Já viu as novidades da nossa malha aérea nacional? ✈️</h3>
-        <p>Mais destinos, mais conexões e a mesma experiência Preço Justo.</p>
-      </div>
-      <div class="news-action">
-        <span class="news-subtext">Aproveite a temporada de férias</span>
-        <button class="btn-outline" onclick="realizarPesquisa()">Confira os destinos</button>
-      </div>
-    </section>
-
-    <!-- Lista de Ofertas -->
     <section class="results-section">
       <div class="section-title-box">
-        <h2>Melhores ofertas de Hospedagem & Voos</h2>
+        <h2 id="resultsCategoryTitle">Melhores ofertas de Hospedagem & Voos</h2>
         <p>Preços atualizados em tempo real nos nossos parceiros</p>
       </div>
+
       <div class="offers-grid" id="offersContainer"></div>
     </section>
-
   </main>
 
   <!-- Rodapé Institucional Escuro -->
@@ -187,17 +173,17 @@
     <div class="footer-container">
       <div>
         <h4 class="footer-logo">PREÇO JUSTO</h4>
-        <p>Pesquise e compare preços de hospedagens e voos com transparência.</p>
+        <p>Plataforma agregadora para comparação de voos, hotéis, carros e seguros.</p>
       </div>
       <div>
         <h4>Acesso do Sistema</h4>
         <ul>
-          <li><a href="login.html">Login / Cadastro de Usuário</a></li>
-          <li><a href="login.html?tipo=empresa">Área da Empresa (Cadastrar Oferta)</a></li>
+          <li><a href="login.html">Login de Usuário</a></li>
+          <li><a href="login.html?tipo=empresa">Cadastrar Oferta (Empresas)</a></li>
         </ul>
       </div>
       <div>
-        <h4>Termos & LGPD</h4>
+        <h4>Suporte & Legal</h4>
         <ul>
           <li><a href="#">Política de Privacidade</a></li>
           <li><a href="#">Termos de Uso</a></li>
