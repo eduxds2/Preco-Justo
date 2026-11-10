@@ -3,44 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
+  <title>Pecojusto.com | Site Oficial | Tarifas justas e mais economia</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
   <link rel="shortcut icon" type="image/png" href="./logo.png">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="dark-mode">
 
-  <!-- Header Navbar com a vossa logo -->
+  <!-- Header Navbar estilo Booking com texto e moeda limpa -->
   <header class="header">
     <div class="header-logo">
-      <a href="index.html" class="logo-brand">
-        <img src="./logo.png" alt="Preço Justo Logo" class="nav-logo-img">
+      <a href="index.html" class="logo-text-brand">
+        preco<span>justo.com</span>
       </a>
     </div>
 
-    <div class="header-nav-actions">
-      <button class="header-btn">PT · R$</button>
+    <div class="header-nav-actions booking-header-right">
+      <span class="currency-display">BRL</span>
+      <img src="https://flagcdn.com/w40/br.png" alt="Brasil" class="flag-icon">
       <a href="login.html" class="header-btn btn-login">Fazer login</a>
     </div>
   </header>
 
-  <!-- Hero Banner Estilo Booking -->
+  <!-- Hero Banner com Abas em forma de ícones estilo Booking -->
   <section class="hero-section">
     <div class="search-container">
       
+      <!-- Título de Impacto -->
       <div class="hero-brand-header text-center" style="margin-bottom: 2rem;">
-        <h1 style="font-size: 2.5rem; font-weight: 800; color: #F8FAFC; margin-bottom: 0.5rem;">Encontre sua próxima viagem</h1>
-        <p class="hero-subtitle" style="font-size: 1.1rem; color: #9CA3AF;">Compare voos, hotéis, carros e seguros com total transparência e economia.</p>
+        <h1 style="font-size: 2.3rem; font-weight: 800; color: #F8FAFC; margin-bottom: 0.5rem;">Encontre sua próxima viagem</h1>
+        <p class="hero-subtitle" style="font-size: 1.05rem; color: #9CA3AF;">Compare voos, hotéis, carros e seguros com total transparência e economia.</p>
       </div>
 
-      <!-- Navegação por Abas -->
-      <div class="tabs-container">
-        <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
-        <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
-        <button class="tab-btn" onclick="trocarAba('pacotes', this)">Pacotes</button>
-        <button class="tab-btn" onclick="trocarAba('hospedagem', this)">Hospedagem</button>
-        <button class="tab-btn" onclick="trocarAba('carros', this)">Carros</button>
-        <button class="tab-btn" onclick="trocarAba('seguros', this)">Seguros</button>
+      <!-- Navegação por Abas (Estilo Ícones Booking) -->
+      <div class="tabs-container booking-tabs">
+        <button class="tab-btn active" onclick="trocarAba('monte', this)">🏨 Monte sua viagem</button>
+        <button class="tab-btn" onclick="trocarAba('voos', this)">✈️ Voos</button>
+        <button class="tab-btn" onclick="trocarAba('pacotes', this)">📦 Pacotes</button>
+        <button class="tab-btn" onclick="trocarAba('hospedagem', this)">🧳 Hospedagem</button>
+        <button class="tab-btn" onclick="trocarAba('carros', this)">🚗 Carros</button>
+        <button class="tab-btn" onclick="trocarAba('seguros', this)">🛡️ Seguros</button>
       </div>
 
       <!-- Card Central de Busca -->
@@ -150,6 +152,33 @@
 
   <!-- CATÁLOGOS ISOLADOS POR ABA -->
   <main class="main-body">
+
+    <!-- SEÇÃO: POR QUE USAR O PREÇO JUSTO? -->
+    <section class="section-block" style="margin-bottom: 3.5rem;">
+      <h2 class="section-block-title" style="margin-bottom: 1.5rem;">Por que usar o Preço Justo?</h2>
+      <div class="cards-grid">
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">💡</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Transparência total de preços</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Comparamos as melhores tarifas do mercado sem taxas ocultas ou surpresas.</p>
+        </div>
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">⭐</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Milhares de avaliações reais</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Obtenha informações confiáveis de viajantes como você.</p>
+        </div>
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🌍</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Opções em todo o mundo</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Hotéis, voos, carros e pacotes nas principais companhias e destinos.</p>
+        </div>
+        <div class="content-card" style="padding: 1.5rem;">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">💬</div>
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Suporte dedicado 24h</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Estamos sempre prontos para ajudar em qualquer etapa da sua viagem.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- 1. BLOCO DE CARROS -->
     <div id="viewCarros" class="tab-content" style="display:none;">
