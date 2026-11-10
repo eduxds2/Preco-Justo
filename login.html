@@ -5,77 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | PREÇO JUSTO</title>
   <link rel="stylesheet" href="./style.css">
-  <style>
-    .login-wrapper {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-    .login-card {
-      background-color: #111C1E;
-      border: 1px solid #1F2937;
-      border-radius: 16px;
-      padding: 2.5rem;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    }
-    .login-card h2 {
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-align: center;
-    }
-    .login-input-group {
-      margin-bottom: 1.2rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .login-input-group label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #9CA3AF;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-    .login-input-group input {
-      background-color: #0E1719;
-      border: 1px solid #374151;
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      color: #FFFFFF;
-      font-size: 0.95rem;
-      outline: none;
-    }
-    .btn-login-submit {
-      width: 100%;
-      background-color: #22C55E;
-      color: white;
-      border: none;
-      padding: 0.9rem;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    .btn-login-submit:hover {
-      background-color: #16A34A;
-    }
-    .back-home {
-      display: block;
-      text-align: center;
-      margin-top: 1.5rem;
-      color: #9CA3AF;
-      text-decoration: none;
-      font-size: 0.85srem;
-    }
-    .back-home:hover {
-      color: #22C55E;
-    }
-  </style>
 </head>
 <body class="dark-mode">
 
@@ -83,7 +12,7 @@
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-brand">
-        <img src="./logo.png" alt="Preço Justo Logo" class="nav-logo-img">
+        <img src="./logo.png" alt="Preço Justo Logo" class="nav-logo-img-large">
       </a>
     </div>
   </header>
@@ -91,30 +20,57 @@
   <main class="login-wrapper">
     <div class="login-card">
       <h2>Acesse sua conta</h2>
-      <form onsubmit="event.preventDefault(); alert('Login efetuado com sucesso!'); window.location.href='index.html';">
+      
+      <form onsubmit="realizarLogin(event)">
         <div class="login-input-group">
-          <label>E-mail</label>
-          <input type="email" placeholder="seu@email.com" required>
+          <label>E-mail ou Nome de Usuário</label>
+          <input type="text" id="loginUsuario" placeholder="ex: admin ou seu@email.com" required>
         </div>
 
         <div class="login-input-group">
           <label>Senha</label>
-          <input type="password" placeholder="••••••••" required>
+          <input type="password" id="loginSenha" placeholder="••••••••" required>
         </div>
 
         <button type="submit" class="btn-login-submit">Entrar</button>
       </form>
 
+      <div class="login-links-grid">
+        <a href="#" onclick="alert('Funcionalidade de Primeiro Acesso em breve!')">Primeiro Acesso</a>
+        <a href="#" onclick="alert('Instruções de recuperação enviadas para o e-mail.')">Esqueci a senha</a>
+      </div>
+
+      <hr class="modal-divider" style="border: none; border-top: 1px solid #1F2937; margin: 1.2rem 0;">
+
+      <div class="empresa-box-action">
+        <p style="font-size: 0.8rem; color: #9CA3AF; margin-bottom: 8px; text-align: center;">Representa um estabelecimento?</p>
+        <button type="button" class="btn-empresa-register" onclick="window.location.href='empresa-cadastro.html'">Registrar Empresa / Parceiro</button>
+      </div>
+
       <a href="index.html" class="back-home">← Voltar para o início</a>
     </div>
   </main>
 
-  <!-- Rodapé -->
   <footer class="footer">
-    <div class="footer-container text-center">
+    <div class="footer-container text-center" style="text-align: center;">
       <p>PREÇO JUSTO © 2026 • Todos os direitos reservados.</p>
     </div>
   </footer>
 
+  <script>
+    function realizarLogin(event) {
+      event.preventDefault();
+      const usuario = document.getElementById('loginUsuario').value.trim();
+      const senha = document.getElementById('loginSenha').value.trim();
+
+      if (usuario === 'admin' && senha === 'admin') {
+        alert('Login de Administrador efetuado com sucesso!');
+        window.location.href = 'index.html?admin=true';
+      } else {
+        alert('Login efetuado com sucesso!');
+        window.location.href = 'index.html';
+      }
+    }
+  </script>
 </body>
 </html>
