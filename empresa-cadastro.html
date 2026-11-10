@@ -19,34 +19,33 @@
     </div>
   </header>
 
-  <main class="login-wrapper" style="min-height: 80vh; padding: 1.5rem 1rem;">
-    <!-- Painel com tamanho compacto e refinado -->
-    <div class="login-card" style="max-width: 480px; padding: 2rem;">
-      <h2 style="font-size: 1.25rem; margin-bottom: 0.4rem;">Portal do Parceiro • Registrar Empresa</h2>
-      <p style="font-size: 0.8rem; color: #9CA3AF; margin-bottom: 1.2rem; text-align: center;">
-        Cadastre seu estabelecimento ou serviço para expor suas ofertas no PREÇO JUSTO.
+  <main class="login-wrapper" style="min-height: 85vh; padding: 2rem 1rem; display: flex; align-items: center; justify-content: center;">
+    <div class="login-card" style="max-width: 520px; width: 100%; padding: 2.5rem; border-radius: 20px;">
+      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; text-align: center;">Portal do Parceiro</h2>
+      <p style="font-size: 0.85rem; color: #9CA3AF; margin-bottom: 1.5rem; text-align: center;">
+        Cadastre sua empresa para expor suas ofertas no PREÇO JUSTO.
       </p>
 
       <form onsubmit="cadastrarEmpresa(event)">
         
-        <div class="login-input-group" style="margin-bottom: 0.9rem;">
-          <label>Nome da Empresa / Razão Social</label>
-          <input type="text" id="empNome" placeholder="Ex: Pousada Vista Linda" required style="padding: 0.7rem 0.9rem; font-size: 0.9rem;">
+        <div class="login-form-group" style="margin-bottom: 1rem;">
+          <label style="font-size: 0.75font; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">Nome da Empresa / Razão Social</label>
+          <input type="text" id="empNome" placeholder="Ex: Pousada Vista Linda" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none;">
         </div>
 
-        <div class="login-input-group" style="margin-bottom: 0.9rem;">
-          <label>CNPJ ou CPF do Responsável</label>
-          <input type="text" id="empDocumento" placeholder="00.000.000/0001-00" required style="padding: 0.7rem 0.9rem; font-size: 0.9rem;">
+        <div class="login-form-group" style="margin-bottom: 1rem;">
+          <label style="font-size: 0.75rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">CNPJ ou CPF do Responsável</label>
+          <input type="text" id="empDocumento" placeholder="00.000.000/0001-00" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none;">
         </div>
 
-        <div class="login-input-group" style="margin-bottom: 0.9rem;">
-          <label>E-mail de Contato / Comercial</label>
-          <input type="email" id="empEmail" placeholder="contato@suaempresa.com" required style="padding: 0.7rem 0.9rem; font-size: 0.9rem;">
+        <div class="login-form-group" style="margin-bottom: 1rem;">
+          <label style="font-size: 0.75rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">E-mail de Contato / Comercial</label>
+          <input type="email" id="empEmail" placeholder="contato@suaempresa.com" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none;">
         </div>
 
-        <div class="login-input-group" style="margin-bottom: 0.9rem;">
-          <label>Segmento (Ramo de Atuação)</label>
-          <select id="empSegmento" onchange="mudarFormularioSegmento()" style="background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; outline: none; cursor: pointer;" required>
+        <div class="login-form-group" style="margin-bottom: 1.2rem;">
+          <label style="font-size: 0.75rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">Segmento (Ramo de Atuação)</label>
+          <select id="empSegmento" onchange="mudarFormularioSegmento()" style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none; cursor: pointer;" required>
             <option value="" disabled selected>-- Escolha uma categoria --</option>
             <option value="hospedagem">🏨 Hotel / Pousada / Hospedagem</option>
             <option value="carros">🚗 Loja de Aluguel de Carros</option>
@@ -55,12 +54,12 @@
           </select>
         </div>
 
-        <div id="camposDinamicos" style="margin-top: 0.8rem; border-top: 1px solid #1F2937; padding-top: 0.8rem;"></div>
+        <div id="camposDinamicos" style="margin-top: 1rem; border-top: 1px solid #1F2937; padding-top: 1rem;"></div>
 
-        <button type="submit" class="btn-login-submit" style="margin-top: 1.2rem; padding: 0.8rem; font-size: 0.9rem;">Concluir Cadastro de Empresa</button>
+        <button type="submit" style="width: 100%; background-color: #22C55E; color: white; border: none; padding: 0.95rem; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 1rem;">Concluir Cadastro de Empresa</button>
       </form>
 
-      <a href="login.html" class="back-home" style="margin-top: 1rem;">← Voltar para a tela de login</a>
+      <a href="login.html" style="display: block; text-align: center; margin-top: 1.2rem; color: #9CA3AF; text-decoration: none; font-size: 0.85rem;">← Voltar para a tela de login</a>
     </div>
   </main>
 
@@ -79,49 +78,49 @@
       if (segmento === 'hospedagem') {
         htmlDinamico = `
           <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes da Hospedagem</h4>
-          <div class="login-input-group" style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem;">Cidade / Localização</label>
-            <input type="text" placeholder="Ex: Campos do Jordão, SP" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.8rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">LOCALIZAÇÃO</label>
+            <input type="text" placeholder="Ex: Campos do Jordão, SP" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
-          <div class="login-input-group" style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem;">Valor Médio da Diária (R$)</label>
-            <input type="number" placeholder="Ex: 250" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.5rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">VALOR MÉDIO DA DIÁRIA (R$)</label>
+            <input type="number" placeholder="Ex: 250" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
         `;
       } else if (segmento === 'carros') {
         htmlDinamico = `
           <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes da Frota</h4>
-          <div class="login-input-group" style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem;">Modelo do Veículo Principal</label>
-            <input type="text" placeholder="Ex: VW Golf GTI" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.8rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">MODELO DO VEÍCULO</label>
+            <input type="text" placeholder="Ex: VW Golf GTI" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
-          <div class="login-input-group" style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem;">Valor da Diária (R$)</label>
-            <input type="number" placeholder="Ex: 150" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.5rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">VALOR DA DIÁRIA (R$)</label>
+            <input type="number" placeholder="Ex: 150" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
         `;
       } else if (segmento === 'voos') {
         htmlDinamico = `
           <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes de Rotas</h4>
-          <div class="login-input-group" style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem;">Rota Principal (Origem ➔ Destino)</label>
-            <input type="text" placeholder="Ex: GRU ➔ BPS" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.8rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">ROTA PRINCIPAL</label>
+            <input type="text" placeholder="Ex: GRU ➔ BPS" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
-          <div class="login-input-group" style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem;">Preço Base (R$)</label>
-            <input type="number" placeholder="Ex: 450" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.5rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">PREÇO BASE (R$)</label>
+            <input type="number" placeholder="Ex: 450" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
         `;
       } else if (segmento === 'seguros') {
         htmlDinamico = `
           <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes do Seguro</h4>
-          <div class="login-input-group" style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem;">Tipo de Plano / Cobertura</label>
-            <input type="text" placeholder="Ex: Nacional R$ 40.000" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.8rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">TIPO DE PLANO</label>
+            <input type="text" placeholder="Ex: Nacional R$ 40.000" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
-          <div class="login-input-group" style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem;">Valor por Passageiro (R$)</label>
-            <input type="number" placeholder="Ex: 35" required style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+          <div style="margin-bottom: 0.5rem;">
+            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">VALOR POR PASSAGEIRO (R$)</label>
+            <input type="number" placeholder="Ex: 35" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
           </div>
         `;
       }
