@@ -3,30 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Compare e Economize</title>
+  <title>PREÇO JUSTO | Comparador de Hotéis</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho Limpo -->
+  <!-- Header -->
   <header>
-    <div class="logo-container">
-      <span class="logo-text">PREÇO JUSTO</span>
+    <span class="logo-text">PREÇO JUSTO</span>
+    <div class="header-actions">
+      <button class="btn-login-header" id="btnLoginHeader" onclick="abrirModalLogin()">Fazer login</button>
     </div>
   </header>
 
-  <!-- Busca Principal -->
+  <!-- Busca -->
   <section class="hero">
-    <h1>Encontre o menor preço sem complicação</h1>
-    <p>Compare valores de acomodações e produtos diretamente nos parceiros.</p>
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="O que você está procurando hoje?">
-      <button onclick="buscarOfertas()">Buscar</button>
+      <input type="text" id="searchInput" placeholder="Para onde você quer ir? (ex: Porto Seguro, Centro)">
+      <button onclick="buscarHoteis()">Buscar</button>
     </div>
   </section>
 
-  <!-- Container onde o JavaScript injeta os cards -->
-  <main class="container" id="offersContainer"></main>
+  <!-- Container dos Cards de Hotéis (Estilo Trivago) -->
+  <main class="main-layout" id="offersContainer"></main>
+
+  <!-- Modal de Login Opcional (Email/Senha/Nome) -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="fecharModalLogin()">✕</button>
+      <h3 class="modal-title">Acessar sua conta</h3>
+      <p class="modal-sub">Entre com seu e-mail/usuário e senha para salvar favoritos.</p>
+      
+      <form onsubmit="processarLogin(event)">
+        <div class="form-group">
+          <label>E-mail ou Nome de Usuário</label>
+          <input type="text" id="loginUser" placeholder="seuemail@exemplo.com ou usuario" required>
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" id="loginPass" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-submit-login">Entrar</button>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
