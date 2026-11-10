@@ -1,98 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar - PREÇO JUSTO</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #1f2937;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | PREÇO JUSTO</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .login-wrapper {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .login-card {
+      background-color: #111C1E;
+      border: 1px solid #1F2937;
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    .login-card h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-align: center;
+    }
+    .login-input-group {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .login-input-group label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #9CA3AF;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .login-input-group input {
+      background-color: #0E1719;
+      border: 1px solid #374151;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .btn-login-submit {
+      width: 100%;
+      background-color: #22C55E;
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .btn-login-submit:hover {
+      background-color: #16A34A;
+    }
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #9CA3AF;
+      text-decoration: none;
+      font-size: 0.85srem;
+    }
+    .back-home:hover {
+      color: #22C55E;
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-white flex items-center justify-center p-4">
+<body class="dark-mode">
 
-    <!-- Card de Login Modal (Estilo Trivago em fundo 100% branco) -->
-    <div class="max-w-md w-full bg-white rounded-3xl border border-gray-200 shadow-2xl p-8 relative space-y-6">
-        
-        <!-- Botão Fechar (X) -->
-        <a href="index.html" class="absolute top-6 right-6 text-gray-400 hover:text-gray-700 transition">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </a>
-
-        <!-- Topo: Logo PNG ou Nome -->
-        <div class="text-center pt-2 space-y-3">
-            <div class="flex justify-center">
-                <img src="logo.png" alt="Preço Justo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo-login').style.display='block';">
-                <span id="fallback-logo-login" style="display:none;" class="text-2xl font-black text-blue-600 uppercase tracking-wider">Preço Justo</span>
-            </div>
-            <h1 class="text-2xl font-extrabold text-gray-900 tracking-tight">
-                Inscreva-se e acesse mais ofertas
-            </h1>
-        </div>
-
-        <!-- Botões de Login Social -->
-        <div class="space-y-3">
-            <!-- Google -->
-            <button onclick="alert('Login com Google')" class="w-full py-3 px-4 rounded-xl border border-gray-300 font-bold text-gray-800 flex items-center justify-center space-x-3 hover:bg-gray-50 transition shadow-sm">
-                <svg class="w-5 h-5" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
-                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.28v3.15C3.25 21.3 7.31 24 12 24z"/>
-                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.28C.46 8.2.0 10.04.0 12s.46 3.8 1.28 5.42l4-3.15z"/>
-                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24.0 12 .0 7.31.0 3.25 2.7 1.28 6.58l4 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-                </svg>
-                <span>Google</span>
-            </button>
-
-            <!-- Apple -->
-            <button onclick="alert('Login com Apple')" class="w-full py-3 px-4 rounded-xl border border-gray-300 font-bold text-gray-800 flex items-center justify-center space-x-3 hover:bg-gray-50 transition shadow-sm">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 170 170">
-                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69.0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58.0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.16-1.9-14.46-6.1-3.21-2.64-7.14-7.27-11.8-13.89-6.93-9.84-12.39-20.9-16.37-33.17-3.98-12.28-5.97-23.95-5.97-35.02.0-14.61 3.7-26.68 11.09-36.2 7.39-9.53 16.73-14.34 28.02-14.44 5.34.0 10.87 1.25 16.59 3.75 5.72 2.5 9.77 3.75 12.15 3.75 2.12.0 6.27-1.3 12.44-3.9 6.18-2.6 11.44-3.8 15.8-3.6 11.44.57 20.67 4.7 27.69 12.41-9.94 6.01-14.8 14.34-14.58 24.99.23 8.35 3.42 15.49 9.58 21.42 6.16 5.93 13.62 9.28 22.37 10.05-2.07 6.16-4.7 12.18-7.89 18.06zm-24.87-107.56c0 6.64-2.42 13.06-7.27 18.25-5.2 5.56-11.59 8.79-18.49 8.44-.13-.78-.2-1.57-.2-2.37.0-6.73 2.65-13.38 7.42-18.37 4.77-5 11.36-8.23 18.28-8.4.13.82.26 1.63.26 2.45z"/>
-                </svg>
-                <span>Apple</span>
-            </button>
-
-            <!-- Facebook -->
-            <button onclick="alert('Login com Facebook')" class="w-full py-3 px-4 rounded-xl border border-gray-300 font-bold text-gray-800 flex items-center justify-center space-x-3 hover:bg-gray-50 transition shadow-sm">
-                <svg class="w-5 h-5 fill-[#1877F2]" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-                <span>Facebook</span>
-            </button>
-        </div>
-
-        <!-- Divisor 'ou' -->
-        <div class="relative flex py-2 items-center">
-            <div class="flex-grow border-t border-gray-200"></div>
-            <span class="flex-shrink mx-4 text-xs font-semibold text-gray-400 uppercase tracking-widest">ou</span>
-            <div class="flex-grow border-t border-gray-200"></div>
-        </div>
-
-        <!-- Formulário de E-mail -->
-        <form class="space-y-4" onsubmit="event.preventDefault(); alert('E-mail enviado!'); window.location.href='index.html';">
-            <div>
-                <label class="block text-xs font-bold text-gray-900 uppercase mb-1">E-mail</label>
-                <input type="email" required placeholder="Digite o endereço de e-mail" class="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition text-sm">
-            </div>
-
-            <button type="submit" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3.5 px-4 rounded-xl transition text-sm tracking-wide cursor-pointer">
-                Continuar com e-mail
-            </button>
-        </form>
-
-        <!-- Termos e Privacidade -->
-        <p class="text-[11px] text-gray-500 text-center leading-relaxed">
-            Ao criar uma conta, você concorda com a nossa 
-            <a href="#" class="text-blue-600 font-medium hover:underline">Política de privacidade</a> e os nossos 
-            <a href="#" class="text-blue-600 font-medium hover:underline">Termos de uso</a>.
-        </p>
-
+  <!-- Header Navbar -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html" class="logo-brand">
+        <img src="./logo.png" alt="Preço Justo Logo" class="nav-logo-img">
+      </a>
     </div>
+  </header>
+
+  <main class="login-wrapper">
+    <div class="login-card">
+      <h2>Acesse sua conta</h2>
+      <form onsubmit="event.preventDefault(); alert('Login efetuado com sucesso!'); window.location.href='index.html';">
+        <div class="login-input-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="login-input-group">
+          <label>Senha</label>
+          <input type="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn-login-submit">Entrar</button>
+      </form>
+
+      <a href="index.html" class="back-home">← Voltar para o início</a>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container text-center">
+      <p>PREÇO JUSTO © 2026 • Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
