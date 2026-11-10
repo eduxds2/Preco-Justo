@@ -3,50 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Comparador de Hotéis</title>
+  <title>PREÇO JUSTO | Compare preços de hotéis em mais de 100 sites</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <span class="logo-text">PREÇO JUSTO</span>
-    <div class="header-actions">
-      <button class="btn-login-header" id="btnLoginHeader" onclick="abrirModalLogin()">Fazer login</button>
+  <!-- 1. Cabeçalho Principal (Header) -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html" class="logo-text">PREÇO JUSTO</a>
+    </div>
+    <div class="header-nav">
+      <button class="btn-lang">🌐 PT · R$</button>
+      <a href="login.html" class="btn-login-header">Fazer login</a>
+      <button class="btn-menu">≡ Menu</button>
     </div>
   </header>
 
-  <!-- Busca -->
-  <section class="hero">
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Para onde você quer ir? (ex: Porto Seguro, Centro)">
-      <button onclick="buscarHoteis()">Buscar</button>
+  <!-- 2. Hero de Busca Inicial (Banner Principal) -->
+  <section class="hero-section">
+    <div class="hero-card">
+      <h1 class="hero-title">Economize até 50% na sua próxima estadia</h1>
+      <p class="hero-subtitle">Comparamos preços de hotéis de mais de 100 sites</p>
+
+      <!-- Barra de Pesquisa Avançada -->
+      <div class="search-bar-container">
+        <div class="search-field field-destination">
+          <span class="field-label">Destino</span>
+          <input type="text" id="searchInput" placeholder="Ex: Porto Seguro, São Paulo, Rio de Janeiro" value="Porto Seguro">
+        </div>
+        <div class="search-field field-dates">
+          <span class="field-label">Entrada/Saída</span>
+          <input type="text" value="1 de mar. - 2 de mar." readonly>
+        </div>
+        <div class="search-field field-guests">
+          <span class="field-label">Hóspedes e quartos</span>
+          <input type="text" value="2 hóspedes, 1 quarto" readonly>
+        </div>
+        <button class="btn-search-main" onclick="buscarHoteis()">Pesquisar</button>
+      </div>
+
+      <!-- Logos dos Parceiros Integrados -->
+      <div class="partners-bar">
+        <span class="partner-logo">Booking.com</span>
+        <span class="partner-logo">Hoteis.com</span>
+        <span class="partner-logo">Expedia</span>
+        <span class="partner-logo">Vrbo</span>
+        <span class="partner-logo">Trip.com</span>
+        <span class="partner-logo">decolar</span>
+        <span class="partner-more">+100 outros sites</span>
+      </div>
     </div>
   </section>
 
-  <!-- Container dos Cards de Hotéis (Estilo Trivago) -->
-  <main class="main-layout" id="offersContainer"></main>
+  <!-- 3. Barra de Filtros Rápidos Superior -->
+  <nav class="quick-filters-bar">
+    <button class="filter-pill active" onclick="filtrarPorPill('todos')">Todas as ofertas</button>
+    <button class="filter-pill" onclick="filtrarPorPill('ofertas')">Ofertas incríveis</button>
+    <button class="filter-pill" onclick="filtrarPorPill('piscina')">Piscina</button>
+    <button class="filter-pill" onclick="filtrarPorPill('cancelamento')">Cancelamento gratuito</button>
+    <button class="filter-pill" onclick="filtrarPorPill('cafe')">Café da manhã incluído</button>
+    <button class="filter-pill" onclick="filtrarPorPill('ar')">Ar-condicionado</button>
+  </nav>
 
-  <!-- Modal de Login Opcional (Email/Senha/Nome) -->
-  <div class="modal-overlay" id="loginModal">
-    <div class="modal-card">
-      <button class="modal-close" onclick="fecharModalLogin()">✕</button>
-      <h3 class="modal-title">Acessar sua conta</h3>
-      <p class="modal-sub">Entre com seu e-mail/usuário e senha para salvar favoritos.</p>
-      
-      <form onsubmit="processarLogin(event)">
-        <div class="form-group">
-          <label>E-mail ou Nome de Usuário</label>
-          <input type="text" id="loginUser" placeholder="seuemail@exemplo.com ou usuario" required>
+  <!-- 4. Layout Principal: Filtros Laterais + Lista de Hotéis -->
+  <div class="main-content-layout">
+    
+    <!-- Painel de Filtros Detalhados (Esquerda) -->
+    <aside class="sidebar-filters">
+      <div class="filter-group">
+        <h3>Filtros</h3>
+        <label class="checkbox-container">
+          <input type="checkbox" id="chkCancelamento" onchange="aplicarFiltrosSidebar()">
+          <span>Cancelamento gratuito</span>
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <h3>Preço</h3>
+        <p class="filter-subtext">Faixa de preço por diária</p>
+        <div class="price-inputs">
+          <input type="number" id="priceMin" placeholder="R$ Min" value="0" oninput="aplicarFiltrosSidebar()">
+          <span>-</span>
+          <input type="number" id="priceMax" placeholder="R$ Máx" value="3000" oninput="aplicarFiltrosSidebar()">
         </div>
-        <div class="form-group">
-          <label>Senha</label>
-          <input type="password" id="loginPass" placeholder="••••••••" required>
-        </div>
-        <button type="submit" class="btn-submit-login">Entrar</button>
-      </form>
-    </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Avaliação do hotel</h3>
+        <label class="checkbox-container"><input type="checkbox" name="star" value="5" onchange="aplicarFiltrosSidebar()"> 5 estrelas</label>
+        <label class="checkbox-container"><input type="checkbox" name="star" value="4" onchange="aplicarFiltrosSidebar()"> 4 estrelas</label>
+        <label class="checkbox-container"><input type="checkbox" name="star" value="3" onchange="aplicarFiltrosSidebar()"> 3 estrelas</label>
+      </div>
+    </aside>
+
+    <!-- Lista de Resultados Trivago (Centro) -->
+    <main class="results-container" id="offersContainer"></main>
+
   </div>
+
+  <!-- 5. Seção Home: Buscas Populares e Destinos -->
+  <section class="home-sections-container">
+    <h2>Buscas populares</h2>
+    <div class="popular-cities-grid">
+      <div class="city-card" onclick="pesquisarCidade('São Paulo')">
+        <img src="https://images.unsplash.com/photo-1543059080-f29f9d74e30b?auto=format&fit=crop&w=400&q=80" alt="São Paulo">
+        <div class="city-info">
+          <h4>São Paulo</h4>
+          <p>Média: R$ 350/noite</p>
+        </div>
+      </div>
+      <div class="city-card" onclick="pesquisarCidade('Rio de Janeiro')">
+        <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=400&q=80" alt="Rio de Janeiro">
+        <div class="city-info">
+          <h4>Rio de Janeiro</h4>
+          <p>Média: R$ 420/noite</p>
+        </div>
+      </div>
+      <div class="city-card" onclick="pesquisarCidade('Porto Seguro')">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Porto Seguro">
+        <div class="city-info">
+          <h4>Porto Seguro</h4>
+          <p>Média: R$ 280/noite</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Banner para Login/Associação -->
+  <div class="membership-banner">
+    <div class="membership-text">
+      💡 <strong>Quer ter acesso a benefícios e preços para associados?</strong> Cadastre-se gratuitamente.
+    </div>
+    <a href="login.html" class="btn-membership-login">Fazer login ></a>
+  </div>
+
+  <!-- 7. Rodapé Institucional (Footer) -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>PREÇO JUSTO</h4>
+        <p>Seu comparador independente de preços de acomodações e ofertas.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Termos e políticas</h4>
+        <ul>
+          <li><a href="#">Condições de uso</a></li>
+          <li><a href="#">Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Benefícios para membros</h4>
+        <ul>
+          <li><a href="login.html">Personalizar experiência</a></li>
+          <li><a href="login.html">Ofertas exclusivas</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
