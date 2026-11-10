@@ -424,17 +424,34 @@ body.dark-mode .footer {
 .feature-text h4 { font-size: 0.95rem; font-weight: 700; }
 .feature-text p { font-size: 0.8rem; color: #9CA3AF; }
 
-.company-logos-row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 2rem;
-  border-radius: 12px;
+/* Estilização das Logos das Companhias Aéreas (Pasta Empresa) */
+.airline-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
 }
 
-.company-logo-item { font-weight: 800; font-size: 1.2rem; color: #9CA3AF; }
+.airline-card {
+  background-color: #111C1E;
+  border: 1px solid #1F2937;
+  padding: 1.2rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.airline-img {
+  max-width: 120px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
 
 .faq-grid {
   display: grid;
