@@ -8,11 +8,13 @@
 </head>
 <body class="light-mode">
 
-  <!-- Header Navbar Elegante (Sem Emojis nos Botões) -->
+  <!-- Header Navbar -->
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-brand">
-        <span class="logo-plane">✈</span>
+        <svg class="logo-svg-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.7 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z" fill="#22C55E"/>
+        </svg>
         <span class="brand-text">preço<strong>justo</strong></span>
       </a>
     </div>
@@ -20,16 +22,21 @@
     <div class="header-nav-actions">
       <button class="header-btn">PT · R$</button>
       <a href="login.html" class="header-btn btn-login">Fazer login</a>
-      <button class="header-btn btn-theme" onclick="toggleTheme()" id="btnThemeToggle">🌙 Modo Escuro</button>
+      <button class="header-btn btn-theme" onclick="toggleTheme()" id="btnThemeToggle">Modo Escuro</button>
     </div>
   </header>
 
-  <!-- Hero Banner com Tipografia da Marca -->
+  <!-- Hero Banner -->
   <section class="hero-section">
     <div class="search-container">
       
       <div class="hero-brand-header">
-        <h1 class="hero-brand-title">preço<br><span>justo</span></h1>
+        <div class="hero-logo-box">
+          <svg class="hero-svg-plane" viewBox="0 0 24 24" fill="#22C55E">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.7 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+          </svg>
+          <h1 class="hero-brand-title">preço<br><span>justo</span></h1>
+        </div>
         <p class="hero-subtitle">Voe com tarifas justas e mais economia para chegar onde importa.</p>
       </div>
 
@@ -77,7 +84,7 @@
           </div>
         </div>
 
-        <!-- FORMULÁRIO DE HOSPEDAGEM (Com Modal de Hóspedes) -->
+        <!-- FORMULÁRIO DE HOSPEDAGEM -->
         <div id="formHospedagem" style="display:none;">
           <div class="search-card-header">
             <h2>Encontre sua próxima estadia</h2>
@@ -99,7 +106,7 @@
               <span class="box-label">HÓSPEDES E QUARTOS</span>
               <input type="text" id="stayOcupacaoInput" value="2 hóspedes, 1 quarto" readonly onclick="toggleModalHospedes()">
               
-              <!-- Modal Popover Hóspedes -->
+              <!-- Modal Popover -->
               <div class="guest-modal" id="guestModal" style="display:none;">
                 <div class="modal-row">
                   <div class="modal-label"><strong>Adultos</strong></div>
@@ -146,96 +153,132 @@
           </div>
         </div>
 
-      </div> <!-- Fim search-card -->
+      </div>
 
     </div>
   </section>
 
-  <!-- Catálogo Completo e Robusto de Conteúdos -->
-  <main class="main-body">
+  <!-- ÁREA DE CONTEÚDO EXCLUSIVO DA ABA SELECIONADA -->
+  <main class="main-body" id="mainBody">
 
-    <!-- 1. SEÇÃO DE HOSPEDAGENS & RESORTS -->
-    <section class="section-block" id="sec-hospedagem">
-      <h2 class="section-block-title">Hotéis & Resorts em Destaque</h2>
-      <p class="section-block-subtitle">Preços atualizados em tempo real nos nossos principais parceiros</p>
-      <div class="cards-grid" id="hospedagemGrid"></div>
-    </section>
-
-    <!-- 2. SEÇÃO DE VOOS & PASSAGENS -->
-    <section class="section-block" id="sec-voos">
-      <h2 class="section-block-title">Passagens Aéreas com Tarifas Imbatíveis</h2>
-      <p class="section-block-subtitle">Principais rotas nacionais e internacionais com desconto</p>
-      <div class="cards-grid" id="voosGrid"></div>
-    </section>
-
-    <!-- 3. SEÇÃO DE CARROS & ALUGUEL (Estilo CVC) -->
-    <section class="section-block" id="sec-carros">
-      <h2 class="section-block-title">Aluguel de Carros</h2>
-      <p class="section-block-subtitle">Encontre o carro certo para você com diárias que cabem no bolso</p>
-
+    <!-- 1. SEÇÃO EXCLUSIVA DE CARROS (img1 + img2) -->
+    <div id="viewCarros" class="view-block" style="display:none;">
       <div class="frota-features-grid">
         <div class="feature-item">
           <div class="feature-icon-circle">⚡</div>
           <div class="feature-text">
             <h4>Fast Retirada Digital</h4>
-            <p>Retire seu carro em até 5 minutos sem filas.</p>
+            <p>Retire seu carro em até 5 minutos, sem enfrentar filas.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon-circle">🛡</div>
+          <div class="feature-icon-circle">🚗</div>
           <div class="feature-text">
-            <h4>Proteção Integrada</h4>
-            <p>Sua viagem 100% protegida contra imprevistos.</p>
+            <h4>Adicionais</h4>
+            <p>Pra que sua viagem seja ainda mais simples e prazerosa!</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon-circle">🗝</div>
+          <div class="feature-icon-circle">👤</div>
           <div class="feature-text">
             <h4>Portal do Cliente</h4>
-            <p>Gerencie sua reserva em um só lugar.</p>
+            <p>Tudo que você precisa, em um só lugar.</p>
           </div>
         </div>
       </div>
 
-      <div class="cards-grid" id="carrosGrid"></div>
-    </section>
+      <section class="section-block">
+        <h2 class="section-block-title">🚗 Aluguel de Carros</h2>
+        <p class="section-block-subtitle">Encontre o carro certo para você</p>
+        <div class="cards-grid" id="carrosGrid"></div>
+      </section>
 
-    <!-- 4. SEÇÃO DE SEGUROS VIAGEM -->
-    <section class="section-block" id="sec-seguros">
-      <h2 class="section-block-title">Seguro Viagem & Assistência</h2>
-      <p class="section-block-subtitle">Proteção médica e hospitalar completa para o Brasil e exterior</p>
-      <div class="cards-grid" id="segurosGrid"></div>
-    </section>
+      <section class="section-block mt-4">
+        <h2 class="section-block-title text-center">Conheça a nossa Frota</h2>
+        <p class="section-block-subtitle text-center">As melhores condições para você reservar e aproveitar</p>
+        <div class="cards-grid" id="frotaGrid"></div>
+        <div class="btn-group-center">
+          <button class="btn-outline-green">CONFIRA TODOS OS GRUPOS</button>
+        </div>
+      </section>
+    </div>
 
-    <!-- FAQ e Newsletter -->
-    <section class="section-block">
-      <h2 class="section-block-title">Dúvidas Frequentes</h2>
-      <div class="faq-grid">
-        <div class="faq-card content-card">
-          <h4>O que é o Seguro Viagem?</h4>
-          <p>O seguro garante suporte total ao passageiro durante todo o período da viagem em casos de urgência médica, cancelamentos de voos e extravio de bagagem.</p>
-        </div>
-        <div class="faq-card content-card">
-          <h4>Como receber os melhores preços?</h4>
-          <p>Nossa plataforma pesquisa simultaneamente em dezenas de companhias parceiras para entregar o menor preço em voos e hospedagens.</p>
-        </div>
-      </div>
+    <!-- 2. SEÇÃO EXCLUSIVA DE HOSPEDAGEM (img3 + img4) -->
+    <div id="viewHospedagem" class="view-block" style="display:none;">
+      <section class="section-block">
+        <h2 class="section-block-title">Especial Nordeste: Hotéis e Resorts</h2>
+        <p class="section-block-subtitle">Estadias incríveis nos melhores destinos praianos</p>
+        <div class="cards-grid" id="hospedagemGrid"></div>
+      </section>
 
-      <div class="newsletter-box content-card">
-        <div>
-          <h4>Receba ofertas exclusivas no seu e-mail</h4>
-          <p style="font-size:0.8rem; color:#64748B;">Receba em primeira mão cupons de desconto de parceiros.</p>
+      <section class="section-block mt-4">
+        <h2 class="section-block-title">🏰 Hospedagens Confortáveis em Campos do Jordão</h2>
+        <p class="section-block-subtitle">Parcele em até 10x iguais! Viaja que dá!</p>
+        <div class="cards-grid" id="camposGrid"></div>
+      </section>
+    </div>
+
+    <!-- 3. SEÇÃO EXCLUSIVA DE VOOS & PACOTES (img5 + img6) -->
+    <div id="viewVoos" class="view-block" style="display:none;">
+      <section class="section-block">
+        <h2 class="section-block-title">🌅 Passagens aéreas baratas Nordeste do Brasil</h2>
+        <p class="section-block-subtitle">De Salvador a Natal explore e garanta sua passagem</p>
+        <div class="cards-grid" id="voosGrid"></div>
+      </section>
+
+      <section class="section-block mt-4">
+        <h2 class="section-block-title">Ofertas Imbatíveis</h2>
+        <div class="cards-grid" id="voosImbateisGrid"></div>
+      </section>
+
+      <section class="section-block mt-4">
+        <h2 class="section-block-title">Passagens aéreas baratas: viaje mais e gaste menos</h2>
+        <div class="company-logos-row content-card">
+          <span class="company-logo-item">LATAM AIRLINES</span>
+          <span class="company-logo-item">GOL</span>
+          <span class="company-logo-item">AZUL</span>
+          <span class="company-logo-item">COPA AIRLINES</span>
         </div>
-        <div class="newsletter-input-group">
-          <input type="email" placeholder="Insira seu e-mail">
-          <button class="btn-submit-search">Quero me inscrever</button>
+      </section>
+    </div>
+
+    <!-- 4. SEÇÃO EXCLUSIVA DE SEGUROS (img7) -->
+    <div id="viewSeguros" class="view-block" style="display:none;">
+      <section class="section-block">
+        <h2 class="section-block-title">🛡️ Viaje protegido com um seguro viagem</h2>
+        <p class="section-block-subtitle">Assistência 24h médica e proteção de bagagem</p>
+        <div class="cards-grid" id="segurosGrid"></div>
+      </section>
+
+      <section class="section-block mt-4">
+        <h2 class="section-block-title">Dúvidas frequentes sobre seguro viagem</h2>
+        <div class="faq-grid">
+          <div class="faq-card content-card">
+            <h4>O que é o seguro viagem?</h4>
+            <p>O seguro viagem cuida, protege e presta suporte ao passageiro durante o período da sua viagem em casos de urgências.</p>
+          </div>
+          <div class="faq-card content-card">
+            <h4>Por que contratar um seguro viagem?</h4>
+            <p>Recomendado para viagens internacionais ou nacionais, garantindo auxílio imediato contra imprevistos.</p>
+          </div>
         </div>
-      </div>
-    </section>
+
+        <div class="newsletter-box content-card">
+          <div>
+            <h4>Receba ofertas exclusivas do ViajaNet no seu e-mail</h4>
+            <p style="font-size:0.8rem; color:#64748B;">Política de privacidade aplicada</p>
+          </div>
+          <div class="newsletter-input-group">
+            <input type="email" placeholder="Insira seu e-mail">
+            <button class="btn-submit-search">Quero me inscrever</button>
+          </div>
+        </div>
+      </section>
+    </div>
 
   </main>
 
-  <!-- Rodapé Institucional Escuro -->
+  <!-- Rodapé -->
   <footer class="footer">
     <div class="footer-container">
       <div>
