@@ -3,143 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
-  <link rel="stylesheet" href="style.css">
+  <title>PREÇO JUSTO | Comparador de Viagens e Hospedagens</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="light-mode">
 
-  <!-- Topo Hero Escuro (Visual da Imagem) -->
-  <div class="hero-header-bg">
-    
-    <!-- Navbar -->
-    <header class="header">
-      <div class="header-logo">
-        <a href="index.html" class="logo">
+  <!-- Header Navbar -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html" class="logo-link">
+        <!-- Espaço para a sua logo personalizada -->
+        <img src="public/assets/logo.png" alt="Preço Justo" class="custom-logo" onerror="this.style.display='none'; document.getElementById('textLogo').style.display='flex';">
+        <div id="textLogo" class="text-logo" style="display:none;">
           <span class="logo-icon">✈️</span>
-          <span class="logo-text">preço<br><strong>justo</strong></span>
-        </a>
-      </div>
-      <nav class="header-nav">
-        <div class="dropdown">
-          <button class="nav-link">Descubra ▾</button>
+          <span class="logo-brand">preço<strong>justo</strong></span>
         </div>
-        <div class="dropdown">
-          <button class="nav-link">Minhas viagens ▾</button>
-        </div>
-        <a href="#" class="nav-link">Central de Ajuda</a>
-      </nav>
-      <div class="header-actions">
-        <button class="btn-icon">🔍</button>
-        <a href="login.html" class="btn-icon" title="Login / Minha Conta">👤</a>
-      </div>
-    </header>
-
-    <!-- Banner Principal -->
-    <section class="banner-intro">
-      <div class="banner-content">
-        <h1 class="brand-title">preço<br><span class="highlight">justo</span></h1>
-        <p class="brand-sub">Voe com tarifas justas e mais economia para chegar onde importa.</p>
-      </div>
-    </section>
-
-    <!-- Barra de Navegação por Categorias (Abas) -->
-    <div class="tabs-container">
-      <button class="tab-btn" onclick="trocarAba('monte')">Monte sua viagem</button>
-      <button class="tab-btn active" onclick="trocarAba('voos')">Voos</button>
-      <button class="tab-btn" onclick="trocarAba('pacotes')">Pacotes</button>
-      <button class="tab-btn" onclick="trocarAba('hospedagem')">Hospedagem</button>
-      <button class="tab-btn" onclick="trocarAba('carros')">Carros</button>
-      <button class="tab-btn" onclick="trocarAba('seguros')">Seguros</button>
-      <button class="tab-btn" onclick="trocarAba('upgrade')">Upgrade</button>
-      <button class="tab-btn" onclick="trocarAba('esim')">eSIM</button>
-      <button class="tab-btn" onclick="trocarAba('universal')">Universal</button>
+      </a>
     </div>
 
-    <!-- Card de Busca Flutuante -->
-    <div class="search-card">
-      <div class="search-card-header">
-        <h2 id="searchCardTitle">Para onde você quer ir?</h2>
-        <div class="trip-options" id="tripOptions">
-          <label class="radio-pill active">
-            <input type="radio" name="tripType" value="ida-volta" checked> ✓ Ida e volta
-          </label>
-          <label class="radio-pill">
-            <input type="radio" name="tripType" value="somente-ida"> Somente ida
-          </label>
-          <label class="radio-pill">
-            <input type="radio" name="tripType" value="multidestino"> Multidestino
-          </label>
-        </div>
-      </div>
+    <nav class="header-nav">
+      <span class="nav-link">Descubra ▾</span>
+      <span class="nav-link">Minhas viagens ▾</span>
+      <a href="#" class="nav-link">Central de Ajuda</a>
+    </nav>
 
-      <div class="search-inputs-grid">
-        <div class="input-box">
-          <span class="box-label">De</span>
-          <input type="text" id="inputOrigem" placeholder="Insira uma origem">
-        </div>
-        <button class="btn-swap" onclick="inverterDestinos()" title="Inverter origem e destino">⇆</button>
-        <div class="input-box">
-          <span class="box-label">Para</span>
-          <input type="text" id="inputDestino" placeholder="Insira um destino">
-        </div>
-        <button class="btn-submit-search" onclick="realizarPesquisa()">Buscar</button>
-      </div>
+    <div class="header-actions">
+      <!-- Botão para Trocar Tema (Light / Dark Mode) -->
+      <button class="btn-theme-toggle" id="btnThemeToggle" onclick="toggleTheme()" title="Alternar Modo Claro / Escuro">
+        🌙
+      </button>
+      <button class="btn-icon" title="Buscar">🔍</button>
+      <a href="login.html" class="btn-icon" title="Fazer Login">👤</a>
     </div>
+  </header>
 
-  </div> <!-- Fim hero-header-bg -->
+  <!-- Hero principal de busca -->
+  <section class="hero-section">
+    <div class="search-container">
+      
+      <!-- Navegação por Abas -->
+      <div class="tabs-container">
+        <button class="tab-btn" onclick="trocarAba('monte', this)">Monte sua viagem</button>
+        <button class="tab-btn active" onclick="trocarAba('voos', this)">Voos</button>
+        <button class="tab-btn" onclick="trocarAba('pacotes', this)">Pacotes</button>
+        <button class="tab-btn" onclick="trocarAba('hospedagem', this)">Hospedagem</button>
+        <button class="tab-btn" onclick="trocarAba('carros', this)">Carros</button>
+        <button class="tab-btn" onclick="trocarAba('seguros', this)">Seguros</button>
+        <button class="tab-btn" onclick="trocarAba('upgrade', this)">Upgrade</button>
+        <button class="tab-btn" onclick="trocarAba('esim', this)">eSIM</button>
+        <button class="tab-btn" onclick="trocarAba('universal', this)">Universal</button>
+      </div>
 
-  <!-- Conteúdo Principal abaixo do Hero -->
+      <!-- Card de Formulário Dinâmico -->
+      <div class="search-card">
+        
+        <!-- Conteúdo de Voos/Hotéis -->
+        <div id="formGenerico">
+          <div class="search-card-header">
+            <h2 id="searchCardTitle">Para onde você quer ir?</h2>
+            <div class="trip-options" id="tripOptions">
+              <label class="radio-pill active">
+                <input type="radio" name="tripType" value="ida-volta" checked> ✓ Ida e volta
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="tripType" value="somente-ida"> Somente ida
+              </label>
+            </div>
+          </div>
+
+          <div class="search-inputs-grid">
+            <div class="input-box">
+              <span class="box-label">De</span>
+              <input type="text" id="inputOrigem" placeholder="Insira uma origem">
+            </div>
+            <button class="btn-swap" onclick="inverterDestinos()">⇆</button>
+            <div class="input-box">
+              <span class="box-label">Para</span>
+              <input type="text" id="inputDestino" placeholder="Insira um destino">
+            </div>
+            <button class="btn-submit-search" onclick="realizarPesquisa()">Buscar</button>
+          </div>
+        </div>
+
+        <!-- Conteúdo Específico de Carros (Estilo CVC) -->
+        <div id="formCarros" style="display:none;">
+          <div class="search-card-header">
+            <h2>Aluguel de carros com preços imperdíveis</h2>
+            <label class="checkbox-cvc">
+              <input type="checkbox" id="chkOutroLocal"> Devolver em outro local ou destino
+            </label>
+          </div>
+
+          <div class="cvc-car-inputs-grid">
+            <div class="input-box flex-2">
+              <span class="box-label">Local de retirada</span>
+              <input type="text" id="carLocal" placeholder="Digite a cidade ou aeroporto">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Retirada</span>
+              <input type="date" id="carDataRetirada">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Hora</span>
+              <input type="time" id="carHoraRetirada" value="10:00">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Devolução</span>
+              <input type="date" id="carDataDevolucao">
+            </div>
+            <div class="input-box">
+              <span class="box-label">Hora</span>
+              <input type="time" id="carHoraDevolucao" value="10:00">
+            </div>
+            <button class="btn-submit-search" onclick="buscarCarros()">Buscar</button>
+          </div>
+        </div>
+
+      </div> <!-- Fim search-card -->
+
+    </div>
+  </section>
+
+  <!-- Corpo Principal -->
   <main class="main-body">
 
-    <!-- Card de Novidades (Malha Aérea Nacional) -->
-    <section class="news-card">
-      <div class="news-content">
-        <span class="badge-tag">NOVAS ROTAS</span>
-        <h3>Já viu as novidades da nossa malha aérea nacional? ✈️</h3>
-        <p>Mais destinos, mais conexões e a mesma experiência Preço Justo.</p>
+    <!-- Seção de Aluguel de Carros (Estilo CVC - Aparece ao Clicar em Carros) -->
+    <section id="sectionCarrosCVC" style="display:none; margin-bottom: 2.5rem;">
+      <div class="cvc-banner-promo-grid">
+        <div class="cvc-promo-card promo-blue">
+          <span>ALUGUEL DE CARROS</span>
+          <h4>Categoria Compacto com Ar</h4>
+          <p>Diárias a partir de <strong>R$ 164</strong></p>
+        </div>
+        <div class="cvc-promo-card promo-yellow">
+          <span>OFERTA IMPERDÍVEL</span>
+          <h4>Proteção do veículo incluída</h4>
+          <p>Diárias a partir de <strong>R$ 67</strong></p>
+        </div>
       </div>
-      <div class="news-action">
-        <span class="news-subtext">Aproveite a temporada de férias</span>
-        <button class="btn-outline" onclick="realizarPesquisa()">Confira os destinos</button>
+
+      <div class="section-title-box mt-4">
+        <h2>Encontre o carro certo para você</h2>
+        <p>Veículos revisados e com quilometragem livre</p>
       </div>
+
+      <div class="cars-grid" id="carsContainer"></div>
     </section>
 
-    <!-- Lista de Ofertas / Resultados (Renderizada via JS) -->
-    <section class="results-section">
+    <!-- Lista de Ofertas Geral (Hotéis / Voos) -->
+    <section class="results-section" id="sectionGeral">
       <div class="section-title-box">
-        <h2>Melhores ofertas de Hospedagem & Voos</h2>
-        <p>Preços atualizados em tempo real nos nossos parceiros</p>
+        <h2>Melhores ofertas encontradas</h2>
+        <p>Preços transparentes e atualizados nos principais parceiros</p>
       </div>
       <div class="offers-grid" id="offersContainer"></div>
     </section>
 
   </main>
 
-  <!-- Rodapé Institucional -->
+  <!-- Rodapé -->
   <footer class="footer">
     <div class="footer-container">
       <div>
         <h4 class="footer-logo">PREÇO JUSTO</h4>
-        <p>Pesquise e compare preços de hospedagens e voos com transparência.</p>
+        <p>Plataforma agregadora para comparação de voos, hotéis e carros.</p>
       </div>
       <div>
         <h4>Acesso do Sistema</h4>
         <ul>
-          <li><a href="login.html">Login / Cadastro de Usuário</a></li>
-          <li><a href="login.html?tipo=empresa">Área da Empresa (Cadastrar Oferta)</a></li>
-          <li><a href="login.html?tipo=admin">Painel Administrativo</a></li>
+          <li><a href="login.html">Login de Usuário</a></li>
+          <li><a href="login.html?tipo=empresa">Cadastrar Oferta (Empresas)</a></li>
         </ul>
       </div>
       <div>
-        <h4>Termos & LGPD</h4>
+        <h4>Suporte</h4>
         <ul>
-          <li><a href="#">Política de Privacidade (RNF04)</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
           <li><a href="#">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
