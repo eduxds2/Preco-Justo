@@ -3,33 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREÇO JUSTO | Comparador de Viagens e Hospedagens</title>
+  <title>PREÇO JUSTO | Tarifas justas e mais economia</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="light-mode">
 
-  <!-- Header Navbar Limpo com a Sua Logo -->
+  <!-- Header Navbar Elegante (Sem Emojis nos Botões) -->
   <header class="header">
     <div class="header-logo">
       <a href="index.html" class="logo-brand">
-        <img src="./logo.png" alt="Preço Justo Logo" class="nav-logo-img">
+        <span class="logo-plane">✈</span>
+        <span class="brand-text">preço<strong>justo</strong></span>
       </a>
     </div>
 
     <div class="header-nav-actions">
-      <button class="header-btn">🌐 PT · R$</button>
-      <a href="login.html" class="header-btn btn-login">👤 Fazer login</a>
-      <button class="header-btn" onclick="toggleTheme()" id="btnThemeToggle">🌙 Modo</button>
+      <button class="header-btn">PT · R$</button>
+      <a href="login.html" class="header-btn btn-login">Fazer login</a>
+      <button class="header-btn btn-theme" onclick="toggleTheme()" id="btnThemeToggle">🌙 Modo Escuro</button>
     </div>
   </header>
 
-  <!-- Hero principal -->
+  <!-- Hero Banner com Tipografia da Marca -->
   <section class="hero-section">
     <div class="search-container">
       
-      <!-- Banner com a Logo Oficial 3D -->
-      <div class="hero-logo-banner">
-        <img src="./logo.png" alt="Preço Justo" class="hero-logo-img">
+      <div class="hero-brand-header">
+        <h1 class="hero-brand-title">preço<br><span>justo</span></h1>
         <p class="hero-subtitle">Voe com tarifas justas e mais economia para chegar onde importa.</p>
       </div>
 
@@ -46,7 +46,7 @@
       <!-- Card Central de Busca -->
       <div class="search-card">
         
-        <!-- FORMULÁRIO GERAL (Monte / Voos / Pacotes / Carros / Seguros) -->
+        <!-- FORMULÁRIO GERAL -->
         <div id="formGeral">
           <div class="search-card-header">
             <h2 id="searchCardTitle">Pesquisar viagens</h2>
@@ -99,7 +99,7 @@
               <span class="box-label">HÓSPEDES E QUARTOS</span>
               <input type="text" id="stayOcupacaoInput" value="2 hóspedes, 1 quarto" readonly onclick="toggleModalHospedes()">
               
-              <!-- Modal Popover -->
+              <!-- Modal Popover Hóspedes -->
               <div class="guest-modal" id="guestModal" style="display:none;">
                 <div class="modal-row">
                   <div class="modal-label"><strong>Adultos</strong></div>
@@ -139,10 +139,10 @@
                   <button type="button" class="btn-redefinir" onclick="redefinirHospedes()">REDEFINIR</button>
                   <button type="button" class="btn-confirmar" onclick="confirmarHospedes()">Confirmar</button>
                 </div>
-              </div> <!-- Fim guest-modal -->
+              </div>
             </div>
 
-            <button class="btn-submit-search" onclick="realizarPesquisa()">Pesquisar</button>
+            <button class="btn-submit-search" onclick="realizarPesquisa()">BUSCAR</button>
           </div>
         </div>
 
@@ -151,8 +151,89 @@
     </div>
   </section>
 
-  <!-- Conteúdo Dinâmico por Aba -->
-  <main class="main-body" id="mainBodyContent"></main>
+  <!-- Catálogo Completo e Robusto de Conteúdos -->
+  <main class="main-body">
+
+    <!-- 1. SEÇÃO DE HOSPEDAGENS & RESORTS -->
+    <section class="section-block" id="sec-hospedagem">
+      <h2 class="section-block-title">Hotéis & Resorts em Destaque</h2>
+      <p class="section-block-subtitle">Preços atualizados em tempo real nos nossos principais parceiros</p>
+      <div class="cards-grid" id="hospedagemGrid"></div>
+    </section>
+
+    <!-- 2. SEÇÃO DE VOOS & PASSAGENS -->
+    <section class="section-block" id="sec-voos">
+      <h2 class="section-block-title">Passagens Aéreas com Tarifas Imbatíveis</h2>
+      <p class="section-block-subtitle">Principais rotas nacionais e internacionais com desconto</p>
+      <div class="cards-grid" id="voosGrid"></div>
+    </section>
+
+    <!-- 3. SEÇÃO DE CARROS & ALUGUEL (Estilo CVC) -->
+    <section class="section-block" id="sec-carros">
+      <h2 class="section-block-title">Aluguel de Carros</h2>
+      <p class="section-block-subtitle">Encontre o carro certo para você com diárias que cabem no bolso</p>
+
+      <div class="frota-features-grid">
+        <div class="feature-item">
+          <div class="feature-icon-circle">⚡</div>
+          <div class="feature-text">
+            <h4>Fast Retirada Digital</h4>
+            <p>Retire seu carro em até 5 minutos sem filas.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-circle">🛡</div>
+          <div class="feature-text">
+            <h4>Proteção Integrada</h4>
+            <p>Sua viagem 100% protegida contra imprevistos.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-circle">🗝</div>
+          <div class="feature-text">
+            <h4>Portal do Cliente</h4>
+            <p>Gerencie sua reserva em um só lugar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-grid" id="carrosGrid"></div>
+    </section>
+
+    <!-- 4. SEÇÃO DE SEGUROS VIAGEM -->
+    <section class="section-block" id="sec-seguros">
+      <h2 class="section-block-title">Seguro Viagem & Assistência</h2>
+      <p class="section-block-subtitle">Proteção médica e hospitalar completa para o Brasil e exterior</p>
+      <div class="cards-grid" id="segurosGrid"></div>
+    </section>
+
+    <!-- FAQ e Newsletter -->
+    <section class="section-block">
+      <h2 class="section-block-title">Dúvidas Frequentes</h2>
+      <div class="faq-grid">
+        <div class="faq-card content-card">
+          <h4>O que é o Seguro Viagem?</h4>
+          <p>O seguro garante suporte total ao passageiro durante todo o período da viagem em casos de urgência médica, cancelamentos de voos e extravio de bagagem.</p>
+        </div>
+        <div class="faq-card content-card">
+          <h4>Como receber os melhores preços?</h4>
+          <p>Nossa plataforma pesquisa simultaneamente em dezenas de companhias parceiras para entregar o menor preço em voos e hospedagens.</p>
+        </div>
+      </div>
+
+      <div class="newsletter-box content-card">
+        <div>
+          <h4>Receba ofertas exclusivas no seu e-mail</h4>
+          <p style="font-size:0.8rem; color:#64748B;">Receba em primeira mão cupons de desconto de parceiros.</p>
+        </div>
+        <div class="newsletter-input-group">
+          <input type="email" placeholder="Insira seu e-mail">
+          <button class="btn-submit-search">Quero me inscrever</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Rodapé Institucional Escuro -->
   <footer class="footer">
