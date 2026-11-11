@@ -3,134 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro de Empresa | PREÇO JUSTO</title>
+  <title>Portal do Parceiro | Preço Justo</title>
+  <meta name="theme-color" content="#0B2621">
+  <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png">
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="dark-mode">
+<body class="auth-page">
 
-  <header class="header">
-    <div class="header-logo">
-      <a href="index.html" class="logo-brand">
-        <img src="./logo.png" alt="Preço Justo Logo" class="nav-logo-img">
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></symbol>
+  </svg>
+
+  <header class="site-header simple-header">
+    <div class="container header-bar">
+      <a class="brand" href="index.html" aria-label="Preço Justo, página inicial">
+        <img src="./img/logo-preco-justo.png" alt="Preço Justo" width="84" height="54">
       </a>
-    </div>
-    <div class="header-nav-actions">
-      <a href="login.html" class="header-btn">Já tem conta? Entrar</a>
+      <p class="header-note">Já tem conta?<a href="login.html">Entrar</a></p>
     </div>
   </header>
 
-  <main class="login-wrapper" style="min-height: 85vh; padding: 2rem 1rem; display: flex; align-items: center; justify-content: center;">
-    <div class="login-card" style="max-width: 520px; width: 100%; padding: 2.5rem; border-radius: 20px;">
-      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; text-align: center;">Portal do Parceiro</h2>
-      <p style="font-size: 0.85rem; color: #9CA3AF; margin-bottom: 1.5rem; text-align: center;">
-        Cadastre sua empresa para expor suas ofertas no PREÇO JUSTO.
-      </p>
+  <main class="partner">
+    <div class="container partner-grid">
+      <div class="partner-intro">
+        <p class="eyebrow">Portal do parceiro</p>
+        <h1>Cadastre sua empresa no Preço Justo</h1>
+        <p>Hotéis, pousadas, locadoras, companhias aéreas e corretoras de seguro podem divulgar suas ofertas para quem está planejando a próxima viagem.</p>
+        <ul class="partner-steps">
+          <li>
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+            <div><strong>Cadastre a empresa</strong><span>Informe os dados básicos e o segmento de atuação.</span></div>
+          </li>
+          <li>
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <div><strong>Validação da equipe</strong><span>Conferimos as informações antes da publicação.</span></div>
+          </li>
+          <li>
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg></span>
+            <div><strong>Divulgue suas ofertas</strong><span>Seus preços aparecem nas buscas dos viajantes.</span></div>
+          </li>
+        </ul>
+      </div>
 
-      <form onsubmit="cadastrarEmpresa(event)">
-        
-        <div class="login-form-group" style="margin-bottom: 1rem;">
-          <label style="font-size: 0.75font; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">Nome da Empresa / Razão Social</label>
-          <input type="text" id="empNome" placeholder="Ex: Pousada Vista Linda" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none;">
-        </div>
+      <section class="partner-card" aria-labelledby="form-title">
+        <h2 id="form-title">Dados da empresa</h2>
+        <p>Preencha todos os campos para enviar o cadastro.</p>
 
-        <div class="login-form-group" style="margin-bottom: 1rem;">
-          <label style="font-size: 0.75rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">CNPJ ou CPF do Responsável</label>
-          <input type="text" id="empDocumento" placeholder="00.000.000/0001-00" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none;">
-        </div>
+        <form class="form-grid" onsubmit="cadastrarEmpresa(event)" data-validate novalidate>
+          <div class="form-field">
+            <label for="empNome">Nome da empresa ou razão social</label>
+            <input class="input" type="text" id="empNome" placeholder="Ex.: Pousada Vista Linda" autocomplete="organization" required
+              data-req="Informe o nome da empresa." data-min="3" data-min-msg="O nome precisa ter pelo menos 3 caracteres.">
+          </div>
+          <div class="form-grid form-grid--2">
+            <div class="form-field">
+              <label for="empDocumento">CNPJ ou CPF do responsável</label>
+              <input class="input" type="text" id="empDocumento" placeholder="00.000.000/0001-00" inputmode="numeric" maxlength="18" required
+                data-req="Informe o CNPJ ou o CPF do responsável."
+                data-doc="Confira o número: use um CPF com 11 dígitos ou um CNPJ com 14 dígitos.">
+            </div>
+            <div class="form-field">
+              <label for="empEmail">E-mail comercial</label>
+              <input class="input" type="email" id="empEmail" placeholder="contato@suaempresa.com" autocomplete="email" required
+                data-req="Informe o e-mail comercial."
+                data-email="Confira o e-mail: ele precisa ter o formato nome@empresa.com.">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="empSegmento">Segmento de atuação</label>
+            <select id="empSegmento" onchange="mudarFormularioSegmento()" required data-req="Escolha o segmento de atuação da empresa.">
+              <option value="" disabled selected>Escolha uma categoria</option>
+              <option value="hospedagem">Hotel, pousada ou hospedagem</option>
+              <option value="carros">Locadora de veículos</option>
+              <option value="voos">Companhia aérea</option>
+              <option value="seguros">Corretora de seguro viagem</option>
+            </select>
+          </div>
 
-        <div class="login-form-group" style="margin-bottom: 1rem;">
-          <label style="font-size: 0.75rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">E-mail de Contato / Comercial</label>
-          <input type="email" id="empEmail" placeholder="contato@suaempresa.com" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none;">
-        </div>
+          <div id="camposDinamicos" aria-live="polite"></div>
 
-        <div class="login-form-group" style="margin-bottom: 1.2rem;">
-          <label style="font-size: 0.75rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; margin-bottom: 0.3rem; display: block;">Segmento (Ramo de Atuação)</label>
-          <select id="empSegmento" onchange="mudarFormularioSegmento()" style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.8rem 1rem; border-radius: 10px; color: #FFFFFF; font-size: 0.95rem; outline: none; cursor: pointer;" required>
-            <option value="" disabled selected>-- Escolha uma categoria --</option>
-            <option value="hospedagem">🏨 Hotel / Pousada / Hospedagem</option>
-            <option value="carros">🚗 Loja de Aluguel de Carros</option>
-            <option value="voos">✈️ Companhia Aérea / Oferta de Voos</option>
-            <option value="seguros">🛡️ Corretora de Seguros Viagem</option>
-          </select>
-        </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar cadastro</button>
+        </form>
 
-        <div id="camposDinamicos" style="margin-top: 1rem; border-top: 1px solid #1F2937; padding-top: 1rem;"></div>
-
-        <button type="submit" style="width: 100%; background-color: #22C55E; color: white; border: none; padding: 0.95rem; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 1rem;">Concluir Cadastro de Empresa</button>
-      </form>
-
-      <a href="login.html" style="display: block; text-align: center; margin-top: 1.2rem; color: #9CA3AF; text-decoration: none; font-size: 0.85rem;">← Voltar para a tela de login</a>
+        <a href="login.html" class="back-link"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar para o login</a>
+      </section>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer-container" style="text-align: center;">
-      <p>PREÇO JUSTO © 2026 • Todos os direitos reservados.</p>
+  <footer class="mini-footer">
+    <div class="container">
+      <p>© 2026 Preço Justo. Todos os direitos reservados.</p>
+      <p>Projeto acadêmico demonstrativo.</p>
     </div>
   </footer>
 
+  <script src="./script.js"></script>
   <script>
-    function mudarFormularioSegmento() {
-      const segmento = document.getElementById('empSegmento').value;
-      const container = document.getElementById('camposDinamicos');
-      let htmlDinamico = '';
+    // Campos extras de acordo com o segmento escolhido (somente visual).
+    var camposPorSegmento = {
+      hospedagem: { titulo: 'Detalhes da hospedagem', campos: [
+        { id: 'segLocal', rotulo: 'Localização', tipo: 'text', exemplo: 'Ex.: Campos do Jordão, SP', msg: 'Informe a cidade da hospedagem.' },
+        { id: 'segValor', rotulo: 'Valor médio da diária (R$)', tipo: 'number', exemplo: 'Ex.: 250', msg: 'Informe o valor médio da diária.' }
+      ] },
+      carros: { titulo: 'Detalhes da frota', campos: [
+        { id: 'segLocal', rotulo: 'Modelo do veículo', tipo: 'text', exemplo: 'Ex.: VW Polo', msg: 'Informe um modelo da frota.' },
+        { id: 'segValor', rotulo: 'Valor da diária (R$)', tipo: 'number', exemplo: 'Ex.: 150', msg: 'Informe o valor da diária.' }
+      ] },
+      voos: { titulo: 'Detalhes das rotas', campos: [
+        { id: 'segLocal', rotulo: 'Rota principal', tipo: 'text', exemplo: 'Ex.: GRU para BPS', msg: 'Informe a rota principal.' },
+        { id: 'segValor', rotulo: 'Preço base (R$)', tipo: 'number', exemplo: 'Ex.: 450', msg: 'Informe o preço base da rota.' }
+      ] },
+      seguros: { titulo: 'Detalhes do seguro', campos: [
+        { id: 'segLocal', rotulo: 'Tipo de plano', tipo: 'text', exemplo: 'Ex.: Nacional R$ 40.000', msg: 'Informe o tipo de plano.' },
+        { id: 'segValor', rotulo: 'Valor por passageiro (R$)', tipo: 'number', exemplo: 'Ex.: 35', msg: 'Informe o valor por passageiro.' }
+      ] }
+    };
 
-      if (segmento === 'hospedagem') {
-        htmlDinamico = `
-          <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes da Hospedagem</h4>
-          <div style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">LOCALIZAÇÃO</label>
-            <input type="text" placeholder="Ex: Campos do Jordão, SP" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-          <div style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">VALOR MÉDIO DA DIÁRIA (R$)</label>
-            <input type="number" placeholder="Ex: 250" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-        `;
-      } else if (segmento === 'carros') {
-        htmlDinamico = `
-          <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes da Frota</h4>
-          <div style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">MODELO DO VEÍCULO</label>
-            <input type="text" placeholder="Ex: VW Golf GTI" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-          <div style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">VALOR DA DIÁRIA (R$)</label>
-            <input type="number" placeholder="Ex: 150" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-        `;
-      } else if (segmento === 'voos') {
-        htmlDinamico = `
-          <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes de Rotas</h4>
-          <div style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">ROTA PRINCIPAL</label>
-            <input type="text" placeholder="Ex: GRU ➔ BPS" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-          <div style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">PREÇO BASE (R$)</label>
-            <input type="number" placeholder="Ex: 450" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-        `;
-      } else if (segmento === 'seguros') {
-        htmlDinamico = `
-          <h4 style="font-size: 0.85rem; color: #22C55E; margin-bottom: 0.6rem;">Detalhes do Seguro</h4>
-          <div style="margin-bottom: 0.8rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">TIPO DE PLANO</label>
-            <input type="text" placeholder="Ex: Nacional R$ 40.000" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-          <div style="margin-bottom: 0.5rem;">
-            <label style="font-size:0.7rem; color:#9CA3AF; font-weight:700;">VALOR POR PASSAGEIRO (R$)</label>
-            <input type="number" placeholder="Ex: 35" required style="width: 100%; background-color: #0E1719; border: 1px solid #374151; padding: 0.7rem 0.9rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; margin-top: 0.2rem;">
-          </div>
-        `;
-      }
-      container.innerHTML = htmlDinamico;
+    function mudarFormularioSegmento() {
+      var segmento = document.getElementById('empSegmento').value;
+      var container = document.getElementById('camposDinamicos');
+      var dados = camposPorSegmento[segmento];
+      if (!dados) { container.innerHTML = ''; return; }
+
+      var html = '<div class="form-section"><h3>' + dados.titulo + '</h3><div class="form-grid form-grid--2">';
+      dados.campos.forEach(function (campo) {
+        var regraNumero = campo.tipo === 'number' ? ' min="1" data-positivo="Informe um valor maior que zero."' : '';
+        html += '<div class="form-field">' +
+          '<label for="' + campo.id + '">' + campo.rotulo + '</label>' +
+          '<input class="input" type="' + campo.tipo + '" id="' + campo.id + '" placeholder="' + campo.exemplo + '" required data-req="' + campo.msg + '"' + regraNumero + '>' +
+        '</div>';
+      });
+      html += '</div></div>';
+      container.innerHTML = html;
     }
 
     function cadastrarEmpresa(event) {
       event.preventDefault();
-      alert('Parabéns! Sua empresa foi cadastrada com sucesso e passará pela validação da equipe Preço Justo.');
-      window.location.href = 'index.html';
+      window.mostrarAviso('Cadastro enviado para validação da equipe Preço Justo (demonstração).');
+      setTimeout(function () { window.location.href = 'index.html'; }, 2400);
     }
   </script>
 </body>

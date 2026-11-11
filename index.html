@@ -3,332 +3,1144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preçojusto.com | Site Oficial | Tarifas justas e mais economia</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
-  <link rel="shortcut icon" type="image/png" href="./logo.png">
+  <title>Preço Justo | Passagens, hospedagens, pacotes e carros</title>
+  <meta name="description" content="Compare passagens aéreas, hospedagens, pacotes, aluguel de carros e seguro viagem em um só lugar. Projeto acadêmico demonstrativo com valores ilustrativos.">
+  <meta name="theme-color" content="#0B2621">
+  <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png">
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="dark-mode">
+<body>
 
-  <!-- Header Navbar Original com a logo.png -->
-  <header class="header">
-    <div class="header-logo">
-      <a href="index.html" class="logo-brand-img-link">
-        <img src="./logo.png" alt="Preçojusto.com" class="nav-text-logo-img">
+  <!-- Ícones (Lucide, licença ISC) usados em toda a página -->
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+    <symbol id="i-takeoff" viewBox="0 0 24 24"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></symbol>
+    <symbol id="i-landing" viewBox="0 0 24 24"><path d="M2 22h20"/><path d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></symbol>
+    <symbol id="i-luggage" viewBox="0 0 24 24"><path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2"/><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14"/><path d="M10 20h4"/><circle cx="16" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-calendar-check" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+    <symbol id="i-calendar-x" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m14 14-4 4"/><path d="m10 14 4 4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-list-checks" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+    <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/></symbol>
+    <symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+    <symbol id="i-snowflake" viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+    <symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-parking" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-armchair" viewBox="0 0 24 24"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="site-header" id="topo">
+    <div class="container header-bar">
+      <a class="brand" href="index.html" aria-label="Preço Justo, página inicial">
+        <img src="./img/logo-preco-justo.png" alt="Preço Justo" width="87" height="56">
       </a>
-    </div>
 
-    <div class="header-nav-actions booking-header-right">
-      <span class="currency-display">BRL</span>
-      <img src="https://flagcdn.com/w40/br.png" alt="Brasil" class="flag-icon-small">
-      
-      <!-- Espaço reservado para o botão dinâmico (Login ou Menu) -->
-      <div id="authActionContainer">
-        <a href="login.html" class="header-btn btn-login">Fazer login</a>
+      <nav class="main-nav" aria-label="Categorias de viagem">
+        <ul>
+          <li><a href="#ofertas" data-offer-link="passagens"><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>Passagens aéreas</a></li>
+          <li><a href="#hospedagens"><svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg>Hospedagens</a></li>
+          <li><a href="#ofertas" data-offer-link="pacotes"><svg class="icon" aria-hidden="true"><use href="#i-luggage"/></svg>Pacotes</a></li>
+          <li><a href="#carros"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg>Aluguel de carros</a></li>
+          <li><a href="#seguro"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Seguro viagem</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="locale" data-demo data-message="A troca de idioma e moeda é apenas ilustrativa nesta demonstração." aria-label="Idioma e moeda: português, real brasileiro">
+          <svg class="flag" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" rx="2" fill="#009B3A"/><path d="M10 1.6 18.2 7 10 12.4 1.8 7z" fill="#FEDF00"/><circle cx="10" cy="7" r="3.1" fill="#002776"/></svg>
+          <span>BRL</span>
+        </button>
+        <a class="header-link" href="#faq">Ajuda</a>
+        <div class="auth-slot" id="authActionContainer">
+          <a href="login.html" class="btn btn-header"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Entrar</a>
+        </div>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Banner com Abas -->
-  <section class="hero-section">
-    <div class="search-container">
-      
-      <!-- Título de Impacto -->
-      <div class="hero-brand-header text-center" style="margin-bottom: 2rem;">
-        <h1 style="font-size: 2.3rem; font-weight: 800; color: #F8FAFC; margin-bottom: 0.5rem;">Encontre sua próxima viagem</h1>
-        <p class="hero-subtitle" style="font-size: 1.05rem; color: #9CA3AF;">Compare voos, hotéis, carros e seguros com total transparência e economia.</p>
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <div class="mobile-menu-backdrop" data-close-menu></div>
+    <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="mobile-menu-head">
+        <img src="./img/logo-preco-justo.png" alt="Preço Justo" width="74" height="48">
+        <button type="button" class="icon-btn icon-btn--light" data-close-menu aria-label="Fechar menu">
+          <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
       </div>
-
-      <!-- Navegação por Abas -->
-      <div class="tabs-container booking-tabs">
-        <button class="tab-btn active" onclick="trocarAba('monte', this)">Monte sua viagem</button>
-        <button class="tab-btn" onclick="trocarAba('voos', this)">Voos</button>
-        <button class="tab-btn" onclick="trocarAba('pacotes', this)">Pacotes</button>
-        <button class="tab-btn" onclick="trocarAba('hospedagem', this)">Hospedagem</button>
-        <button class="tab-btn" onclick="trocarAba('carros', this)">Carros</button>
-        <button class="tab-btn" onclick="trocarAba('seguros', this)">Seguros</button>
+      <nav aria-label="Categorias de viagem">
+        <ul class="mobile-nav">
+          <li><a href="#ofertas" data-offer-link="passagens"><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>Passagens aéreas</a></li>
+          <li><a href="#hospedagens"><svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg>Hospedagens</a></li>
+          <li><a href="#ofertas" data-offer-link="pacotes"><svg class="icon" aria-hidden="true"><use href="#i-luggage"/></svg>Pacotes</a></li>
+          <li><a href="#carros"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg>Aluguel de carros</a></li>
+          <li><a href="#seguro"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Seguro viagem</a></li>
+          <li><a href="#faq"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>Ajuda</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-foot">
+        <a href="login.html" class="btn btn-sun btn-block" id="mobileAuthLink"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Entrar na minha conta</a>
+        <a href="empresa-cadastro.html" class="btn btn-ghost-light btn-block">Cadastrar minha empresa</a>
       </div>
+    </div>
+  </div>
 
-      <!-- Card Central de Busca -->
-      <div class="search-card">
-        
-        <!-- FORMULÁRIO GERAL -->
-        <div id="formGeral">
-          <div class="search-card-header">
-            <h2 id="searchCardTitle">Pesquisar viagens</h2>
-            <div class="trip-options" id="tripOptions">
-              <label class="radio-pill active" id="pillIdaVolta" onclick="selecionarTipoViagem('ida-volta')">
-                <input type="radio" name="tripType" value="ida-volta" checked> ✓ Ida e volta
-              </label>
-              <label class="radio-pill" id="pillSomenteIda" onclick="selecionarTipoViagem('somente-ida')">
-                <input type="radio" name="tripType" value="somente-ida"> Somente ida
-              </label>
-            </div>
-          </div>
+  <main id="conteudo">
 
-          <div class="search-inputs-grid">
-            <div class="input-box flex-2">
-              <span class="box-label" id="labelOrigem">DE</span>
-              <input type="text" id="inputOrigem" placeholder="Insira uma origem">
-            </div>
-            
-            <button class="btn-swap" id="btnSwap" onclick="inverterDestinos()" title="Inverter">⇆</button>
-            
-            <div class="input-box flex-2">
-              <span class="box-label" id="labelDestino">PARA</span>
-              <input type="text" id="inputDestino" placeholder="Insira um destino">
-            </div>
-            
-            <button class="btn-submit-search" onclick="realizarPesquisa()">BUSCAR</button>
-          </div>
+    <!-- ===================== HERO + BUSCA ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img src="./img/hero/arraial-do-cabo.jpg" alt="" width="1920" height="1440" fetchpriority="high">
+      </div>
+      <p class="hero-credit"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Arraial do Cabo (RJ)</p>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Encontre sua próxima viagem <span>pelo preço justo.</span></h1>
+          <p>Compare opções, descubra novos destinos e planeje sua próxima experiência com mais economia.</p>
         </div>
 
-        <!-- FORMULÁRIO DE HOSPEDAGEM -->
-        <div id="formHospedagem" style="display:none;">
-          <div class="search-card-header">
-            <h2>Encontre sua próxima estadia</h2>
+        <div class="search-panel" id="busca">
+          <div class="search-tabs" role="tablist" aria-label="O que você quer pesquisar?">
+            <button type="button" role="tab" id="tab-voos" aria-selected="true" aria-controls="painel-voos" data-search-tab>
+              <svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>Voos
+            </button>
+            <button type="button" role="tab" id="tab-hospedagem" aria-selected="false" aria-controls="painel-hospedagem" tabindex="-1" data-search-tab>
+              <svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg>Hospedagem
+            </button>
+            <button type="button" role="tab" id="tab-pacotes" aria-selected="false" aria-controls="painel-pacotes" tabindex="-1" data-search-tab>
+              <svg class="icon" aria-hidden="true"><use href="#i-luggage"/></svg>Pacotes
+            </button>
+            <button type="button" role="tab" id="tab-carros" aria-selected="false" aria-controls="painel-carros" tabindex="-1" data-search-tab>
+              <svg class="icon" aria-hidden="true"><use href="#i-car"/></svg>Carros
+            </button>
           </div>
 
-          <div class="search-inputs-grid">
-            <div class="input-box flex-2">
-              <span class="box-label">DESTINO</span>
-              <input type="text" id="stayDestino" placeholder="Para onde você vai?">
+          <!-- VOOS -->
+          <form class="search-form" id="painel-voos" role="tabpanel" aria-labelledby="tab-voos" data-search-form="voos" novalidate>
+            <div class="search-options">
+              <div class="choice-group" role="radiogroup" aria-label="Tipo de viagem">
+                <label class="choice"><input type="radio" name="tipo" value="ida-volta" checked data-trip-type><span>Ida e volta</span></label>
+                <label class="choice"><input type="radio" name="tipo" value="somente-ida" data-trip-type><span>Somente ida</span></label>
+              </div>
+              <label class="check"><input type="checkbox" id="voo-direto"><span>Somente voos diretos</span></label>
             </div>
 
-            <div class="input-box">
-              <span class="box-label">ENTRADA (CHECK-IN)</span>
-              <input type="date" id="stayDataEntrada" class="date-input-clean">
-            </div>
-
-            <div class="input-box">
-              <span class="box-label">SAÍDA (CHECK-OUT)</span>
-              <input type="date" id="stayDataSaida" class="date-input-clean">
-            </div>
-
-            <div class="input-box flex-2 relative-box">
-              <span class="box-label">HÓSPEDES E QUARTOS</span>
-              <input type="text" id="stayOcupacaoInput" value="2 hóspedes, 1 quarto" readonly onclick="toggleModalHospedes()">
-              
-              <div class="guest-modal" id="guestModal" style="display:none;">
-                <div class="modal-row">
-                  <div class="modal-label"><strong>Adultos</strong></div>
-                  <div class="counter-control">
-                    <button type="button" class="btn-counter" onclick="alterarHospedes('adultos', -1)">-</button>
-                    <span id="cntAdultos" class="counter-value">2</span>
-                    <button type="button" class="btn-counter" onclick="alterarHospedes('adultos', 1)">+</button>
-                  </div>
+            <div class="fields fields--voos">
+              <div class="route">
+                <div class="field">
+                  <label for="voo-origem">Origem</label>
+                  <svg class="icon field-icon" aria-hidden="true"><use href="#i-takeoff"/></svg>
+                  <input type="text" id="voo-origem" name="origem" list="lista-aeroportos" placeholder="De onde?" autocomplete="off">
                 </div>
-
-                <div class="modal-row">
-                  <div class="modal-label"><strong>Crianças</strong></div>
-                  <div class="counter-control">
-                    <button type="button" class="btn-counter" onclick="alterarHospedes('criancas', -1)">-</button>
-                    <span id="cntCriancas" class="counter-value">0</span>
-                    <button type="button" class="btn-counter" onclick="alterarHospedes('criancas', 1)">+</button>
-                  </div>
-                </div>
-
-                <div class="modal-row">
-                  <div class="modal-label"><strong>Quartos</strong></div>
-                  <div class="counter-control">
-                    <button type="button" class="btn-counter" onclick="alterarHospedes('quartos', -1)">-</button>
-                    <span id="cntQuartos" class="counter-value">1</span>
-                    <button type="button" class="btn-counter" onclick="alterarHospedes('quartos', 1)">+</button>
-                  </div>
-                </div>
-
-                <hr class="modal-divider">
-
-                <div class="modal-checkbox-row">
-                  <label><input type="checkbox" id="chkPets"> Aceita animais</label>
-                </div>
-
-                <div class="modal-footer-btns">
-                  <button type="button" class="btn-redefinir" onclick="redefinirHospedes()">REDEFINIR</button>
-                  <button type="button" class="btn-confirmar" onclick="confirmarHospedes()">Confirmar</button>
+                <button type="button" class="swap" data-swap="voo-origem voo-destino" aria-label="Inverter origem e destino">
+                  <svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg>
+                </button>
+                <div class="field">
+                  <label for="voo-destino">Destino</label>
+                  <svg class="icon field-icon" aria-hidden="true"><use href="#i-landing"/></svg>
+                  <input type="text" id="voo-destino" name="destino" list="lista-aeroportos" placeholder="Para onde?" autocomplete="off">
                 </div>
               </div>
+              <div class="field">
+                <label for="voo-ida">Ida</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="voo-ida" name="ida" data-date-start="voo-volta">
+              </div>
+              <div class="field" data-return-field>
+                <label for="voo-volta">Volta</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="voo-volta" name="volta">
+              </div>
+              <div class="field field--popover">
+                <span class="field-label" id="voo-pax-label">Passageiros</span>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-users"/></svg>
+                <button type="button" class="field-button" aria-haspopup="dialog" aria-expanded="false" aria-controls="pop-voo-pax" aria-describedby="voo-pax-label">
+                  <span data-summary>1 adulto</span>
+                  <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+                </button>
+                <div class="popover" id="pop-voo-pax" role="dialog" aria-label="Escolher passageiros" data-counter-group="passageiros" hidden>
+                  <div class="counter" data-key="adultos" data-min="1" data-max="9" data-value="1">
+                    <div class="counter-text"><strong>Adultos</strong><span>A partir de 12 anos</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover adulto"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">1</output>
+                      <button type="button" data-step="1" aria-label="Adicionar adulto"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="counter" data-key="criancas" data-min="0" data-max="8" data-value="0">
+                    <div class="counter-text"><strong>Crianças</strong><span>De 2 a 11 anos</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover criança"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">0</output>
+                      <button type="button" data-step="1" aria-label="Adicionar criança"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="counter" data-key="bebes" data-min="0" data-max="4" data-value="0">
+                    <div class="counter-text"><strong>Bebês</strong><span>Até 23 meses, no colo</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover bebê"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">0</output>
+                      <button type="button" data-step="1" aria-label="Adicionar bebê"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="popover-foot">
+                    <button type="button" class="link-btn" data-reset>Redefinir</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-confirm>Confirmar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="field field--select">
+                <label for="voo-classe">Classe</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-armchair"/></svg>
+                <select id="voo-classe" name="classe">
+                  <option>Econômica</option>
+                  <option>Premium economy</option>
+                  <option>Executiva</option>
+                  <option>Primeira classe</option>
+                </select>
+                <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </div>
+              <button type="submit" class="btn btn-sun btn-search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Buscar</button>
             </div>
+          </form>
 
-            <button class="btn-submit-search" onclick="realizarPesquisa()">BUSCAR</button>
-          </div>
-        </div>
+          <!-- HOSPEDAGEM -->
+          <form class="search-form" id="painel-hospedagem" role="tabpanel" aria-labelledby="tab-hospedagem" hidden data-search-form="hospedagem" novalidate>
+            <div class="search-options">
+              <p class="search-note">Hotéis, pousadas, resorts e chalés no Brasil e no exterior.</p>
+            </div>
+            <div class="fields fields--stay">
+              <div class="field field--wide">
+                <label for="stayDestino">Destino</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                <input type="text" id="stayDestino" list="lista-cidades" placeholder="Cidade, região ou hotel" autocomplete="off">
+              </div>
+              <div class="field">
+                <label for="stayDataEntrada">Check-in</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="stayDataEntrada" data-date-start="stayDataSaida">
+              </div>
+              <div class="field">
+                <label for="stayDataSaida">Check-out</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="stayDataSaida">
+              </div>
+              <div class="field field--popover">
+                <span class="field-label" id="stay-guests-label">Hóspedes e quartos</span>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-users"/></svg>
+                <button type="button" class="field-button" aria-haspopup="dialog" aria-expanded="false" aria-controls="guestModal" aria-describedby="stay-guests-label">
+                  <span data-summary>2 hóspedes, 1 quarto</span>
+                  <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+                </button>
+                <div class="popover popover--end" id="guestModal" role="dialog" aria-label="Escolher hóspedes e quartos" data-counter-group="hospedes" hidden>
+                  <div class="counter" data-key="adultos" data-min="1" data-max="12" data-value="2">
+                    <div class="counter-text"><strong>Adultos</strong><span>A partir de 18 anos</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover adulto"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">2</output>
+                      <button type="button" data-step="1" aria-label="Adicionar adulto"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="counter" data-key="criancas" data-min="0" data-max="8" data-value="0">
+                    <div class="counter-text"><strong>Crianças</strong><span>Até 17 anos</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover criança"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">0</output>
+                      <button type="button" data-step="1" aria-label="Adicionar criança"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="counter" data-key="quartos" data-min="1" data-max="6" data-value="1">
+                    <div class="counter-text"><strong>Quartos</strong><span>Até 6 por reserva</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover quarto"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">1</output>
+                      <button type="button" data-step="1" aria-label="Adicionar quarto"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <label class="check popover-check"><input type="checkbox" id="chkPets"><span>Aceita animais de estimação</span></label>
+                  <div class="popover-foot">
+                    <button type="button" class="link-btn" data-reset>Redefinir</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-confirm>Confirmar</button>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-sun btn-search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Buscar</button>
+            </div>
+          </form>
 
-      </div>
+          <!-- PACOTES -->
+          <form class="search-form" id="painel-pacotes" role="tabpanel" aria-labelledby="tab-pacotes" hidden data-search-form="pacotes" novalidate>
+            <div class="search-options">
+              <p class="search-note">Voo e hospedagem juntos, em uma única pesquisa.</p>
+            </div>
+            <div class="fields fields--packages">
+              <div class="route">
+                <div class="field">
+                  <label for="pac-origem">Origem</label>
+                  <svg class="icon field-icon" aria-hidden="true"><use href="#i-takeoff"/></svg>
+                  <input type="text" id="pac-origem" list="lista-aeroportos" placeholder="De onde?" autocomplete="off">
+                </div>
+                <button type="button" class="swap" data-swap="pac-origem pac-destino" aria-label="Inverter origem e destino">
+                  <svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg>
+                </button>
+                <div class="field">
+                  <label for="pac-destino">Destino</label>
+                  <svg class="icon field-icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                  <input type="text" id="pac-destino" list="lista-cidades" placeholder="Para onde?" autocomplete="off">
+                </div>
+              </div>
+              <div class="field">
+                <label for="pac-ida">Ida</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="pac-ida" data-date-start="pac-volta">
+              </div>
+              <div class="field">
+                <label for="pac-volta">Volta</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="pac-volta">
+              </div>
+              <div class="field field--popover">
+                <span class="field-label" id="pac-pax-label">Viajantes</span>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-users"/></svg>
+                <button type="button" class="field-button" aria-haspopup="dialog" aria-expanded="false" aria-controls="pop-pac-pax" aria-describedby="pac-pax-label">
+                  <span data-summary>2 viajantes, 1 quarto</span>
+                  <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+                </button>
+                <div class="popover popover--end" id="pop-pac-pax" role="dialog" aria-label="Escolher viajantes e quartos" data-counter-group="viajantes" hidden>
+                  <div class="counter" data-key="adultos" data-min="1" data-max="9" data-value="2">
+                    <div class="counter-text"><strong>Adultos</strong><span>A partir de 12 anos</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover adulto"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">2</output>
+                      <button type="button" data-step="1" aria-label="Adicionar adulto"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="counter" data-key="criancas" data-min="0" data-max="6" data-value="0">
+                    <div class="counter-text"><strong>Crianças</strong><span>De 2 a 11 anos</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover criança"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">0</output>
+                      <button type="button" data-step="1" aria-label="Adicionar criança"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="counter" data-key="quartos" data-min="1" data-max="4" data-value="1">
+                    <div class="counter-text"><strong>Quartos</strong><span>Até 4 por pacote</span></div>
+                    <div class="counter-ctrl">
+                      <button type="button" data-step="-1" aria-label="Remover quarto"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                      <output aria-live="polite">1</output>
+                      <button type="button" data-step="1" aria-label="Adicionar quarto"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="popover-foot">
+                    <button type="button" class="link-btn" data-reset>Redefinir</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-confirm>Confirmar</button>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-sun btn-search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Buscar</button>
+            </div>
+          </form>
 
-    </div>
-  </section>
+          <!-- CARROS -->
+          <form class="search-form" id="painel-carros" role="tabpanel" aria-labelledby="tab-carros" hidden data-search-form="carros" novalidate>
+            <div class="search-options">
+              <label class="check"><input type="checkbox" id="car-outro-local" data-toggle-field="car-devolucao-field"><span>Devolver em outro local</span></label>
+              <label class="check"><input type="checkbox" id="car-idade" checked><span>Condutor com 25 anos ou mais</span></label>
+            </div>
+            <div class="fields fields--cars">
+              <div class="field field--wide">
+                <label for="car-retirada">Local de retirada</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                <input type="text" id="car-retirada" list="lista-aeroportos" placeholder="Cidade ou aeroporto" autocomplete="off">
+              </div>
+              <div class="field field--wide" id="car-devolucao-field" hidden>
+                <label for="car-devolucao">Local de devolução</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                <input type="text" id="car-devolucao" list="lista-aeroportos" placeholder="Cidade ou aeroporto" autocomplete="off">
+              </div>
+              <div class="field">
+                <label for="car-data-ret">Retirada</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="car-data-ret" data-date-start="car-data-dev">
+              </div>
+              <div class="field field--select field--time">
+                <label for="car-hora-ret">Horário</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-clock"/></svg>
+                <select id="car-hora-ret">
+                  <option>08:00</option><option>09:00</option><option selected>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option><option>20:00</option>
+                </select>
+                <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </div>
+              <div class="field">
+                <label for="car-data-dev">Devolução</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                <input type="date" id="car-data-dev">
+              </div>
+              <div class="field field--select field--time">
+                <label for="car-hora-dev">Horário</label>
+                <svg class="icon field-icon" aria-hidden="true"><use href="#i-clock"/></svg>
+                <select id="car-hora-dev">
+                  <option>08:00</option><option>09:00</option><option selected>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option><option>20:00</option>
+                </select>
+                <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+              </div>
+              <button type="submit" class="btn btn-sun btn-search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Buscar</button>
+            </div>
+          </form>
 
-  <!-- CATÁLOGOS ISOLADOS POR ABA -->
-  <main class="main-body">
-
-    <!-- SEÇÃO: POR QUE USAR O PREÇO JUSTO? -->
-    <section class="section-block" style="margin-bottom: 3.5rem;">
-      <h2 class="section-block-title" style="margin-bottom: 1.5rem;">Por que usar o Preço Justo?</h2>
-      <div class="cards-grid">
-        <div class="content-card" style="padding: 1.5rem;">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">💡</div>
-          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Transparência total de preços</h4>
-          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Comparamos as melhores tarifas do mercado sem taxas ocultas ou surpresas.</p>
-        </div>
-        <div class="content-card" style="padding: 1.5rem;">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">⭐</div>
-          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Milhares de avaliações reais</h4>
-          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Obtenha informações confiáveis de viajantes como você.</p>
-        </div>
-        <div class="content-card" style="padding: 1.5rem;">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🌍</div>
-          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Opções em todo o mundo</h4>
-          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Hotéis, voos, carros e pacotes nas principales companhias e destinos.</p>
-        </div>
-        <div class="content-card" style="padding: 1.5rem;">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">💬</div>
-          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Suporte dedicado 24h</h4>
-          <p style="font-size: 0.85rem; color: #9CA3AF; line-height: 1.4;">Estamos sempre prontos para ajudar em qualquer etapa da sua viagem.</p>
+          <!-- Sugestões preenchidas por script.js a partir de dados.js -->
+          <datalist id="lista-aeroportos"></datalist>
+          <datalist id="lista-cidades"></datalist>
         </div>
       </div>
     </section>
 
-    <!-- 1. BLOCO DE CARROS -->
-    <div id="viewCarros" class="tab-content" style="display:none;">
-      <div class="frota-features-grid">
-        <div class="feature-item">
-          <div class="feature-icon-circle">⚡</div>
-          <div class="feature-text">
-            <h4>Fast Retirada Digital</h4>
-            <p>Retire seu carro em até 5 minutos, sem filas.</p>
+    <!-- ===================== OFERTAS ===================== -->
+    <section class="section section--offers" id="ofertas" aria-labelledby="ofertas-title">
+      <div class="container" data-reveal>
+        <div class="section-head">
+          <div class="section-title">
+            <h2 id="ofertas-title">Ofertas em destaque</h2>
+            <p>Preços ilustrativos por pessoa, para você ter uma referência antes de planejar.</p>
+          </div>
+          <div class="section-tools">
+            <div class="pill-tabs" role="tablist" aria-label="Tipo de oferta">
+              <button type="button" role="tab" id="oferta-tab-passagens" aria-selected="true" aria-controls="ofertas-passagens" data-offer-tab="passagens">Passagens</button>
+              <button type="button" role="tab" id="oferta-tab-pacotes" aria-selected="false" aria-controls="ofertas-pacotes" tabindex="-1" data-offer-tab="pacotes">Pacotes</button>
+            </div>
+            <div class="rail-nav">
+              <button type="button" class="icon-btn" data-rail-prev aria-label="Ofertas anteriores"><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+              <button type="button" class="icon-btn" data-rail-next aria-label="Próximas ofertas"><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+            </div>
           </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon-circle">🚗</div>
-          <div class="feature-text">
-            <h4>Adicionais</h4>
-            <p>Para que sua viagem seja ainda mais simples!</p>
-          </div>
+
+        <!-- Passagens -->
+        <div class="rail rail--offers" id="ofertas-passagens" role="tabpanel" aria-labelledby="oferta-tab-passagens" tabindex="0">
+          <article class="ticket" data-offer="salvador">
+            <div class="ticket-media">
+              <img src="./img/ofertas/salvador.jpg" alt="Casarões coloridos e igreja no Pelourinho, em Salvador" width="700" height="933" loading="lazy">
+              <span class="tag">Somente ida</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Salvador</h3>
+              <p class="ticket-region">Bahia, Brasil</p>
+              <p class="ticket-desc">Pelourinho, praias urbanas e a culinária baiana no mesmo roteiro.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GIG</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>SSA</span><span class="visually-hidden">: Rio de Janeiro para Salvador</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">A partir de</span><strong><small>R$</small> 310</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="porto-seguro">
+            <div class="ticket-media">
+              <img src="./img/ofertas/porto-seguro.jpg" alt="Praia de areia clara com coqueiros em Porto Seguro" width="700" height="1050" loading="lazy">
+              <span class="tag">Ida e volta</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Porto Seguro</h3>
+              <p class="ticket-region">Bahia, Brasil</p>
+              <p class="ticket-desc">Águas calmas, recifes e passeios até Trancoso e Arraial d'Ajuda.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>BPS</span><span class="visually-hidden">: São Paulo para Porto Seguro</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">A partir de</span><strong><small>R$</small> 450</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="recife">
+            <div class="ticket-media">
+              <img src="./img/ofertas/recife.jpg" alt="Prédios históricos do Recife Antigo às margens do rio" width="800" height="600" loading="lazy">
+              <span class="tag">Ida e volta</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Recife</h3>
+              <p class="ticket-region">Pernambuco, Brasil</p>
+              <p class="ticket-desc">Recife Antigo, frevo e acesso rápido a Olinda e ao litoral sul.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>REC</span><span class="visually-hidden">: São Paulo para Recife</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">A partir de</span><strong><small>R$</small> 590</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="florianopolis">
+            <div class="ticket-media">
+              <img src="./img/ofertas/florianopolis.jpg" alt="Avenida Beira-Mar e prédios à beira da baía em Florianópolis" width="800" height="599" loading="lazy">
+              <span class="tag">Ida e volta</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Florianópolis</h3>
+              <p class="ticket-region">Santa Catarina, Brasil</p>
+              <p class="ticket-desc">Mais de 40 praias, a Lagoa da Conceição e a ponte Hercílio Luz.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>FLN</span><span class="visually-hidden">: São Paulo para Florianópolis</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">A partir de</span><strong><small>R$</small> 420</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="foz-do-iguacu">
+            <div class="ticket-media">
+              <img src="./img/ofertas/foz-do-iguacu.jpg" alt="Cataratas do Iguaçu com arco-íris sob céu azul" width="800" height="533" loading="lazy">
+              <span class="tag">Ida e volta</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Foz do Iguaçu</h3>
+              <p class="ticket-region">Paraná, Brasil</p>
+              <p class="ticket-desc">As Cataratas do Iguaçu e a tríplice fronteira com Argentina e Paraguai.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>IGU</span><span class="visually-hidden">: São Paulo para Foz do Iguaçu</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">A partir de</span><strong><small>R$</small> 520</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="santiago">
+            <div class="ticket-media">
+              <img src="./img/ofertas/santiago.jpg" alt="Vista de Santiago com a Cordilheira dos Andes ao fundo" width="800" height="534" loading="lazy">
+              <span class="tag">Internacional</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Santiago</h3>
+              <p class="ticket-region">Chile</p>
+              <p class="ticket-desc">Cordilheira dos Andes, vinícolas e uma capital cheia de vida.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>SCL</span><span class="visually-hidden">: São Paulo para Santiago</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">A partir de</span><strong><small>R$</small> 1.390</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon-circle">👤</div>
-          <div class="feature-text">
-            <h4>Portal do Cliente</h4>
-            <p>Tudo o que você precisa em um só lugar.</p>
+
+        <!-- Pacotes -->
+        <div class="rail rail--offers" id="ofertas-pacotes" role="tabpanel" aria-labelledby="oferta-tab-pacotes" tabindex="0" hidden>
+          <article class="ticket" data-offer="natal-pipa">
+            <div class="ticket-media">
+              <img src="./img/ofertas/natal-pipa.jpg" alt="Praia de Ponta Negra e o Morro do Careca, em Natal" width="800" height="600" loading="lazy">
+              <span class="tag">Voo + hotel</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Natal e Pipa</h3>
+              <p class="ticket-region">Rio Grande do Norte, Brasil</p>
+              <p class="ticket-desc">Aéreo e 5 noites de hospedagem entre dunas e falésias.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>NAT</span><span class="visually-hidden">: São Paulo para Natal</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">Pacote a partir de</span><strong><small>R$</small> 1.680</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="maceio">
+            <div class="ticket-media">
+              <img src="./img/ofertas/maceio-pacote.jpg" alt="Barcos a vela no mar azul-turquesa de Maceió" width="800" height="451" loading="lazy">
+              <span class="tag">Voo + resort</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Maceió</h3>
+              <p class="ticket-region">Alagoas, Brasil</p>
+              <p class="ticket-desc">Aéreo e resort all inclusive perto das piscinas naturais.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>MCZ</span><span class="visually-hidden">: São Paulo para Maceió</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">Pacote a partir de</span><strong><small>R$</small> 2.450</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="bonito">
+            <div class="ticket-media">
+              <img src="./img/ofertas/bonito.jpg" alt="Lago de água azul dentro de uma gruta em Bonito" width="800" height="533" loading="lazy">
+              <span class="tag">Voo + hotel</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Bonito</h3>
+              <p class="ticket-region">Mato Grosso do Sul, Brasil</p>
+              <p class="ticket-desc">Aéreo e 4 noites com flutuação em rios cristalinos e grutas.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>VCP</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>BYO</span><span class="visually-hidden">: Campinas para Bonito</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">Pacote a partir de</span><strong><small>R$</small> 2.190</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ticket" data-offer="bariloche">
+            <div class="ticket-media">
+              <img src="./img/ofertas/bariloche.jpg" alt="Lagos e montanhas com neve na região de Bariloche" width="800" height="600" loading="lazy">
+              <span class="tag">Voo + hotel</span>
+            </div>
+            <div class="ticket-body">
+              <h3 class="ticket-city">Bariloche</h3>
+              <p class="ticket-region">Argentina</p>
+              <p class="ticket-desc">Aéreo e 5 noites entre lagos, montanhas e a temporada de neve.</p>
+            </div>
+            <div class="ticket-stub">
+              <p class="ticket-route"><span>GRU</span><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg><span>BRC</span><span class="visually-hidden">: São Paulo para Bariloche</span></p>
+              <div class="ticket-buy">
+                <p class="price"><span class="price-from">Pacote a partir de</span><strong><small>R$</small> 3.290</strong><span class="price-note">por pessoa · valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-offer-open>Ver oferta</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DESTINOS POPULARES ===================== -->
+    <section class="section section--destinations" id="destinos" aria-labelledby="destinos-title">
+      <div class="container" data-reveal>
+        <div class="section-head">
+          <div class="section-title">
+            <h2 id="destinos-title">Destinos populares</h2>
+            <p>Do litoral brasileiro às cidades mais procuradas fora do país.</p>
+          </div>
+          <a href="#" class="text-link" data-demo>Ver todos os destinos<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+
+        <div class="mosaic">
+          <a href="#busca" class="dest dest--feature" data-destino="GIG">
+            <img src="./img/destinos/rio-de-janeiro.jpg" alt="Pão de Açúcar e a Baía de Guanabara, no Rio de Janeiro" width="1300" height="867" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">RJ, Brasil</span>
+              <span class="dest-name">Rio de Janeiro</span>
+              <span class="dest-line">Pão de Açúcar, Cristo Redentor e praias conhecidas no mundo inteiro.</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#busca" class="dest dest--tall" data-destino="FEN">
+            <img src="./img/destinos/fernando-de-noronha.jpg" alt="Morro Dois Irmãos e o mar azul de Fernando de Noronha" width="720" height="1280" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">PE, Brasil</span>
+              <span class="dest-name">Fernando de Noronha</span>
+              <span class="dest-line">Arquipélago com algumas das praias mais bonitas do país.</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#busca" class="dest dest--small" data-destino="gramado">
+            <img src="./img/destinos/gramado.jpg" alt="Igreja Matriz São Pedro, no centro de Gramado" width="760" height="1013" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">RS, Brasil</span>
+              <span class="dest-name">Gramado</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#busca" class="dest dest--small" data-destino="MCZ">
+            <img src="./img/destinos/maceio.jpg" alt="Praia com coqueiros e mar verde em Maceió" width="900" height="1125" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">AL, Brasil</span>
+              <span class="dest-name">Maceió</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#busca" class="dest dest--wide" data-destino="porto-de-galinhas">
+            <img src="./img/destinos/porto-de-galinhas.jpg" alt="Jangadas com velas coloridas em Porto de Galinhas" width="1200" height="800" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">PE, Brasil</span>
+              <span class="dest-name">Porto de Galinhas</span>
+              <span class="dest-line">Piscinas naturais e jangadas coloridas no litoral sul.</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#busca" class="dest dest--tall" data-destino="EZE">
+            <img src="./img/destinos/buenos-aires.jpg" alt="Casas coloridas do Caminito, no bairro de La Boca, em Buenos Aires" width="760" height="1140" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">Argentina</span>
+              <span class="dest-name">Buenos Aires</span>
+              <span class="dest-line">Tango, cafés tradicionais e as cores do Caminito.</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#busca" class="dest dest--tall" data-destino="LIS">
+            <img src="./img/destinos/lisboa.jpg" alt="Telhados alaranjados do bairro de Alfama, em Lisboa" width="760" height="950" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">Portugal</span>
+              <span class="dest-name">Lisboa</span>
+              <span class="dest-line">Bondes, miradouros e o casario de Alfama.</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#busca" class="dest dest--wide" data-destino="MCO">
+            <img src="./img/destinos/orlando.jpg" alt="Prédios de Orlando refletidos no lago Eola ao entardecer" width="1200" height="800" loading="lazy">
+            <span class="dest-info">
+              <span class="dest-region">Flórida, Estados Unidos</span>
+              <span class="dest-name">Orlando</span>
+              <span class="dest-line">Parques temáticos, compras e lagos no centro da Flórida.</span>
+            </span>
+            <span class="dest-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow-right"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== POR QUE ESCOLHER ===================== -->
+    <section class="section section--benefits" id="vantagens" aria-labelledby="vantagens-title">
+      <div class="container" data-reveal>
+        <div class="benefits">
+          <div class="benefits-intro">
+            <img src="./img/apple-touch-icon.png" alt="" width="72" height="72" class="benefits-mark">
+            <h2 id="vantagens-title">Por que escolher o Preço Justo?</h2>
+            <p>Reunimos as principais etapas da viagem em um só lugar, com informações claras para você decidir com calma.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></span>
+            <h3>Comparação sem complicação</h3>
+            <p>Veja as opções lado a lado e entenda rapidamente o que cada uma inclui.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+            <h3>Destinos para todos os estilos</h3>
+            <p>Praia, serra, cidade ou natureza, no Brasil e no exterior.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-list-checks"/></svg></span>
+            <h3>Informações organizadas</h3>
+            <p>Horários, valores e condições apresentados de forma direta e fácil de consultar.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar-check"/></svg></span>
+            <h3>Planejamento prático</h3>
+            <p>Passagem, hospedagem, carro e seguro na mesma pesquisa.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-pointer"/></svg></span>
+            <h3>Experiência simplificada</h3>
+            <p>Navegação objetiva, do primeiro clique até a escolha da viagem.</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <section class="section-block">
-        <h2 class="section-block-title">🚗 Aluguel de Carros</h2>
-        <p class="section-block-subtitle">Encontre o carro certo para você</p>
-        <div class="cards-grid" id="carrosGrid"></div>
-      </section>
-
-      <section class="section-block mt-4">
-        <h2 class="section-block-title text-center">Conheça a nossa Frota</h2>
-        <p class="section-block-subtitle text-center">As melhores condições para você reservar</p>
-        <div class="cards-grid" id="frotaGrid"></div>
-      </section>
-    </div>
-
-    <!-- 2. BLOCO DE HOSPEDAGEM -->
-    <div id="viewHospedagem" class="tab-content" style="display:none;">
-      <section class="section-block">
-        <h2 class="section-block-title">Especial Nordeste: Hotéis e Resorts</h2>
-        <p class="section-block-subtitle">Estadias incríveis nos melhores destinos</p>
-        <div class="cards-grid" id="hospedagemGrid"></div>
-      </section>
-
-      <section class="section-block mt-4">
-        <h2 class="section-block-title">🏰 Hospedagens em Campos do Jordão</h2>
-        <p class="section-block-subtitle">Parcele em até 10x sem juros</p>
-        <div class="cards-grid" id="camposGrid"></div>
-      </section>
-    </div>
-
-    <!-- 3. BLOCO DE VOOS, PACOTES E MONTE SUA VIAGEM -->
-    <div id="viewVoos" class="tab-content" style="display:none;">
-      <section class="section-block">
-        <h2 class="section-block-title" id="secVoosTitle">Destaques e Ofertas</h2>
-        <p class="section-block-subtitle" id="secVoosSub">As melhores opções selecionadas para você</p>
-        <div class="cards-grid" id="voosGrid"></div>
-      </section>
-
-      <!-- Bloco com as Logos PNG das Companhias Aéreas (GOL sem classe de tamanho extra) -->
-      <section class="section-block mt-4">
-        <h2 class="section-block-title text-center">Companhias Aéreas Parceiras</h2>
-        <p class="section-block-subtitle text-center">Emitimos bilhetes integrados com as principais companhias do mundo</p>
-        <div class="airline-logos-grid">
-          <div class="airline-card"><img src="./empresa/gol.png" alt="GOL" class="airline-img"></div>
-          <div class="airline-card"><img src="./empresa/azul.png" alt="Azul" class="airline-img logo-ajustada"></div>
-          <div class="airline-card"><img src="./empresa/latam.png" alt="Latam" class="airline-img logo-ajustada"></div>
-          <div class="airline-card"><img src="./empresa/copa.png" alt="Copa" class="airline-img logo-ajustada"></div>
-        </div>
-      </section>
-    </div>
-
-    <!-- 4. BLOCO DE SEGUROS -->
-    <div id="viewSeguros" class="tab-content" style="display:none;">
-      <section class="section-block">
-        <h2 class="section-block-title">🛡️ Viaje Protegido com um Seguro Viagem</h2>
-        <p class="section-block-subtitle">Assistência médica completa e flexível</p>
-        <div class="cards-grid" id="segurosGrid"></div>
-      </section>
-
-      <section class="section-block mt-4">
-        <h2 class="section-block-title">Dúvidas Frequentes sobre Seguro Viagem</h2>
-        <div class="faq-grid">
-          <div class="faq-card content-card">
-            <h4>O que é o seguro viagem?</h4>
-            <p>Cuida e presta suporte ao passageiro durante o período da viagem em casos de urgência médica.</p>
+    <!-- ===================== HOSPEDAGENS ===================== -->
+    <section class="section section--stays" id="hospedagens" aria-labelledby="hospedagens-title">
+      <div class="container" data-reveal>
+        <div class="section-head">
+          <div class="section-title">
+            <h2 id="hospedagens-title">Hospedagens para cada estilo de viagem</h2>
+            <p>Resorts, hotéis e pousadas selecionados. Diárias ilustrativas para 2 pessoas.</p>
           </div>
-          <div class="faq-card content-card">
-            <h4>Por que contratar?</h4>
-            <p>Garante tranquilidade total contra despesas médicas inesperadas e extravio de bagagem.</p>
+          <a href="#busca" class="text-link" data-search-open="hospedagem" data-message="Informe o destino e as datas para ver as hospedagens.">Ver todas as hospedagens<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+
+        <div class="stays rail-mobile">
+          <article class="stay" data-stay="resort-maceio">
+            <div class="stay-media">
+              <img src="./img/hospedagens/resort-maceio.jpg" alt="Piscina cercada por coqueiros em um resort à beira-mar" width="900" height="600" loading="lazy">
+              <span class="tag tag--light">Resort</span>
+              <button type="button" class="fav" aria-label="Salvar nos favoritos" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+            </div>
+            <div class="stay-body">
+              <h3>Resort all inclusive à beira-mar</h3>
+              <p class="stay-place"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Maceió, AL</p>
+              <ul class="amenities" aria-label="Comodidades">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-utensils"/></svg>All inclusive</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-waves"/></svg>Piscina</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg>Wi-Fi</li>
+              </ul>
+              <div class="stay-foot">
+                <p class="price"><span class="price-from">Diária a partir de</span><strong><small>R$</small> 2.052</strong><span class="price-note">valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-stay-open>Ver hospedagem</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="stay" data-stay="hotel-natal">
+            <div class="stay-media">
+              <img src="./img/hospedagens/hotel-natal.jpg" alt="Piscina e deck de madeira de um hotel no litoral" width="900" height="600" loading="lazy">
+              <span class="tag tag--light">Hotel</span>
+              <button type="button" class="fav" aria-label="Salvar nos favoritos" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+            </div>
+            <div class="stay-body">
+              <h3>Hotel na orla de Ponta Negra</h3>
+              <p class="stay-place"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Natal, RN</p>
+              <ul class="amenities" aria-label="Comodidades">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-coffee"/></svg>Café da manhã</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-waves"/></svg>Piscina</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg>Wi-Fi</li>
+              </ul>
+              <div class="stay-foot">
+                <p class="price"><span class="price-from">Diária a partir de</span><strong><small>R$</small> 469</strong><span class="price-note">valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-stay-open>Ver hospedagem</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="stay" data-stay="pousada-campos">
+            <div class="stay-media">
+              <img src="./img/hospedagens/pousada-campos-do-jordao.jpg" alt="Pousada em estilo europeu cercada por árvores na serra" width="720" height="1080" loading="lazy">
+              <span class="tag tag--light">Pousada</span>
+              <button type="button" class="fav" aria-label="Salvar nos favoritos" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+            </div>
+            <div class="stay-body">
+              <h3>Pousada com lareira na serra</h3>
+              <p class="stay-place"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Campos do Jordão, SP</p>
+              <ul class="amenities" aria-label="Comodidades">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>Lareira</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-coffee"/></svg>Café da manhã</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-parking"/></svg>Estacionamento</li>
+              </ul>
+              <div class="stay-foot">
+                <p class="price"><span class="price-from">Diária a partir de</span><strong><small>R$</small> 297</strong><span class="price-note">valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-stay-open>Ver hospedagem</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="stay" data-stay="hotel-sao-paulo">
+            <div class="stay-media">
+              <img src="./img/hospedagens/hotel-sao-paulo.jpg" alt="Quarto de hotel com cama de casal e janelas amplas" width="900" height="600" loading="lazy">
+              <span class="tag tag--light">Hotel</span>
+              <button type="button" class="fav" aria-label="Salvar nos favoritos" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+            </div>
+            <div class="stay-body">
+              <h3>Hotel executivo perto da Paulista</h3>
+              <p class="stay-place"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>São Paulo, SP</p>
+              <ul class="amenities" aria-label="Comodidades">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg>Wi-Fi</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-coffee"/></svg>Café da manhã</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-parking"/></svg>Estacionamento</li>
+              </ul>
+              <div class="stay-foot">
+                <p class="price"><span class="price-from">Diária a partir de</span><strong><small>R$</small> 316</strong><span class="price-note">valor ilustrativo</span></p>
+                <button type="button" class="btn btn-outline btn-sm" data-stay-open>Ver hospedagem</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ALUGUEL DE CARROS ===================== -->
+    <section class="section section--cars" id="carros" aria-labelledby="carros-title">
+      <div class="container cars" data-reveal>
+        <div class="cars-intro">
+          <p class="eyebrow">Aluguel de carros</p>
+          <h2 id="carros-title">O carro certo para cada roteiro</h2>
+          <p class="cars-lead">Compare categorias de locadoras parceiras e retire o veículo no aeroporto ou na cidade de destino.</p>
+          <ul class="cars-features">
+            <li><span class="cars-feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg></span><div><strong>Retirada digital</strong><span>Retire o carro em poucos minutos, sem filas no balcão.</span></div></li>
+            <li><span class="cars-feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span><div><strong>Adicionais</strong><span>Cadeirinha, GPS e condutor extra para simplificar a viagem.</span></div></li>
+            <li><span class="cars-feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span><div><strong>Portal do cliente</strong><span>Reservas e comprovantes reunidos em um só lugar.</span></div></li>
+          </ul>
+          <a href="#busca" class="btn btn-sun" data-search-open="carros" data-message="Informe o local e as datas de retirada para ver os carros.">Ver carros disponíveis<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+
+        <div class="cars-list rail-mobile">
+          <article class="car">
+            <div class="car-media">
+              <img src="./img/carros/economico.jpg" alt="Volkswagen Polo azul estacionado em rua arborizada" width="900" height="600" loading="lazy">
+            </div>
+            <div class="car-body">
+              <p class="car-group">Econômico</p>
+              <h3>VW Polo <span>ou similar</span></h3>
+              <ul class="car-specs" aria-label="Características">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>5</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg>2 malas</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg>Manual</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-snowflake"/></svg>Ar</li>
+              </ul>
+              <p class="price"><span class="price-from">Diária a partir de</span><strong><small>R$</small> 139</strong><span class="price-note">valor ilustrativo</span></p>
+            </div>
+          </article>
+
+          <article class="car">
+            <div class="car-media">
+              <img src="./img/carros/suv.jpg" alt="Jeep Renegade preto estacionado em frente a um prédio" width="900" height="600" loading="lazy">
+            </div>
+            <div class="car-body">
+              <p class="car-group">SUV compacto</p>
+              <h3>Jeep Renegade <span>ou similar</span></h3>
+              <ul class="car-specs" aria-label="Características">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>5</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg>3 malas</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg>Automático</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-snowflake"/></svg>Ar</li>
+              </ul>
+              <p class="price"><span class="price-from">Diária a partir de</span><strong><small>R$</small> 216</strong><span class="price-note">valor ilustrativo</span></p>
+            </div>
+          </article>
+
+          <article class="car">
+            <div class="car-media">
+              <img src="./img/carros/esportivo.jpg" alt="Chevrolet Camaro azul em estrada de terra no deserto" width="900" height="600" loading="lazy">
+            </div>
+            <div class="car-body">
+              <p class="car-group">Esportivo</p>
+              <h3>Chevrolet Camaro <span>ou similar</span></h3>
+              <ul class="car-specs" aria-label="Características">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>4</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg>2 malas</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg>Automático</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-snowflake"/></svg>Ar</li>
+              </ul>
+              <p class="price"><span class="price-from">Diária a partir de</span><strong><small>R$</small> 890</strong><span class="price-note">valor ilustrativo</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMPANHIAS AÉREAS ===================== -->
+    <section class="section section--airlines" id="companhias" aria-labelledby="companhias-title">
+      <div class="container airlines" data-reveal>
+        <div class="airlines-text">
+          <h2 id="companhias-title">Principais companhias aéreas</h2>
+          <p>Compare voos das companhias que operam no Brasil e na América Latina.</p>
+        </div>
+        <ul class="airline-list">
+          <li class="airline airline--gol"><img src="./img/companhias/gol.png" alt="GOL Linhas Aéreas" width="213" height="120" loading="lazy"></li>
+          <li class="airline airline--azul"><img src="./img/companhias/azul.png" alt="Azul Linhas Aéreas" width="448" height="120" loading="lazy"></li>
+          <li class="airline airline--latam"><img src="./img/companhias/latam.png" alt="LATAM Airlines" width="506" height="120" loading="lazy"></li>
+          <li class="airline airline--copa"><img src="./img/companhias/copa.png" alt="Copa Airlines" width="463" height="120" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SEGURO VIAGEM ===================== -->
+    <section class="section section--insurance" id="seguro" aria-labelledby="seguro-title">
+      <div class="container insurance" data-reveal>
+        <div class="insurance-media">
+          <img src="./img/seguro-viagem.jpg" alt="Viajante sorrindo com malas no saguão de um aeroporto" width="900" height="1349" loading="lazy">
+          <div class="insurance-badge">
+            <span class="insurance-badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <p><strong>Assistência em viagem</strong><span>Suporte do embarque ao retorno</span></p>
           </div>
         </div>
-      </section>
-    </div>
+
+        <div class="insurance-content">
+          <p class="eyebrow">Seguro viagem</p>
+          <h2 id="seguro-title">Viaje com mais tranquilidade, do embarque ao retorno</h2>
+          <p class="insurance-lead">Compare planos com assistência médica, cobertura para bagagem e suporte durante toda a viagem.</p>
+
+          <ul class="coverages">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-heart-pulse"/></svg>Assistência médica e hospitalar</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-luggage"/></svg>Extravio de bagagem</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-calendar-x"/></svg>Cancelamento de viagem</li>
+          </ul>
+
+          <ul class="plans" aria-label="Planos de seguro viagem">
+            <li class="plan">
+              <div><strong>Brasil</strong><span>Cobertura médica de R$ 40 mil</span></div>
+              <p class="price price--inline"><span class="price-from">a partir de</span><strong><small>R$</small> 35</strong></p>
+            </li>
+            <li class="plan">
+              <div><strong>América do Sul</strong><span>Cobertura médica de US$ 30 mil</span></div>
+              <p class="price price--inline"><span class="price-from">a partir de</span><strong><small>R$</small> 90</strong></p>
+            </li>
+            <li class="plan">
+              <div><strong>Europa</strong><span>Cobertura de € 30 mil, aceita no Espaço Schengen</span></div>
+              <p class="price price--inline"><span class="price-from">a partir de</span><strong><small>R$</small> 120</strong></p>
+            </li>
+          </ul>
+          <p class="plans-note">Valores ilustrativos por pessoa.</p>
+
+          <a href="#" class="btn btn-sun" data-demo>Conhecer planos de seguro<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DÚVIDAS FREQUENTES ===================== -->
+    <section class="section section--faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq" data-reveal>
+        <div class="faq-intro">
+          <h2 id="faq-title">Dúvidas frequentes</h2>
+          <p>Respostas rápidas sobre como planejar sua viagem com o Preço Justo.</p>
+          <div class="help-card">
+            <span class="help-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg></span>
+            <div>
+              <strong>Ainda com dúvidas?</strong>
+              <p>Nossa central de ajuda atende por chat e e-mail.</p>
+              <a href="#" class="text-link" data-demo>Falar com o suporte<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="true" aria-controls="faq-1" id="faq-1-btn">Como funciona a comparação no Preço Justo?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+            <div class="acc-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div><p>Reunimos opções de passagens, hospedagens, carros e seguros em uma mesma interface, para que você compare valores, horários e condições antes de decidir.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Os preços exibidos no site são definitivos?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+            <div class="acc-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div><p>Não. Os preços desta página são ilustrativos e servem como referência. Valores reais variam conforme datas, disponibilidade e regras de cada fornecedor.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Posso planejar voo, hotel e carro na mesma pesquisa?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+            <div class="acc-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div><p>Sim. Na área de pesquisa você alterna entre voos, hospedagens, pacotes e carros para organizar cada etapa da viagem.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">O que é o seguro viagem?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+            <div class="acc-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div><p>É um serviço que dá suporte ao passageiro durante a viagem, principalmente em casos de urgência médica, além de coberturas como extravio de bagagem.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Por que contratar um seguro viagem?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+            <div class="acc-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div><p>Ele traz tranquilidade diante de despesas médicas inesperadas e imprevistos como o extravio de bagagem. Para países do Espaço Schengen, na Europa, o seguro pode ser exigido na entrada.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">Quais companhias aéreas aparecem nas buscas?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+            <div class="acc-panel" id="faq-6" role="region" aria-labelledby="faq-6-btn"><div><p>As opções incluem companhias nacionais e internacionais, como GOL, Azul, LATAM e Copa Airlines.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-trigger" aria-expanded="false" aria-controls="faq-7" id="faq-7-btn">Minha empresa pode anunciar no Preço Justo?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></h3>
+            <div class="acc-panel" id="faq-7" role="region" aria-labelledby="faq-7-btn"><div><p>Sim. Hotéis, pousadas, locadoras, companhias aéreas e corretoras de seguro podem se cadastrar pelo <a href="empresa-cadastro.html">Portal do Parceiro</a>.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div>
-        <h4 class="footer-logo">PREÇO JUSTO</h4>
-        <p>Plataforma agregadora para comparação de voos, hotéis, carros e seguros.</p>
-      </div>
-      <div>
-        <h4>Acesso do Sistema</h4>
-        <ul>
-          <li><a href="login.html">Login de Usuário</a></li>
-          <li><a href="empresa-cadastro.html">Cadastrar Empresa / Parceiro</a></li>
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img src="./img/logo-preco-justo.png" alt="Preço Justo" width="93" height="60" loading="lazy">
+        <p>Plataforma para comparar passagens, hospedagens, pacotes, aluguel de carros e seguro viagem em um só lugar.</p>
+        <ul class="social" aria-label="Redes sociais">
+          <li><a href="#" data-demo aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li><a href="#" data-demo aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+          <li><a href="#" data-demo aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
+          <li><a href="#" data-demo aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
         </ul>
       </div>
-      <div>
-        <h4>Suporte & Legal</h4>
+
+      <nav class="footer-col" aria-labelledby="ft-inst">
+        <h2 id="ft-inst">Institucional</h2>
         <ul>
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#" data-demo>Sobre o Preço Justo</a></li>
+          <li><a href="#vantagens">Como funciona</a></li>
+          <li><a href="#" data-demo>Trabalhe conosco</a></li>
+          <li><a href="#" data-demo>Imprensa</a></li>
         </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="ft-viagens">
+        <h2 id="ft-viagens">Viagens</h2>
+        <ul>
+          <li><a href="#ofertas" data-offer-link="passagens">Passagens aéreas</a></li>
+          <li><a href="#hospedagens">Hospedagens</a></li>
+          <li><a href="#ofertas" data-offer-link="pacotes">Pacotes</a></li>
+          <li><a href="#carros">Aluguel de carros</a></li>
+          <li><a href="#seguro">Seguro viagem</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="ft-ajuda">
+        <h2 id="ft-ajuda">Ajuda e suporte</h2>
+        <ul>
+          <li><a href="#faq">Central de ajuda</a></li>
+          <li><a href="#faq">Dúvidas frequentes</a></li>
+          <li><a href="login.html">Minhas viagens</a></li>
+          <li><a href="#" data-demo>Fale conosco</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="ft-parceiros">
+        <h2 id="ft-parceiros">Parceiros</h2>
+        <ul>
+          <li><a href="empresa-cadastro.html">Cadastrar empresa</a></li>
+          <li><a href="login.html">Acessar conta</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Preço Justo. Todos os direitos reservados.</p>
+        <ul class="legal">
+          <li><a href="#" data-demo>Política de privacidade</a></li>
+          <li><a href="#" data-demo>Termos de uso</a></li>
+          <li><a href="#" data-demo>Cookies</a></li>
+        </ul>
+        <p class="footer-note">Projeto acadêmico demonstrativo. Preços e ofertas são ilustrativos.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Script para alternar entre "Fazer login" e o botão "Menu" com base no login -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      const jaLogado = localStorage.getItem('usuarioLogado') === 'true';
-      const container = document.getElementById('authActionContainer');
+  <!-- Janela de detalhes (ofertas e hospedagens), preenchida por script.js -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title"></dialog>
 
-      if (jaLogado) {
-        container.innerHTML = `
-          <button class="header-btn btn-menu" onclick="alert('Menu do usuário aberto!')">
-            <span class="menu-icon">☰</span> Menu
-          </button>
-        `;
-      }
-    });
-  </script>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
+    <span data-toast-text></span>
+  </div>
 
+  <script src="./dados.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
